@@ -1,2 +1,6 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/sites/TheBlog/Shared%20Documents/theblog
+  /: https://drive.google.com/drive/folders/17bH6mtRACYdDbkuf8UeHqOnbWwCxmCFx
+
+folders:
+  /authors: /generic-author
+  /tagged: /generic-tagged
