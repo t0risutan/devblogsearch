@@ -3,7 +3,7 @@ version: 1
 indices:
   english: &default
     include:
-      - /en/publish/*/*/*/*
+      - /en/publish/**
     exclude:
       - '**/Document.*'
     target: /en/query-index
