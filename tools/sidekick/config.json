@@ -1,6 +1,6 @@
 {
   "project": "Blog",
-  "host": "TODO-devblog.adobe.com",
+  "host": "main--ablog--bdelacretaz.hlx.live",
   "plugins": [
     {
       "id": "path",
