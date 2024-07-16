@@ -6,7 +6,7 @@ indices:
       - /en/publish/**
     exclude:
       - '**/Document.*'
-    target: /en/query-index
+    target: /en/query-index.json
     properties:
       author:
         select: head > meta[name="author"]
