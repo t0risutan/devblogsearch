@@ -29,6 +29,6 @@ export default async function predictUrl() {
     const [ month, day, year ] = date.split('-');
     if (month && day && year) publishPath = `/publish/${year}/${month}/${day}`;
   }
-  const url = `https://blog.adobe.com/${pathSplit[1]}${publishPath}/${page}`;
+  const url = `https://TODO-devblog.adobe.com/${pathSplit[1]}${publishPath}/${page}`;
   showBanner(url, createTag);
 }

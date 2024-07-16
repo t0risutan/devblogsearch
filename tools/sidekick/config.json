@@ -1,6 +1,6 @@
 {
   "project": "Blog",
-  "host": "blog.adobe.com",
+  "host": "TODO-devblog.adobe.com",
   "plugins": [
     {
       "id": "path",
