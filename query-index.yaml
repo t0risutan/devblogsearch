@@ -6,7 +6,7 @@ indices:
       - /en/publish/*/*/*/*
     exclude:
       - '**/Document.*'
-    target: /en/query-index.xlsx
+    target: /en/query-index
     properties:
       author:
         select: head > meta[name="author"]
