@@ -1,5 +1,5 @@
 mountpoints:
-  /: https://drive.google.com/drive/folders/17bH6mtRACYdDbkuf8UeHqOnbWwCxmCFx
+  /: https://drive.google.com/drive/folders/1o7tfX78efNIqRil2G54jx8dPRfC_UJnB
 
 folders:
   /authors: /generic-author
