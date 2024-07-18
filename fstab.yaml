@@ -2,5 +2,5 @@ mountpoints:
   /: https://drive.google.com/drive/folders/1o7tfX78efNIqRil2G54jx8dPRfC_UJnB
 
 folders:
-  /authors: /generic-author
-  /tagged: /generic-tagged
+  /en/authors: /en/generic-author
+  /en/topics: /en/generic-tagged

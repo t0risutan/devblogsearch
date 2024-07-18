@@ -18,31 +18,31 @@ const STYLES = ['/styles/styles.css', '/styles/articles.css'];
 // Use '/libs' if your live site maps '/libs' to milo's origin.
 const LIBS = '/libs';
 
-// Add any config options.
+// Config was copied from blog.a.c, for now disable most of it
 const CONFIG = {
   // codeRoot: '',
   // contentRoot: '',
-  imsClientId: 'theblog-helix',
+  //imsClientId: 'theblog-helix',
   stage: {
-    edgeConfigId: '72b074a6-76d2-43de-a210-124acc734f1c',
-    marTechUrl: 'https://assets.adobedtm.com/d4d114c60e50/a0e989131fd5/launch-2c94beadc94f-development.min.js',
+    //edgeConfigId: '72b074a6-76d2-43de-a210-124acc734f1c',
+    //marTechUrl: 'https://assets.adobedtm.com/d4d114c60e50/a0e989131fd5/launch-2c94beadc94f-development.min.js',
   },
   prod: {
-    edgeConfigId: '913eac4d-900b-45e8-9ee7-306216765cd2',
+    //edgeConfigId: '913eac4d-900b-45e8-9ee7-306216765cd2',
   },
   locales: {
     '': { ietf: 'en-US', tk: 'hah7vzn.css' },
     en: { ietf: 'en-US', tk: 'hah7vzn.css' },
-    de: { ietf: 'de', tk: 'hah7vzn.css' },
-    ko: { ietf: 'ko', tk: 'zfo3ouc' },
-    es: { ietf: 'es', tk: 'oln4yqj.css' },
-    fr: { ietf: 'fr', tk: 'vrk5vyv.css' },
-    it: { ietf: 'it', tk: 'bbf5pok.css' },
-    jp: { ietf: 'ja-JP', tk: 'dvg6awq' },
-    kr: { ietf: 'ko', tk: 'qjs5sfm' },
-    br: { ietf: 'pt-BR', tk: 'inq1xob.css' },
-    'en/uk': { ietf: 'en', tk: 'hah7vzn.css' },
-    'en/apac': { ietf: 'en', tk: 'hah7vzn.css' },
+    //de: { ietf: 'de', tk: 'hah7vzn.css' },
+    //ko: { ietf: 'ko', tk: 'zfo3ouc' },
+    //es: { ietf: 'es', tk: 'oln4yqj.css' },
+    //fr: { ietf: 'fr', tk: 'vrk5vyv.css' },
+    //it: { ietf: 'it', tk: 'bbf5pok.css' },
+    //jp: { ietf: 'ja-JP', tk: 'dvg6awq' },
+    //kr: { ietf: 'ko', tk: 'qjs5sfm' },
+    //br: { ietf: 'pt-BR', tk: 'inq1xob.css' },
+    //'en/uk': { ietf: 'en', tk: 'hah7vzn.css' },
+    //'en/apac': { ietf: 'en', tk: 'hah7vzn.css' },
   },
 };
 
