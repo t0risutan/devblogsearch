@@ -46,6 +46,24 @@ export const [setLibs, getLibs] = (() => {
 })();
 
 /**
+ * List all components here that are found in our
+ * web-components folder. This function loads the ones
+ * which are actually used in the current document
+ */
+function loadWebComponents() {
+  [
+    'inline-gist'
+  ].forEach(name => {
+    if(document.querySelector(name)) {
+      const script = document.createElement('script');
+      script.setAttribute('src', `/web-components/${name}.js`);
+      script.setAttribute('type', 'module');
+      document.head.append(script);
+    }
+  })
+}
+
+/**
  * Normalizes all headings within a container element.
  * @param {Element} el The container element
  * @param {array} allowedHeadings The list of allowed headings (h1 ... h6)
@@ -313,9 +331,33 @@ function fixImportedContent() {
   }
 }
 
+// Gists are not separated as blocks in the original content, need
+// to process them inline
+function processGists(main) {
+  main.querySelectorAll('a[href^="https://gist.github.com/"]').forEach(a => {
+    const ig = document.createElement('inline-gist');
+    ig.setAttribute('href', a.href);
+    a.replaceWith(ig);
+  })
+}
+
+export async function loadCSSURL(href) {
+  return new Promise((resolve, reject) => {
+    if (!document.querySelector(`head > link[href="${href}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.onload = resolve;
+      link.onerror = reject;
+      document.head.append(link);
+    } else {
+      resolve();
+    }
+  });
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
-  const miloLibs = getLibs();
   const mainEl = document.querySelector('main');
   if(window.location.pathname.match(/\/authors\//)) {
   } else if(window.location.pathname.match(/\/topics\//)) {
@@ -325,7 +367,9 @@ export async function buildDevblogAutoBlocks() {
     // article page
     await buildArticleHeader(mainEl);
     buildTagsBlock();
+    processGists(mainEl);
   }
+  loadWebComponents();
 }
 
 
