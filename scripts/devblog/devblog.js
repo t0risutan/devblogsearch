@@ -10,6 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
+// Code that's specific to the developers blog
+
+const SITE = {
+  team: 'Adobe Developers Blog Team',
+  authorsRoot: '/en/authors'
+}
+
 /**
  * The decision engine to decide where to get Milo's libs from.
  */
@@ -110,6 +117,11 @@ export function createOptimizedPicture(
  */
 
 function getImageCaption(picture) {
+  // TODO need default pictures
+  if(!picture) {
+    return '';
+  }
+
   // Check if the parent element has a caption
   const parentEl = picture.parentNode;
   let caption = parentEl.querySelector('em');
@@ -256,9 +268,9 @@ async function buildArticleHeader(el) {
   figure.append(picture, caption);
   const tag = getMetadata('article:tag');
   const category = tag || 'News';
-  const author = getMetadata('author') || 'Adobe Communications Team';
+  const author = getMetadata('author') || SITE.team;
   const { codeRoot } = getConfig();
-  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}/authors/${author.replace(/[^0-9a-z]/gi, '-').toLowerCase()}` : null);
+  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}${SITE.authorsRoot}/${author.replace(/[^0-9a-z]/gi, '-').toLowerCase()}` : null);
   const publicationDate = getMetadata('publication-date');
 
   const categoryTag = getLinkForTopic(category);
@@ -292,19 +304,31 @@ function buildTagsBlock() {
   }
 }
 
-/*export*/ async function buildAutoBlocks() {
-  const miloLibs = getLibs();
-  const { getMetadata } = await import(`${miloLibs}/utils/utils.js`);
-  const mainEl = document.querySelector('main');
-  try {
-    if (getMetadata('content-type') === 'article' && !mainEl.querySelector('.article-header')) {
-      await buildArticleHeader(mainEl);
-      buildTagsBlock();
-    } else if (getMetadata('content-type') === 'authors') {
-      buildAuthorHeader(mainEl);
-    }
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Auto Blocking failed', error);
+function fixImportedContent() {
+  // Fix m_date from imported Medium content, which is like
+  // <meta name="m_date" content="2021-08-03">
+  const date = document.head.querySelector('meta[name=m_date]');
+  if(date) {    
+    date.setAttribute('name','publication-date');
+    // TODO does Milo use the locale, or a fixed format??
+    const parts = date.content.split('-');
+    date.content = `${parts[1]}-${parts[2]}-${parts[0]}`;
   }
 }
+
+export async function buildDevblogAutoBlocks() {
+  fixImportedContent();
+  const miloLibs = getLibs();
+  const mainEl = document.querySelector('main');
+  if(window.location.pathname.match(/\/authors\//)) {
+  } else if(window.location.pathname.match(/\/topics\//)) {
+  } else if(window.location.pathname === '/') {
+    // homepage
+  } else {
+    // article page
+    await buildArticleHeader(mainEl);
+    buildTagsBlock();
+  }
+}
+
+
