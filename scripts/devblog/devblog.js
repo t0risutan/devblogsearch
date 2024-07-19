@@ -247,15 +247,30 @@ function buildBlock(blockName, content) {
   return (blockEl);
 }
 
-function buildAuthorHeader(mainEl) {
+function getAuthorName(id) {
+  // TODO might not work for all names, the name should
+  // ideally come from query-index.json. Or define a
+  // clean bidirectional name to path mapping
+  return id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function buildAuthorPage(mainEl) {
+
+  // Replace author markers in the generic page
+  // If we get a specific page it should be built with the
+  // correct template to get the author's bio and feed
+  const authorId = window.location.pathname.match(/en\/authors\/(.*)/)[1];
+  const authorName = getAuthorName(authorId);
+  document.title = authorName;
+  document.querySelectorAll('body *').forEach(e => {
+    if(e.childElementCount == 0) {
+      e.textContent = e.textContent.replace(/\$AUTHOR\$/, authorName);
+    }
+  })
+
+  // Make sure heading is H1
   const div = mainEl.querySelector('div');
   const heading = div.querySelector('h1, h2');
-  const bio = div.querySelector('h1 + p, h2 + p');
-  const picture = div.querySelector('picture');
-  const social = div.querySelector('h3');
-  const socialLinks = social ? social.nextElementSibling : null;
-  let title;
-
   if (heading.tagName !== 'H1') {
     title = document.createElement('h1');
     title.textContent = heading.textContent;
@@ -263,20 +278,24 @@ function buildAuthorHeader(mainEl) {
     heading.replaceWith(title);
   }
 
-  const authorHeading = title ? title : heading;
+  const bio = document.createElement('p');
+  bio.textContent = ''; // TODO optionally get bio from author page
+  const pic = createOptimizedPicture(`/images/authors/${authorId}.png`, authorName);
+  const ppic = document.createElement('p');
+  ppic.append(pic);
   const authorHeader = buildBlock('author-header', [
     [{
       elems: [
-        authorHeading,
-        picture.closest('p'),
-        bio,
-        social,
-        socialLinks,
+        heading,
+        ppic,
+        bio
       ],
     }],
   ]);
-
   div.prepend(authorHeader);
+
+
+  // TODO build the author-header block to get the nice blog.a.c styles
 }
 
 async function buildArticleHeader(el) {
@@ -360,6 +379,7 @@ export async function buildDevblogAutoBlocks() {
   fixImportedContent();
   const mainEl = document.querySelector('main');
   if(window.location.pathname.match(/\/authors\//)) {
+    buildAuthorPage(mainEl);
   } else if(window.location.pathname.match(/\/topics\//)) {
   } else if(window.location.pathname === '/') {
     // homepage
