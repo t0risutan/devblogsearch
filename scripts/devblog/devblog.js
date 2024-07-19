@@ -254,6 +254,20 @@ function getAuthorName(id) {
   return id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
+function buildTopicPage(mainEl) {
+  const topic = window.location.pathname.match(/en\/topics\/(.*)/)[1];
+  document.querySelectorAll('body *').forEach(e => {
+    if(e.childElementCount == 0) {
+      e.textContent = e.textContent.replace(/\$TOPIC\$/, topic);
+    }
+  })
+  const title = `Topic: ${topic}`;
+  const h1 = document.createElement('h1');
+  h1.textContent = title;
+  mainEl.prepend(h1);
+  document.title = title;
+}
+
 function buildAuthorPage(mainEl) {
 
   // Replace author markers in the generic page
@@ -293,9 +307,6 @@ function buildAuthorPage(mainEl) {
     }],
   ]);
   div.prepend(authorHeader);
-
-
-  // TODO build the author-header block to get the nice blog.a.c styles
 }
 
 async function buildArticleHeader(el) {
@@ -381,6 +392,7 @@ export async function buildDevblogAutoBlocks() {
   if(window.location.pathname.match(/\/authors\//)) {
     buildAuthorPage(mainEl);
   } else if(window.location.pathname.match(/\/topics\//)) {
+    buildTopicPage(mainEl);
   } else if(window.location.pathname === '/') {
     // homepage
   } else {
