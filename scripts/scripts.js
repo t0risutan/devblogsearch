@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { decorateContent, setLibs, buildDevblogAutoBlocks } from './devblog/devblog.js';
+import { decorateContent, setLibs, buildDevblogAutoBlocks, addDevBlogBlockOverrides } from './devblog/devblog.js';
 
 // Add project-wide styles here.
 const STYLES = ['/styles/styles.css', '/styles/articles.css'];
@@ -47,13 +47,13 @@ const CONFIG = {
 };
 
 // Milo blocks overridden by the Blog project
-const OVERRIDE_MILO_BLOCKS = [{
+const OVERRIDE_MILO_BLOCKS = addDevBlogBlockOverrides([{
   milo: 'table-of-contents',
   blog: 'blog-table-of-contents',
 }, {
   milo: 'carousel',
   blog: 'blog-carousel',
-}];
+}]);
 
 // Default to loading the first image as eager.
 (async function loadLCPImage() {

@@ -12,9 +12,18 @@
 
 // Code that's specific to the developers blog
 
-const SITE = {
+export const SITE = {
   team: 'Adobe Developers Blog Team',
-  authorsRoot: '/en/authors'
+  authorsRoot: '/en/authors',
+  topicsRoot: '/en/topics'
+}
+
+export function addDevBlogBlockOverrides(overrides) {
+  overrides.push({
+    milo: 'tags',
+    blog: 'devblog-tags',
+  });
+  return overrides;
 }
 
 /**
@@ -288,20 +297,8 @@ async function buildArticleHeader(el) {
 
 function buildTagsBlock() {
   const tagsArray = [...document.head.querySelectorAll('meta[property="article:tag"]')].map((el) => el.content) || [];
-
   const tagsBlock = buildBlock('tags', tagsArray.join(', '));
-  const main = document.querySelector('main');
-  const recBlock = main.querySelector('.recommended-articles');
-  if (recBlock) {
-    // Put tags block before recommended articles block
-    if (recBlock.parentElement.childElementCount === 1) {
-      recBlock.parentElement.previousElementSibling.append(tagsBlock);
-    } else {
-      recBlock.before(tagsBlock);
-    }
-  } else {
-    main.lastElementChild.append(tagsBlock);
-  }
+  document.querySelector('main')?.lastElementChild.append(tagsBlock);
 }
 
 function fixImportedContent() {
