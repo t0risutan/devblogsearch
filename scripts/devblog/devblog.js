@@ -12,6 +12,8 @@
 
 // Code that's specific to the developers blog
 
+import { setupTaxonomyProxy } from './taxonomy-proxy.js';
+
 export const SITE = {
   team: 'Adobe Developers Blog Team',
   authorsRoot: '/en/authors',
@@ -388,6 +390,7 @@ export async function loadCSSURL(href) {
 
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
+  setupTaxonomyProxy();
   const mainEl = document.querySelector('main');
   if(window.location.pathname.match(/\/authors\//)) {
     buildAuthorPage(mainEl);
