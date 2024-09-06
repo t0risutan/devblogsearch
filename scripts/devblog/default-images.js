@@ -14,7 +14,6 @@ import { createOptimizedPicture } from '../utils.js';
 // Set this according to the contents of the default images folder
 const nDefaultImages = 13;
 const defaultImagePrefix = '/images/default-images/default-image-';
-const altPrefix = 'Image';
 
 const longTimerIntervalMsec = 1000;
 const shortTimerIntervalMsec = 200;
@@ -42,8 +41,9 @@ function fixDefaultImages() {
     if(img.src.indexOf('default-meta-image.png') >= 0 ) {
       const oldPic = img.parentElement;
       if(oldPic) {
+        const alt = oldPic.querySelector('img')?.getAttribute('alt');
         const n = getDefaultImageNumber(img.closest('a[class=article-card]')?.href);
-        const newPic = createOptimizedPicture(`${defaultImagePrefix}${n}.png`,`${altPrefix} ${n}`);
+        const newPic = createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt);
         oldPic.replaceWith(newPic);
       }
     }
@@ -52,8 +52,10 @@ function fixDefaultImages() {
   // Fix article cards
   document.body.querySelectorAll('div[class=article-card-image]').forEach(div => {
     if(div.childElementCount == 0) {
-      const n = getDefaultImageNumber(div.closest('a[class=article-card]')?.href);
-      div.append(createOptimizedPicture(`${defaultImagePrefix}${n}.png`,`${altPrefix} ${n}`));
+      const card = div.closest('a[class=article-card]');
+      const n = getDefaultImageNumber(card?.href);
+      const alt = card?.querySelector('h3').textContent;
+      div.append(createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt));
     }
   });
 
