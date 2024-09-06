@@ -12,6 +12,7 @@
 
 // Code that's specific to the developers blog
 
+import { setupDefaultImages } from './default-images.js';
 import { setupTaxonomyProxy } from './taxonomy-proxy.js';
 
 export const SITE = {
@@ -405,6 +406,7 @@ export async function buildDevblogAutoBlocks() {
     processGists(mainEl);
   }
   loadWebComponents();
+  setupDefaultImages();
 }
 
 
