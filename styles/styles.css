@@ -9,6 +9,9 @@
 :root {
   --color-quote: #367ea8;
   --page-top-spacing: 128px;
+
+  /* Keep this them in sync with 800px media queries below */
+  --grid-container-width: 800px;
 }
 
 body header .gnav-wrapper a.gnav-brand {
@@ -251,5 +254,24 @@ main + footer .feds-regionPicker-wrapper > .fragment p strong > a::after {
     justify-content: center;
     padding-left: inherit;
     padding-right: inherit;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main .section .content {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  div .tags {
+    max-width: 100%;
+    margin: auto 2%;
+  }
+  div .tags p {
+    justify-content: center;
+  }
+  div .milo-video {
+    margin-bottom: 2em;
   }
 }
