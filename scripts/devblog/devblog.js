@@ -389,8 +389,17 @@ export async function loadCSSURL(href) {
   });
 }
 
+function addLangRoot() {
+  // needed for category link in article header
+  const meta = document.createElement('meta');
+  meta.name = 'lang-root';
+  meta.content = '/en';
+  document.head.append(meta);
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
+  addLangRoot();
   setupTaxonomyProxy();
   const mainEl = document.querySelector('main');
   if(window.location.pathname.match(/\/authors\//)) {

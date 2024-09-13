@@ -6,9 +6,18 @@
 // that allows the current topic page to
 // display results.
 
-function getLocalTaxonomy() {
+function getTopicTag() {
   const match = window.location.pathname.match(/\/topics\/(.*)/);
-  const currentTag = match && match.length == 2 ? match[1] : 'NO_TAG';
+  return match?.length == 2 ? match[1] : null;
+}
+
+function getDocumentTag() {
+  return document.head.querySelector("meta[property='article:tag']")?.getAttribute("content");
+}
+
+function getLocalTaxonomy() {
+  const currentTag = getTopicTag() || getDocumentTag() || 'NO_TAG';
+  console.log('currentTag', currentTag);
   const tax = {
     "total": 1,
     "offset": 0,
