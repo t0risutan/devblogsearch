@@ -30,6 +30,10 @@ export function addDevBlogBlockOverrides(overrides) {
     milo: 'recommended-articles',
     blog: 'recommended-articles-post-process',
   });
+  overrides.push({
+    milo: 'article-feed',
+    blog: 'article-feed-post-process',
+  });
   return overrides;
 }
 
