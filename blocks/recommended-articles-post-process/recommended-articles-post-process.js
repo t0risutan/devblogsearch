@@ -4,20 +4,22 @@
 //
 // A bit of hack, but the alternative is to completely
 // override the original block, which is not better.
-import { setLibs, getLibs, createOptimizedPicture } from '../../scripts/utils.js';
+import { setLibs, getLibs } from '../../scripts/utils.js';
+import { recreatePicture } from '../../scripts/devblog/devblog.js';
 setLibs();
 const miloBlock = await import(`${getLibs()}/blocks/recommended-articles/recommended-articles.js`);
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
 
+// New breakpoints and sizes
+const breakpoints = [{ media: '(min-width: 600px)', width: '420' }, { width: '200' }];
+
 export default async function init(blockEl) {
   await miloBlock.default(blockEl);
   blockEl.querySelectorAll('a.article-card').forEach(article => {
-    // TODO fix the picture elements in the article, including default images
-    /*
+    // TODO also handle missing pictures
     article.querySelectorAll('picture').forEach(pic => {
-      pic.replaceWith(createOptimizedPicture('/en/publish/media_1c67edcbf3d332be11bd6fc295d88625f21666abc.jpeg'));
+      pic.replaceWith(recreatePicture(pic, breakpoints));
     })
-    */
   })
   blockEl.classList.add("recommended-articles");
   loadStyle(`${getLibs()}/blocks/recommended-articles/recommended-articles.css`);

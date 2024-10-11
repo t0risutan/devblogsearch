@@ -21,6 +21,16 @@ export const SITE = {
   topicsRoot: '/en/topics'
 }
 
+// Recreate the given picture with new breakpoints
+export function recreatePicture(picture, breakpoints) {
+  const src = picture.querySelector('source')?.getAttribute('srcset');
+  const path = src.split('?')[0];
+  const alt = '';
+  const eager = false;
+  const newPic = createOptimizedPicture(path, alt, eager, breakpoints);
+  picture.replaceWith(newPic);
+}
+
 export function addDevBlogBlockOverrides(overrides) {
   overrides.push({
     milo: 'tags',
