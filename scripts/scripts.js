@@ -177,8 +177,8 @@ function overrideMiloBlocks() {
   OVERRIDE_MILO_BLOCKS.forEach((block) => {
     const miloBlocks = document.querySelectorAll(`.${block.milo}`);
     miloBlocks.forEach((miloBlock) => {
-      miloBlock.classList.remove(block.milo);
-      miloBlock.classList.add(block.blog);
+      // Need to keep the block class first in the class list
+      miloBlock.classList.replace(block.milo, block.blog);
     });
   });
 }

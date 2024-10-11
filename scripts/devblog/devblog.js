@@ -26,6 +26,10 @@ export function addDevBlogBlockOverrides(overrides) {
     milo: 'tags',
     blog: 'devblog-tags',
   });
+  overrides.push({
+    milo: 'recommended-articles',
+    blog: 'recommended-articles-post-process',
+  });
   return overrides;
 }
 
