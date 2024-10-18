@@ -5,13 +5,10 @@
 // A bit of hack, but the alternative is to completely
 // override the original block, which is not better.
 import { setLibs, getLibs } from '../../scripts/utils.js';
-import { recreatePicture } from '../../scripts/devblog/devblog.js';
+import { recreatePicture, SITE } from '../../scripts/devblog/devblog.js';
 setLibs();
 const miloBlock = await import(`${getLibs()}/blocks/article-feed/article-feed.js`);
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
-
-// Set all images to this size, which is the maximum we need given our CSS
-const breakpoints = [{ width: '450' }];
 
 function blockChanged(records, _observer) {
   for(const record of records) {
@@ -19,7 +16,7 @@ function blockChanged(records, _observer) {
       // recreate picture elements with new breakpoints
       // TODO also handle missing pictures
       added.querySelectorAll('picture').forEach(pic => {
-        pic.replaceWith(recreatePicture(pic, breakpoints));
+        pic.replaceWith(recreatePicture(pic, SITE.articleFeed.breakpoints));
       })
     }
   }

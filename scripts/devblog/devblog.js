@@ -18,7 +18,13 @@ import { setupTaxonomyProxy } from './taxonomy-proxy.js';
 export const SITE = {
   team: 'Adobe Developers Blog Team',
   authorsRoot: '/en/authors',
-  topicsRoot: '/en/topics'
+  topicsRoot: '/en/topics',
+  articleCard: {
+    breakpoints: [{ media: '(min-width: 600px)', width: '420' }, { width: '200' }]
+  },
+  articleFeed: {
+    breakpoints: [{ width: '450' }]
+  }
 }
 
 // Recreate the given picture with new breakpoints

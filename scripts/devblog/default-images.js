@@ -10,6 +10,7 @@
 // this in Milo.
 
 import { createOptimizedPicture } from '../utils.js';
+import { SITE } from '../../scripts/devblog/devblog.js';
 
 // Set this according to the contents of the default images folder
 const nDefaultImages = 13;
@@ -36,6 +37,8 @@ function getDefaultImageNumber(articlePath) {
 }
 
 function fixDefaultImages() {
+  const eager = false;
+
   // Fix list of posts
   document.body.querySelectorAll('img').forEach(img => {
     if(img.src.indexOf('default-meta-image.png') >= 0 ) {
@@ -43,7 +46,7 @@ function fixDefaultImages() {
       if(oldPic) {
         const alt = oldPic.querySelector('img')?.getAttribute('alt');
         const n = getDefaultImageNumber(img.closest('a[class=article-card]')?.href);
-        const newPic = createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt);
+        const newPic = createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt,eager,SITE.articleFeed.breakpoints);
         oldPic.replaceWith(newPic);
       }
     }
@@ -55,7 +58,7 @@ function fixDefaultImages() {
       const card = div.closest('a[class=article-card]');
       const n = getDefaultImageNumber(card?.href);
       const alt = card?.querySelector('h3').textContent;
-      div.append(createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt));
+      div.append(createOptimizedPicture(`${defaultImagePrefix}${n}.png`,alt,eager,SITE.articleCard.breakpoints));
     }
   });
 
