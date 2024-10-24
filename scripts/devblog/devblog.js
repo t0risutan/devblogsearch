@@ -15,6 +15,7 @@
 import { setupDefaultImages } from './default-images.js';
 import { setupTaxonomyProxy } from './taxonomy-proxy.js';
 
+// The defaultImages values must be set this according to the contents of the default images folder
 export const SITE = {
   team: 'Adobe Developers Blog Team',
   authorsRoot: '/en/authors',
@@ -24,7 +25,19 @@ export const SITE = {
   },
   articleFeed: {
     breakpoints: [{ width: '450' }]
+  },
+  defaultImages: {
+    count: 13,
+    prefix: '/images/default-images/default-image-'
   }
+}
+
+export function getDefaultImageNumber(articlePath) {
+  // deterministic mapping of the article path
+  // to our set of default images, so that a given
+  // article always gets the same one
+  const n = articlePath.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0) % SITE.defaultImages.count;
+  return n;
 }
 
 // Recreate the given picture with new breakpoints
