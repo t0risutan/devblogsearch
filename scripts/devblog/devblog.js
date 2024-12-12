@@ -29,7 +29,11 @@ export const SITE = {
   defaultImages: {
     count: 13,
     prefix: '/images/default-images/default-image-'
-  }
+  },
+  lcpCss: [
+    "/blocks/featured-article/featured-article.css",
+    "/styles/styles.css"
+  ]
 }
 
 export function getDefaultImageNumber(articlePath) {
@@ -414,7 +418,7 @@ function processGists(main) {
   })
 }
 
-export async function loadCSSURL(href) {
+export async function loadCSSURL(href,loadInfo) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
@@ -422,6 +426,9 @@ export async function loadCSSURL(href) {
       link.href = href;
       link.onload = resolve;
       link.onerror = reject;
+      if(loadInfo) {
+        link.setAttribute('data-load-info',loadInfo);
+      }
       document.head.append(link);
     } else {
       resolve();
@@ -437,10 +444,20 @@ function addLangRoot() {
   document.head.append(meta);
 }
 
+async function eagerLoadCssForLCP() {
+  setLibs();
+  const miloLibs = getLibs();
+  SITE.lcpCss.forEach(async path => {
+    const url = `${miloLibs}${path}`;
+    await loadCSSURL(url,'eagerLoad');
+  })
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
   addLangRoot();
   setupTaxonomyProxy();
+  eagerLoadCssForLCP();
   const mainEl = document.querySelector('main');
   if(window.location.pathname.match(/\/authors\//)) {
     buildAuthorPage(mainEl);
