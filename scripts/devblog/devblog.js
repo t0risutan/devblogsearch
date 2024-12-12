@@ -155,6 +155,7 @@ export function createOptimizedPicture(
     if (br.media) source.setAttribute('media', br.media);
     source.setAttribute('type', 'image/webp');
     source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);
+    source.setAttribute('width', br.width);
     picture.appendChild(source);
   });
 
@@ -164,12 +165,14 @@ export function createOptimizedPicture(
       const source = document.createElement('source');
       if (br.media) source.setAttribute('media', br.media);
       source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      source.setAttribute('width', br.width);
       picture.appendChild(source);
     } else {
       const img = document.createElement('img');
       img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
       img.setAttribute('loading', eager ? 'eager' : 'lazy');
       img.setAttribute('alt', alt);
+      img.setAttribute('width', br.width);
       picture.appendChild(img);
     }
   });
