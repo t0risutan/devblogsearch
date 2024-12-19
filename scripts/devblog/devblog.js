@@ -79,7 +79,9 @@ export const [setLibs, getLibs] = (() => {
     (prodLibs, location) => {
       libs = (() => {
         const { hostname, search } = location || window.location;
-        if (!(hostname.includes('.hlx.') || hostname.includes('local'))) return prodLibs;
+        const hlxPipeline = hostname.includes('.hlx.') || hostname.includes('.aem.');
+        const local = hostname.includes('local');
+        if (!(hlxPipeline || local)) return prodLibs;
         const branch = new URLSearchParams(search).get('milolibs') || 'main';
         if (branch === 'local') return 'http://localhost:6456/libs';
         return branch.includes('--') ? `https://${branch}.hlx.live/libs` : `https://${branch}--milo--adobecom.hlx.live/libs`;
