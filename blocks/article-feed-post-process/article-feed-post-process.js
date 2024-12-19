@@ -26,7 +26,7 @@ function processArticleCard(card) {
   })
   card.querySelectorAll('div[class=article-card-image]').forEach(div => {
     if(div.childElementCount == 0) {
-      console.log('missing', div);
+      console.error('missing', div);
     }
   });
 }

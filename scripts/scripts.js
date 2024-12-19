@@ -136,7 +136,7 @@ function getMediaFilename (a) {
     const mediaUrl = new URL(a.href);
     return mediaUrl.pathname.split('/').pop();
   } catch (e) {
-    console.log('Error parsing media url', e);
+    console.error('Error parsing media url', e);
   }
   return '';
 };

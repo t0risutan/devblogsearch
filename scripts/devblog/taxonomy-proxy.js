@@ -17,7 +17,6 @@ function getDocumentTag() {
 
 function getLocalTaxonomy() {
   const currentTag = getTopicTag() || getDocumentTag() || 'NO_TAG';
-  console.log('currentTag', currentTag);
   const tax = {
     "total": 1,
     "offset": 0,
@@ -41,10 +40,8 @@ export function setupTaxonomyProxy() {
   const oldFetch = window.fetch;
   window.fetch = (resource, options) => {
     if (resource.endsWith('/taxonomy.json')) {
-      console.log('Proxying taxonomy fetch');
       return new Promise(async (resolve) => {
         const body = getLocalTaxonomy();
-        console.log('taxonomy', body);
         const options = {
           headers: {
             'Content-Type': 'application/json'
