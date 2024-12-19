@@ -4,7 +4,7 @@
 //
 // A bit of hack, but the alternative is to completely
 // override the original block, which is not better.
-import { setLibs, getLibs } from '../../scripts/utils.js';
+import { setLibs, getLibs } from '../../scripts/devblog/devblog.js';
 import { recreatePicture, createOptimizedPicture, getDefaultImageNumber, SITE } from '../../scripts/devblog/devblog.js';
 setLibs();
 const miloBlock = await import(`${getLibs()}/blocks/article-feed/article-feed.js`);
