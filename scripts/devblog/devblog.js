@@ -33,6 +33,19 @@ export const SITE = {
   lcpCss: [
     "/blocks/featured-article/featured-article.css",
     "/styles/styles.css"
+  ],
+  acronyms: [
+    'AEM',
+    'AI',
+    'API',
+    'ARM',
+    'CEP',
+    'PDF',
+    'REST',
+    'SDK',
+    'UPIA',
+    'UXP',
+    'XD'
   ]
 }
 
@@ -303,6 +316,19 @@ function getAuthorName(id) {
   return id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
+function niceTopicWord(word) {
+  const upper = word?.toUpperCase();
+  if(SITE.acronyms.includes(upper)) {
+    return upper;
+  } else {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+}
+
+function niceTopicName(topic) {
+  return topic.split('-').map(niceTopicWord).join(' ');
+}
+
 function buildTopicPage(mainEl) {
   const topic = window.location.pathname.match(/en\/topics\/(.*)/)[1];
   document.querySelectorAll('body *').forEach(e => {
@@ -310,7 +336,7 @@ function buildTopicPage(mainEl) {
       e.textContent = e.textContent.replace(/\$TOPIC\$/, topic);
     }
   })
-  const title = `Topic: ${topic}`;
+  const title = `Topic: ${niceTopicName(topic)}`;
   const h1 = document.createElement('h1');
   h1.textContent = title;
   mainEl.prepend(h1);
