@@ -10,6 +10,21 @@ setLibs();
 const miloBlock = await import(`${getLibs()}/blocks/recommended-articles/recommended-articles.js`);
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
 
+async function loadCSS(href) {
+  return new Promise((resolve, reject) => {
+    if (!document.querySelector(`head > link[href="${href}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.onload = resolve;
+      link.onerror = reject;
+      document.head.append(link);
+    } else {
+      resolve();
+    }
+  });
+}
+
 export default async function init(blockEl) {
   await miloBlock.default(blockEl);
   const eager = false;
@@ -29,5 +44,5 @@ export default async function init(blockEl) {
     })
   })
   blockEl.classList.add("recommended-articles");
-  loadStyle(`${getLibs()}/blocks/recommended-articles/recommended-articles.css`);
+  await loadCSS(`${getLibs()}/blocks/recommended-articles/recommended-articles.css`);
 }
