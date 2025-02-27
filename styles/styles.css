@@ -18,6 +18,14 @@ body header .gnav-wrapper a.gnav-brand {
   color: #EB1000;
 }
 
+/* progressive section appearance */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'],
+main > div,
+main .section[data-status='decorated'] {
+  display: none;
+}
+
 /* Add correct font family for Consonant Cards  */
 .milo-card-wrapper .consonant-Wrapper,
 .milo-card-wrapper .consonant-OneHalfCard-text,
