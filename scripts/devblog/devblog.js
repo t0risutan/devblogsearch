@@ -20,6 +20,7 @@ export const SITE = {
   team: 'Adobe Developers Blog Team',
   authorsRoot: '/en/authors',
   topicsRoot: '/en/topics',
+  prodLibsPath: '/libs', // Use '/libs' if your live site maps '/libs' to milo's origin.
   articleCard: {
     breakpoints: [{ media: '(min-width: 600px)', width: '420' }, { width: '200' }]
   },
@@ -90,6 +91,9 @@ export const [setLibs, getLibs] = (() => {
   let libs;
   return [
     (prodLibs, location) => {
+      if(!prodLibs) {
+        throw new Error("Missing prodLibs, value is required");
+      }
       libs = (() => {
         const { hostname, search } = location || window.location;
         const hlxPipeline = hostname.includes('.hlx.') || hostname.includes('.aem.');
@@ -473,7 +477,7 @@ function addLangRoot() {
 }
 
 async function eagerLoadCssForLCP() {
-  setLibs();
+  setLibs(SITE.prodLibsPath);
   const miloLibs = getLibs();
   SITE.lcpCss.forEach(async path => {
     const url = `${miloLibs}${path}`;

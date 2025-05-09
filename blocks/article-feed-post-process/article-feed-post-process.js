@@ -6,7 +6,7 @@
 // override the original block, which is not better.
 import { setLibs, getLibs } from '../../scripts/devblog/devblog.js';
 import { recreatePicture, createOptimizedPicture, getDefaultImageNumber, SITE } from '../../scripts/devblog/devblog.js';
-setLibs();
+setLibs(SITE.prodLibsPath);
 const miloBlock = await import(`${getLibs()}/blocks/article-feed/article-feed.js`);
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
 

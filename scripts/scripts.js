@@ -10,13 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import { decorateContent, setLibs, buildDevblogAutoBlocks, addDevBlogBlockOverrides } from './devblog/devblog.js';
+import { SITE, decorateContent, setLibs, buildDevblogAutoBlocks, addDevBlogBlockOverrides } from './devblog/devblog.js';
 
 // Add project-wide styles here.
 const STYLES = ['/styles/styles.css', '/styles/articles.css'];
-
-// Use '/libs' if your live site maps '/libs' to milo's origin.
-const LIBS = '/libs';
 
 // Config was copied from blog.a.c, for now disable most of it
 const CONFIG = {
@@ -67,7 +64,7 @@ const OVERRIDE_MILO_BLOCKS = addDevBlogBlockOverrides([{
  * ------------------------------------------------------------
  */
 
-const miloLibs = setLibs(LIBS);
+const miloLibs = setLibs(SITE.prodLibsPath);
 
 (async function loadStyles() {
   const paths = [`${miloLibs}/styles/styles.css`];
