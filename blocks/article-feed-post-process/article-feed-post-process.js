@@ -1,4 +1,4 @@
-// Post-process the result of the article-feed
+// Post-process the result of the article-feed 
 // block to fix its picture elements, for default images
 // and to get optimal image sizes.
 //
