@@ -17,7 +17,7 @@ const STYLES = ['/styles/styles.css', '/styles/articles.css'];
 
 // Config was copied from blog.a.c, for now disable most of it
 const CONFIG = {
-  // codeRoot: '',
+  codeRoot: '', // avoid using the origin in local code paths
   // contentRoot: '',
   //imsClientId: 'theblog-helix',
   stage: {
