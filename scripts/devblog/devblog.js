@@ -313,10 +313,11 @@ function buildBlock(blockName, content) {
   return (blockEl);
 }
 
-function getAuthorName(id) {
-  // TODO might not work for all names, the name should
-  // ideally come from query-index.json. Or define a
-  // clean bidirectional name to path mapping
+export function getAuthorId(name) {
+  return name?.replace(/[^0-9a-z]/gi, '-').toLowerCase();
+}
+
+export function getAuthorName(id) {
   return id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
@@ -406,7 +407,7 @@ async function buildArticleHeader(el) {
   const category = tag || 'News';
   const author = getMetadata('author') || SITE.team;
   const { codeRoot } = getConfig();
-  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}${SITE.authorsRoot}/${author.replace(/[^0-9a-z]/gi, '-').toLowerCase()}` : null);
+  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}${SITE.authorsRoot}/${getAuthorId(author)}` : null);
   const publicationDate = getMetadata('publication-date');
 
   const categoryTag = getLinkForTopic(category);
