@@ -314,7 +314,7 @@ function buildBlock(blockName, content) {
 }
 
 export function getAuthorId(name) {
-  return name?.replace(/[^0-9a-z]/gi, '-').toLowerCase();
+  return name?.trim().replace(/[^0-9a-z]/gi, '-').toLowerCase();
 }
 
 export function getAuthorName(id) {

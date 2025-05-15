@@ -2,11 +2,22 @@ import { expect } from 'chai';
 import { getAuthorName,getAuthorId } from '../scripts/devblog/devblog.js';
 
 describe('Test author names to IDs mapping', () => {
-  it('computes author ID correctly', () => {
-    expect(getAuthorId('Paul A. Blokk')).to.equal('paul-a--blokk');
-  });
+  const testCases = [
+    { name:'Paul A. Blokk', id:'paul-a--blokk', back:'Paul A--Blokk'},
+    { name:'Paul A. Blokk  ', id:'paul-a--blokk', back:'Paul A--Blokk'},
+    { name:'Paul A.Blokk', id:'paul-a-blokk', back:'Paul A-Blokk'},
+    { name:'Paul.A.Blokk', id:'paul-a-blokk', back:'Paul A-Blokk'},
+    { name:'Paul Arkner (Blokk)', id:'paul-arkner--blokk-', back:'Paul Arkner--Blokk-'},
+  ];
 
-  it('computes author name correctly', () => {
-    expect(getAuthorName('bab-el-plakk')).to.equal('Bab El-Plakk');
+  testCases.forEach(tc => {
+    it(`Correctly maps [${tc.name}] to [${tc.id}]`, () => {
+      expect(getAuthorId(tc.name)).to.equal(tc.id);
+
+    });
+    it(`Correctly maps back [${tc.id}] to [${tc.back}]`, () => {
+      expect(getAuthorName(tc.id)).to.equal(tc.back);
+
+    });
   });
 });
