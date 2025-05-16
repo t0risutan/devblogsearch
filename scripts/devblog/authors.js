@@ -12,25 +12,24 @@
 
 import { SITE } from './devblog.js';
 
-// Need to replace % and . in URL-encoded paths with this for URL testing of
-// the Milo article-header block to work
-const replacements = {
-  percent: '_',
-  dot: '#'
-}
+// Separate between the (almost) plain author name and its encoded part
+// so that the name is visible in the path, but we don't use it in decoding
+const partsSeparator = '#';
 
 function getPageName(authorName) {
-  return encodeURIComponent(authorName)
-    .replaceAll('%',replacements.percent)
-    .replaceAll('.',replacements.dot)
-  ;
+  return `${authorName.replace(/[^0-9a-z]/gi, '_')}${partsSeparator}${encodeURIComponent(btoa(authorName))}`;
 }
 
 function getAuthorName(pageName) {
-  return decodeURIComponent(pageName
-    .replaceAll(replacements.percent,'%')
-    .replaceAll(replacements.dot,'.')
-  );
+  const parts = pageName.split(partsSeparator);
+  if(parts.len < 2) {
+    return null;
+  }
+  try {
+    return atob(decodeURIComponent(parts[1]));
+  } catch(e) {
+    return null;
+  }
 }
 
 function getImageFilename(authorName) {
@@ -38,7 +37,10 @@ function getImageFilename(authorName) {
 }
 
 export function getAuthorInfoFromPathAndHash(pagePath) {
-  const pageName = pagePath.match(/en\/authors\/(.*)/)[1];
+  if(!pagePath) return {};
+  const matchGroups = pagePath.match(/en\/authors\/(.*)/);
+  if(!matchGroups || matchGroups.len < 2) return {};
+  const pageName = matchGroups[1];
   const authorName = getAuthorName(pageName);
   const info = {
     authorName,
