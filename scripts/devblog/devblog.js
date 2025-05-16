@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Adobe. All rights reserved.
+ * Copyright 2025 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -14,6 +14,7 @@
 
 import { setupDefaultImages } from './default-images.js';
 import { setupTaxonomyProxy } from './taxonomy-proxy.js';
+import { getAuthorInfoFromPath, getAuthorPagePath } from './authors.js';
 
 // The defaultImages values must be set this according to the contents of the default images folder
 export const SITE = {
@@ -313,14 +314,6 @@ function buildBlock(blockName, content) {
   return (blockEl);
 }
 
-export function getAuthorId(name) {
-  return name?.trim().replace(/[^0-9a-z]/gi, '-').toLowerCase();
-}
-
-export function getAuthorName(id) {
-  return id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
-}
-
 function niceTopicWord(word) {
   const upper = word?.toUpperCase();
   if(SITE.acronyms.includes(upper)) {
@@ -353,8 +346,7 @@ function buildAuthorPage(mainEl) {
   // Replace author markers in the generic page
   // If we get a specific page it should be built with the
   // correct template to get the author's bio and feed
-  const authorId = window.location.pathname.match(/en\/authors\/(.*)/)[1];
-  const authorName = getAuthorName(authorId);
+  const { authorName, authorImageFilename } = getAuthorInfoFromPath(window.location.pathname);
   document.title = authorName;
   document.querySelectorAll('body *').forEach(e => {
     if(e.childElementCount == 0) {
@@ -374,7 +366,7 @@ function buildAuthorPage(mainEl) {
 
   const bio = document.createElement('p');
   bio.textContent = ''; // TODO optionally get bio from author page
-  const pic = createOptimizedPicture(`/images/authors/${authorId}.png`, authorName);
+  const pic = createOptimizedPicture(`/images/authors/${authorImageFilename}.png`, authorName);
   const ppic = document.createElement('p');
   ppic.append(pic);
   const authorHeader = buildBlock('author-header', [
@@ -407,7 +399,7 @@ async function buildArticleHeader(el) {
   const category = tag || 'News';
   const author = getMetadata('author') || SITE.team;
   const { codeRoot } = getConfig();
-  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}${SITE.authorsRoot}/${getAuthorId(author)}` : null);
+  const authorURL = getMetadata('author-url') || getAuthorPagePath(codeRoot, author);
   const publicationDate = getMetadata('publication-date');
 
   const categoryTag = getLinkForTopic(category);
