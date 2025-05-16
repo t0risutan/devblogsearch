@@ -14,7 +14,7 @@
 
 import { setupDefaultImages } from './default-images.js';
 import { setupTaxonomyProxy } from './taxonomy-proxy.js';
-import { getAuthorInfoFromPath, getAuthorPagePath } from './authors.js';
+import { getAuthorInfoFromPathAndHash, getAuthorPagePath } from './authors.js';
 
 // The defaultImages values must be set this according to the contents of the default images folder
 export const SITE = {
@@ -346,7 +346,7 @@ function buildAuthorPage(mainEl) {
   // Replace author markers in the generic page
   // If we get a specific page it should be built with the
   // correct template to get the author's bio and feed
-  const { authorName, authorImageFilename } = getAuthorInfoFromPath(window.location.pathname);
+  const { authorName, authorImageFilename } = getAuthorInfoFromPathAndHash(`${window.location.pathname}${window.location.hash}`);
   document.title = authorName;
   document.querySelectorAll('body *').forEach(e => {
     if(e.childElementCount == 0) {

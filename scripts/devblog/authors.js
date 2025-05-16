@@ -12,21 +12,42 @@
 
 import { SITE } from './devblog.js';
 
-function getAuthorPageName(name) {
-  //return name?.trim().replace(/[^0-9a-z]/gi, '-').replace(/-+/gi,'-').replace(/-$/,'').toLowerCase();
-  return name?.trim().replace(/[^0-9a-z]/gi, '-').toLowerCase();
+// Need to replace % and . in URL-encoded paths with this for URL testing of
+// the Milo article-header block to work
+const replacements = {
+  percent: '_',
+  dot: '#'
 }
 
-export function getAuthorInfoFromPath(pagePath) {
-  const id = pagePath.match(/en\/authors\/(.*)/)[1];
+function getPageName(authorName) {
+  return encodeURIComponent(authorName)
+    .replaceAll('%',replacements.percent)
+    .replaceAll('.',replacements.dot)
+  ;
+}
+
+function getAuthorName(pageName) {
+  return decodeURIComponent(pageName
+    .replaceAll(replacements.percent,'%')
+    .replaceAll(replacements.dot,'.')
+  );
+}
+
+function getImageFilename(authorName) {
+  return authorName?.trim().toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/gi,'-').replace(/-$/gi,'');
+}
+
+export function getAuthorInfoFromPathAndHash(pagePath) {
+  const pageName = pagePath.match(/en\/authors\/(.*)/)[1];
+  const authorName = getAuthorName(pageName);
   const info = {
-    authorName: id.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase()),
-    authorImageFilename: id
+    authorName,
+    authorImageFilename: getImageFilename(authorName)
   };
   return info;
 }
 
 export function getAuthorPagePath(codeRoot, authorName) {
-  return authorName ? `${codeRoot}${SITE.authorsRoot}/${getAuthorPageName(authorName)}` : null;
+  return authorName ? `${codeRoot}${SITE.authorsRoot}/${getPageName(authorName)}` : null;
 }
 
