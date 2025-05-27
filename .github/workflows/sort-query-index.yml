@@ -33,5 +33,5 @@ jobs:
           git config --local user.name "GitHub Action (sort query index)"
           git pull
           git add .
-          git commit -am "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git diff-index --quiet HEAD || git commit -am "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           git push
