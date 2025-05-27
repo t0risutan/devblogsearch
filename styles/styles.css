@@ -283,3 +283,9 @@ main + footer .feds-regionPicker-wrapper > .fragment p strong > a::after {
     margin-bottom: 2em;
   }
 }
+
+/** the max-height that Milo sets is too low for some of our images */
+.figure .figure img {
+  max-width: 100%;
+  max-height: 800px !important;
+}
