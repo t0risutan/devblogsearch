@@ -32,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (sort query index)"
           git add .
-          git diff --staged --quiet || git commit -m "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git commit -am "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           git push
