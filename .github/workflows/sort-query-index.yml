@@ -28,6 +28,7 @@ jobs:
         run: node sorted-index/sort-query-index.js
         
       - name: Commit and push changes if any
+        uses: actions/checkout@v4
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action (sort query index)"
