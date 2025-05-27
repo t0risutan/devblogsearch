@@ -21,7 +21,7 @@ that runs in this repository.
 It is used by the `article-feed` block on the blog's homepage, author and topics pages.
 
 If needed, those pages can revert to the unsorted index by using `/en/query-index.json` as
-the value of the `feed` parameter for that block, instead of `sorted-index/sorted-query-index.json`
+the value of the `feed` parameter for that block, instead of `/sorted-index/sorted-query-index.json`
 which is the one generated in this repository.
 
 The sorting action is currently configured to run once every hour at minute 03, which means
