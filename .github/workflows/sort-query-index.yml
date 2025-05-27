@@ -1,0 +1,39 @@
+name: Create a local sorted copy of the blog's query index
+
+on:
+  schedule:
+    # Every hour at 03
+    - cron: '3 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-blog-data:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Run sorting scripts
+        run: node sorted-index/sort-query-index.js
+        
+      - name: Commit and push changes if any
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add sorted-index
+            git commit -m "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+            git push
+          fi

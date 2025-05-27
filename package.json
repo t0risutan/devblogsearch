@@ -1,14 +1,15 @@
 {
-  "name": "@adobecom/college",
+  "name": "@adobecom/devblog",
   "private": true,
   "version": "1.0.0",
-  "description": "Website foundation technology.",
+  "description": "Edge Delivery Services code for blog.developer.adobe.com",
   "scripts": {
     "test": "mocha",
     "test:watch": "npm test -- --watch",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
-    "lint:css": "stylelint 'blocks/**/*.css' 'styles/*.css'"
+    "lint:css": "stylelint 'blocks/**/*.css' 'styles/*.css'",
+    "sort-index": "node sorted-index/sort-query-index.js"
   },
   "repository": {
     "type": "git",
