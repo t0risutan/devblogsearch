@@ -13,7 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { compareNumbersInPaths } = require('./sort-paths.js');
+const compareNumbersInPaths = require('./sort-paths.js');
 
 const QUERY_INDEX_URL = 'https://blog.developer.adobe.com/en/query-index.json';
 const OUT_FILE = 'sorted-index/sorted-query-index.json';

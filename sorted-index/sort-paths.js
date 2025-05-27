@@ -32,7 +32,7 @@ function compareNumberArrays(arr1, arr2) {
   return 0;
 }
 
-export function compareNumbersInPaths(a, b, mostRecentFirst=true) {
+function compareNumbersInPaths(a, b, mostRecentFirst=true) {
   const numbersA = getNumbers(a);
   const numbersB = getNumbers(b);
   if(mostRecentFirst) {
@@ -41,3 +41,5 @@ export function compareNumbersInPaths(a, b, mostRecentFirst=true) {
     return compareNumberArrays(numbersA, numbersB);
   }
 }
+
+module.exports = compareNumbersInPaths;
