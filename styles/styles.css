@@ -289,3 +289,9 @@ main + footer .feds-regionPicker-wrapper > .fragment p strong > a::after {
   max-width: 100%;
   max-height: 800px !important;
 }
+
+/* Homepage section titles */
+#more-articles, #top-stories, #top-stories +p {
+  text-align: center;
+}
+
