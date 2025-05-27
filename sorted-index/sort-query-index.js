@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { compareNumbersInPaths } = require('./sort-paths.js');
 
 const QUERY_INDEX_URL = 'https://blog.developer.adobe.com/en/query-index.json';
 const OUT_FILE = 'sorted-index/sorted-query-index.json';
@@ -36,12 +37,6 @@ function fetchData(url) {
     }).on('error', (err) => {
       reject(err);
     });
-  });
-}
-
-function sortQueryIndex(data) {
-  return data.sort((a, b) => {
-    return a.path > b.path ? -1 : 1;
   });
 }
 
@@ -71,7 +66,7 @@ async function fetchAndSort() {
     
     const sortedData = {
       ...blogData,
-      data: sortQueryIndex([...blogData.data])
+      data: blogData.data.sort((a,b) => compareNumbersInPaths(a.path,b.path))
     };
     
     // Find out if there are data changes
