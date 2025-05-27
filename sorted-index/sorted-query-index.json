@@ -1,8 +1,21 @@
 {
-  "total": 44,
+  "total": 45,
   "offset": 0,
-  "limit": 44,
+  "limit": 45,
   "data": [
+    {
+      "path": "/en/publish/2025/04/raising-the-bar-for-ai-assistant-in-adobe-experience-platform",
+      "image": "/en/publish/2025/04/media_1da729f6e1a6d7716c6fd3145dffb63f49195d6f9.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Raising the Bar for AI Assistant in Adobe Experience Platform",
+      "author": "Namita Krishnan",
+      "description": "In a previous blog post, we explored how AI Assistant in Adobe Experience Platform is monitored and improved via an end-to-end evaluation framework, including how ...",
+      "tags": "[\"ai\",\"platform\",\"adobe-experience-platform\",\"enterprise-ai\",\"machine-learning\"]",
+      "imageAlt": "︎Some authors of the paper displaying the DSRI AI Incidents and Best Practices Paper Award won at the 39th Annual AAAI Conference on Artificial Intelligence.",
+      "robots": "",
+      "lastModified": "1748340775",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/03/how-to-create-telemetry-dashboards-for-adobe-express-add-ons",
       "image": "/en/publish/2025/03/media_1d51310adbcb7c58339830615bc98b7ed317c1ef8.jpg?width=1200&format=pjpg&optimize=medium",
@@ -78,7 +91,7 @@
       "tags": "[\"adobe-commerce\",\"aem-developer\",\"edge-delivery-services\",\"composable-commerce\",\"adobe-experience-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1748340386",
+      "lastModified": "1748360918",
       "Removed from Medium?": ""
     },
     {
@@ -590,5 +603,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-05-27T15:39:59.175Z"
+  "generatedAt": "2025-05-27T16:16:28.044Z"
 }
