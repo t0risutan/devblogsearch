@@ -27,3 +27,7 @@ which is the one generated in this repository.
 The sorting action is currently configured to run once every hour at minute 03, which means
 that changes to the blog's "native" index might take up to an hour to propagate, if using
 the sorted index, unless the sorting action is executed manually earlier.
+
+Currently the sorting code only considers year and month: as the last modified dates do not
+seem to be reliable in our documents, it only considers the numbers found in the document's
+path. So the sorting order of documents from the same month is undefined.
