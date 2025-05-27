@@ -13,7 +13,7 @@ npm run test:watch
 ```
 This will give you several options to debug tests. Note: coverage may not be accurate.
 
-## Custom sorted index
+## Custom sorted index
 
 A sorted query index is created by a [GitHub Action](.github/workflows/sort-query-index.yml ) 
 that runs in this repository.
