@@ -33,6 +33,7 @@ jobs:
           if git diff --quiet; then
             echo "No changes to commit"
           else
+            git pull origin main
             git add sorted-index
             git commit -m "Update sorted query index - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
             git push
