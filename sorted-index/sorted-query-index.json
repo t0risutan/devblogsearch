@@ -1,8 +1,21 @@
 {
-  "total": 45,
+  "total": 46,
   "offset": 0,
-  "limit": 45,
+  "limit": 46,
   "data": [
+    {
+      "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
+      "image": "/en/publish/2025/06/media_1fd57564c6f7e5db9a2fb23892cd6815aa1ea0f8d.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Launching Workflows from the AEM Content Fragment Editor with UI Extensibility",
+      "author": "Drew Robinson",
+      "description": "Over the years, I've built a lot of AEM front-end customizations. These solutions leveraged node overlays, dialog tweaks, Coral UI and Granite UI to get ...",
+      "tags": "[\"adobe-experience-manager\",\"adobe experience cloud\",\"content-framework-editor\",\"extensibility\",\"user-interface\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1749074736",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/04/raising-the-bar-for-ai-assistant-in-adobe-experience-platform",
       "image": "/en/publish/2025/04/media_1da729f6e1a6d7716c6fd3145dffb63f49195d6f9.png?width=1200&format=pjpg&optimize=medium",
@@ -603,5 +616,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-05T10:29:03.984Z"
+  "generatedAt": "2025-06-05T22:23:44.852Z"
 }
