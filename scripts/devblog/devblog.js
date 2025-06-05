@@ -48,7 +48,8 @@ export const SITE = {
     'UPIA',
     'UXP',
     'XD'
-  ]
+  ],
+  disableAutoLinksText: ['link','playlist']
 }
 
 export function getDefaultImageNumber(articlePath) {
@@ -479,6 +480,36 @@ async function eagerLoadCssForLCP() {
   })
 }
 
+// Prevent links which contain a specific text
+// from being converted to blocks. Used to have
+// plain youtube links in text for example, without
+// creating a video player for them
+function watchAutoLinks() {
+  const observer = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const target = mutation.target;
+        if (target.tagName === 'A') {
+          const text = target.textContent.trim().toLowerCase();
+          const textMatch = SITE.disableAutoLinksText.find(t => text === t);
+          if(textMatch) {
+            console.debug(`Link text [${textMatch}] disables auto-blocking on a.href=${target.href}`);
+            target.removeAttribute('class');
+          }
+        }
+      }
+    }
+  });
+
+  // Observe all existing <a> elements
+  document.querySelectorAll('a').forEach((a) => {
+    observer.observe(a, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  });
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
   addLangRoot();
@@ -499,6 +530,7 @@ export async function buildDevblogAutoBlocks() {
   }
   loadWebComponents();
   setupDefaultImages();
+  watchAutoLinks();
 }
 
 
