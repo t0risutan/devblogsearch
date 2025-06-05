@@ -300,3 +300,7 @@ main + footer .feds-regionPicker-wrapper > .fragment p strong > a::after {
 pre {
   font-size: var(--code-font-size);
 }
+
+.centerHeading {
+  text-align: center;
+}

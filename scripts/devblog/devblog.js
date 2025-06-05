@@ -336,6 +336,7 @@ function buildTopicPage(mainEl) {
   })
   const title = `Topic: ${niceTopicName(topic)}`;
   const h1 = document.createElement('h1');
+  h1.classList.add('centerHeading');
   h1.textContent = title;
   mainEl.prepend(h1);
   document.title = title;
