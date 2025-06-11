@@ -1,7 +1,7 @@
 {
-  "total": 46,
+  "total": 47,
   "offset": 0,
-  "limit": 46,
+  "limit": 47,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -14,6 +14,19 @@
       "imageAlt": "",
       "robots": "",
       "lastModified": "1749074736",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer",
+      "image": "/en/publish/2025/06/media_1c0d58d3088f1147adddf2cb380d4ef09987d5c3b.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "author": "Pratibha Sharma & Asim Chatterjee",
+      "description": "In today’s digital landscape, personalized marketing is crucial for maximizing customer engagement and conversion rates. Propensity scores help marketers understand consumer behaviours, determine the likelihood ...",
+      "tags": "[\"adobe-experience-platform\",\"real-time-cdp\",\"marketing\",\"customer-ai\",\"adobe-experience-cloud\"]",
+      "imageAlt": "A person smiling and looking at a screen AI-generated content may be incorrect.",
+      "robots": "",
+      "lastModified": "1749659658",
       "Removed from Medium?": ""
     },
     {
@@ -616,5 +629,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-05T22:23:44.852Z"
+  "generatedAt": "2025-06-11T17:22:54.466Z"
 }
