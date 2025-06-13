@@ -1,7 +1,7 @@
 {
-  "total": 47,
+  "total": 48,
   "offset": 0,
-  "limit": 47,
+  "limit": 48,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -27,6 +27,19 @@
       "imageAlt": "A person smiling and looking at a screen AI-generated content may be incorrect.",
       "robots": "",
       "lastModified": "1749672335",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2025/06/show-dont-tell-multimodal-answers-in-ai-assistant-in-adobe-experience-platform",
+      "image": "/en/publish/2025/06/media_1109572fa9649e2a2f591c7ee96e5ef7f44e1cc85.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Show, Don’t Tell: Multimodal Answers in AI Assistant in Adobe Experience Platform",
+      "author": "Namita Krishnan",
+      "description": "Imagine you have just built a new audience to promote your summer collection, and now you want to activate it to an advertising destination. You ...",
+      "tags": "[\"adobe-experience-platform\",\"AI\",\"AI-assistant\",\"gen-ai\",\"adobe-experience-cloud\"]",
+      "imageAlt": "Picture",
+      "robots": "",
+      "lastModified": "1749847405",
       "Removed from Medium?": ""
     },
     {
@@ -629,5 +642,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-11T20:27:10.945Z"
+  "generatedAt": "2025-06-13T21:23:57.473Z"
 }
