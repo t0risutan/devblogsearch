@@ -1,7 +1,7 @@
 {
-  "total": 49,
+  "total": 50,
   "offset": 0,
-  "limit": 49,
+  "limit": 50,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -326,6 +326,19 @@
       "imageAlt": "",
       "robots": "",
       "lastModified": "1750428338",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2023/06/adobe-express-introduces-add-ons-for-developers",
+      "image": "/en/publish/2023/06/media_129add0185b77f778327cfbad27cd905414800f3f.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Express Introduces Add-ons for Developers",
+      "author": "Aubrey Cattell",
+      "description": "We’re excited to announce that Adobe Express is taking another step to open up its ecosystem to developers. Last year we launched the Express Embed ...",
+      "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"plugins\",\"extensibility\",\"developer\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1750450163",
       "Removed from Medium?": ""
     },
     {
@@ -655,5 +668,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-20T14:24:58.607Z"
+  "generatedAt": "2025-06-20T20:27:36.863Z"
 }
