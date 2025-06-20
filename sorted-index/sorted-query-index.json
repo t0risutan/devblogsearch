@@ -1,8 +1,21 @@
 {
-  "total": 50,
+  "total": 53,
   "offset": 0,
-  "limit": 50,
+  "limit": 53,
   "data": [
+    {
+      "path": "/en/publish/2025/11/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth",
+      "image": "/en/publish/2025/11/media_132d8172ef550ee1aa3a273b990289447220e5d0a.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Express Platform Updates for MAX 2024: New Developer Capabilities and Explosive Growth of Our Partner Ecosystem",
+      "author": "Aubrey Cattell",
+      "description": "Ever since we opened up the Adobe Express platform to developers, our thriving partner ecosystem has seen exponential growth. Adobe Express is now a powerful ...",
+      "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"adobe-max\",\"extensibility\",\"adobe-express-add-ons\"]",
+      "imageAlt": "Partners and developers can build integrations and add-ons for Adobe Express",
+      "robots": "",
+      "lastModified": "1750451894",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
       "image": "/en/publish/2025/06/media_1fd57564c6f7e5db9a2fb23892cd6815aa1ea0f8d.jpg?width=1200&format=pjpg&optimize=medium",
@@ -147,6 +160,19 @@
       "Removed from Medium?": ""
     },
     {
+      "path": "/en/publish/2024/11/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth",
+      "image": "/en/publish/2024/11/media_132d8172ef550ee1aa3a273b990289447220e5d0a.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Express Platform Updates for MAX 2024: New Developer Capabilities and Explosive Growth of Our Partner Ecosystem",
+      "author": "Aubrey Cattell",
+      "description": "Ever since we opened up the Adobe Express platform to developers, our thriving partner ecosystem has seen exponential growth. Adobe Express is now a powerful ...",
+      "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"adobe-max\",\"extensibility\",\"adobe-express-add-ons\"]",
+      "imageAlt": "Partners and developers can build integrations and add-ons for Adobe Express",
+      "robots": "",
+      "lastModified": "1750452103",
+      "Removed from Medium?": ""
+    },
+    {
       "path": "/en/publish/2024/11/behind-the-scenes-with-ammar-alim-devsecops-leader",
       "image": "/en/publish/2024/11/media_11b0905709ab24e95c7500d9cedd320b0e00da503.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -274,6 +300,19 @@
       "imageAlt": "︎",
       "robots": "",
       "lastModified": "1732899607",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2023/10/adobe-express-at-max-2023-the-next-step-for-our-open-developer-platform",
+      "image": "/en/publish/2023/10/media_11eefb1c6e61a844ea7247f68e1951e7c3fcff614.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Express at MAX 2023: The Next Step for Our Open Developer Platform",
+      "author": "Aubrey Cattell",
+      "description": "The Creative Cloud Developer Platform team is excited to be back at Adobe MAX, and this year we’re sharing some exciting news about Adobe Express.",
+      "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"plugins\",\"extensibility\",\"adobe-express-add-ons\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1750451280",
       "Removed from Medium?": ""
     },
     {
@@ -668,5 +707,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-20T20:27:36.863Z"
+  "generatedAt": "2025-06-20T21:22:36.644Z"
 }
