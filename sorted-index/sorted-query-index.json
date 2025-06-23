@@ -1,7 +1,7 @@
 {
-  "total": 53,
+  "total": 54,
   "offset": 0,
-  "limit": 53,
+  "limit": 54,
   "data": [
     {
       "path": "/en/publish/2025/11/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth",
@@ -511,6 +511,19 @@
       "Removed from Medium?": ""
     },
     {
+      "path": "/en/publish/2022/00/powering-adobe-max-with-app-builder-io-runtime",
+      "image": "/en/publish/2022/00/media_1b3f558a23da728f58b1840a5dea2994ab3805a86.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Powering Adobe MAX with App Builder and I/O Runtime",
+      "author": "Honwai Wong",
+      "description": "Now is an exciting time for extensibility at Adobe. We recently announced the general availability of Adobe Developer App Builder for all Adobe Experience Manager ...",
+      "tags": "[\"adobe-io-runtime\",\"adobe-app-builder\",\"adobe-max\",\"rest-api\",\"adobe-developer-app-builder\"]",
+      "imageAlt": "︎Card collection component showing personalized content via an integration with Target activities and Target Recommendations",
+      "robots": "",
+      "lastModified": "1750698041",
+      "Removed from Medium?": ""
+    },
+    {
       "path": "/en/publish/2021/06/licensing-updates-for-developers-using-indesign-server",
       "image": "/en/publish/2021/06/media_11b32d5a6c1ae776bcd778e0d41b25cd8a69c1e62.jpeg?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -707,5 +720,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-22T08:30:52.145Z"
+  "generatedAt": "2025-06-23T17:23:53.460Z"
 }
