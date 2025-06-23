@@ -1,7 +1,7 @@
 {
-  "total": 54,
+  "total": 55,
   "offset": 0,
-  "limit": 54,
+  "limit": 55,
   "data": [
     {
       "path": "/en/publish/2025/11/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth",
@@ -524,6 +524,19 @@
       "Removed from Medium?": ""
     },
     {
+      "path": "/en/publish/2022/00/how-to-forward-adobe-developer-app-builder-application-logs",
+      "image": "/en/publish/2022/00/media_13132cca71f727edabc861a07187d1665402cd830.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "How to Forward Adobe Developer App Builder Application Logs",
+      "author": "Manik Jindal",
+      "description": "Adobe Developer App Builder enables developers to build custom applications that extend and integrate with Adobe Experience Manager and other Adobe solutions. App Builder became ...",
+      "tags": "[\"adobe-developer-app-builder\",\"adobe-experience-manager\",\"adobe-experience-cloud\",\"aio-cli\",\"log-forwarding\"]",
+      "imageAlt": "︎Forwarding logs to a customer‘s Splunk account.",
+      "robots": "",
+      "lastModified": "1750701990",
+      "Removed from Medium?": ""
+    },
+    {
       "path": "/en/publish/2021/06/licensing-updates-for-developers-using-indesign-server",
       "image": "/en/publish/2021/06/media_11b32d5a6c1ae776bcd778e0d41b25cd8a69c1e62.jpeg?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -720,5 +733,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-23T17:23:53.460Z"
+  "generatedAt": "2025-06-23T18:36:20.637Z"
 }
