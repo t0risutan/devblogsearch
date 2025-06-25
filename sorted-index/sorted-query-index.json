@@ -1,21 +1,8 @@
 {
-  "total": 56,
+  "total": 55,
   "offset": 0,
-  "limit": 56,
+  "limit": 55,
   "data": [
-    {
-      "path": "/en/publish/2025/11/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth",
-      "image": "/en/publish/2025/11/media_132d8172ef550ee1aa3a273b990289447220e5d0a.png?width=1200&format=pjpg&optimize=medium",
-      "date": "",
-      "title": "Adobe Express Platform Updates for MAX 2024: New Developer Capabilities and Explosive Growth of Our Partner Ecosystem",
-      "author": "Aubrey Cattell",
-      "description": "Ever since we opened up the Adobe Express platform to developers, our thriving partner ecosystem has seen exponential growth. Adobe Express is now a powerful ...",
-      "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"adobe-max\",\"extensibility\",\"adobe-express-add-ons\"]",
-      "imageAlt": "Partners and developers can build integrations and add-ons for Adobe Express",
-      "robots": "",
-      "lastModified": "1750477341",
-      "Removed from Medium?": ""
-    },
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
       "image": "/en/publish/2025/06/media_1fd57564c6f7e5db9a2fb23892cd6815aa1ea0f8d.jpg?width=1200&format=pjpg&optimize=medium",
@@ -46,7 +33,7 @@
       "path": "/en/publish/2025/06/show-dont-tell-multimodal-answers-in-ai-assistant-in-adobe-experience-platform",
       "image": "/en/publish/2025/06/media_1109572fa9649e2a2f591c7ee96e5ef7f44e1cc85.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
-      "title": "Show, Don’t Tell: Multimodal Answers in AI���Assistant in Adobe Experience Platform",
+      "title": "Show, Don’t Tell: Multimodal Answers in AI Assistant in Adobe Experience Platform",
       "author": "Namita Krishnan",
       "description": "Imagine you have just built a new audience to promote your summer collection, and now you want to activate it to an advertising destination. You ...",
       "tags": "[\"adobe-experience-platform\",\"AI\",\"AI-assistant\",\"gen-ai\",\"adobe-experience-cloud\"]",
@@ -746,5 +733,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-25T03:53:28.431Z"
+  "generatedAt": "2025-06-25T04:35:31.456Z"
 }
