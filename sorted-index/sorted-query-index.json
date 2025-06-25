@@ -1,7 +1,7 @@
 {
-  "total": 55,
+  "total": 56,
   "offset": 0,
-  "limit": 55,
+  "limit": 56,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -485,6 +485,19 @@
       "Removed from Medium?": ""
     },
     {
+      "path": "/en/publish/2022/05/adobe-app-builder-the-power-of-scaling-at-your-fingertips-8ae1149b7ebd",
+      "image": "/en/publish/2022/05/media_112ea097dc091812a63198d41e02a2c8e7e6b466c.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Developer App Builder — The Power of Scaling at Your Fingertips",
+      "author": "Kelvin Xu",
+      "description": "Built on top of Adobe I/O Runtime, App Builder provides a unified development framework for extending and customizing Adobe solutions without worrying about the physical ...",
+      "tags": "[\"adobe-developer-app-builder\",\"adobe-io-runtime\",\"serverless\"]",
+      "imageAlt": "︎",
+      "robots": "",
+      "lastModified": "1750888537",
+      "Removed from Medium?": ""
+    },
+    {
       "path": "/en/publish/2022/03/how-to-install-uxp-plugins-using-command-line-tools",
       "image": "/en/publish/2022/03/media_1c4d633f40690ac57b39a0177f1d260d93f965836.jpeg?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -733,5 +746,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-25T19:18:36.348Z"
+  "generatedAt": "2025-06-25T22:24:58.527Z"
 }
