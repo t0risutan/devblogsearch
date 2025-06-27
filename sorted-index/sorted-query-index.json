@@ -1,7 +1,7 @@
 {
-  "total": 56,
+  "total": 57,
   "offset": 0,
-  "limit": 56,
+  "limit": 57,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -40,6 +40,19 @@
       "imageAlt": "Picture",
       "robots": "",
       "lastModified": "1749847405",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2025/06/adobe-express-add-ons-whats-new-and-coming-up-for-developers",
+      "image": "/en/publish/2025/06/media_1118867786f80f809772e095ec5455e40ffc9bd18.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Express Add-ons: What’s New and Coming Up for Developers",
+      "author": "Kerri Shotts",
+      "description": "The Adobe Express add-on marketplace continues to thrive — nearly 300 unique integrations are now available to extend the functionality of Adobe Express and boost ...",
+      "tags": "[\"adobe-express-addons\",\"adobe-express\",\"enhanced-text-capabilities\",\"ai-powered-documentation\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1751055174",
       "Removed from Medium?": ""
     },
     {
@@ -486,15 +499,15 @@
     },
     {
       "path": "/en/publish/2022/05/adobe-app-builder-the-power-of-scaling-at-your-fingertips-8ae1149b7ebd",
-      "image": "/en/publish/2022/05/media_112ea097dc091812a63198d41e02a2c8e7e6b466c.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2022/05/media_16712d4183ef45c7e5e0b7215f760628113808779.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Adobe Developer App Builder — The Power of Scaling at Your Fingertips",
       "author": "Kelvin Xu",
       "description": "Built on top of Adobe I/O Runtime, App Builder provides a unified development framework for extending and customizing Adobe solutions without worrying about the physical ...",
       "tags": "[\"adobe-developer-app-builder\",\"adobe-io-runtime\",\"serverless\"]",
-      "imageAlt": "︎",
+      "imageAlt": "",
       "robots": "",
-      "lastModified": "1750888537",
+      "lastModified": "1751054170",
       "Removed from Medium?": ""
     },
     {
@@ -538,15 +551,15 @@
     },
     {
       "path": "/en/publish/2022/00/how-to-forward-adobe-developer-app-builder-application-logs",
-      "image": "/en/publish/2022/00/media_13132cca71f727edabc861a07187d1665402cd830.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2022/00/media_1ddda410041c611a2ed169a456414eaac3585e71e.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "How to Forward Adobe Developer App Builder Application Logs",
       "author": "Manik Jindal",
       "description": "Adobe Developer App Builder enables developers to build custom applications that extend and integrate with Adobe Experience Manager and other Adobe solutions. App Builder became ...",
       "tags": "[\"adobe-developer-app-builder\",\"adobe-experience-manager\",\"adobe-experience-cloud\",\"aio-cli\",\"log-forwarding\"]",
-      "imageAlt": "︎Forwarding logs to a customer‘s Splunk account.",
+      "imageAlt": "",
       "robots": "",
-      "lastModified": "1750701990",
+      "lastModified": "1751054310",
       "Removed from Medium?": ""
     },
     {
@@ -746,5 +759,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-06-26T17:23:26.683Z"
+  "generatedAt": "2025-06-27T20:27:42.822Z"
 }
