@@ -1,7 +1,7 @@
 {
-  "total": 57,
+  "total": 58,
   "offset": 0,
-  "limit": 57,
+  "limit": 58,
   "data": [
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
@@ -743,6 +743,19 @@
       "robots": "",
       "lastModified": "1732899607",
       "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2018/04/cep-panels-and-json-objects",
+      "image": "/en/publish/2018/04/media_162e321c7ada5373a36e6f0216a6031f2ca7e3fb6.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "CEP Panels and JSON Objects",
+      "author": "Davide Barranca",
+      "description": "Update 4/10/2018: Our CEP Getting Started resources are now on GitHub! See the repo for the latest info.",
+      "tags": "[\"adobe-creative-cloud\",\"cep-panels\",\"json\",\"creative-cloud-extensibility\",\"adobe-photoshop\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1752218325",
+      "Removed from Medium?": ""
     }
   ],
   "columns": [
@@ -759,5 +772,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-07-07T15:27:20.010Z"
+  "generatedAt": "2025-07-11T20:29:00.580Z"
 }
