@@ -1,8 +1,21 @@
 {
-  "total": 58,
+  "total": 59,
   "offset": 0,
-  "limit": 58,
+  "limit": 59,
   "data": [
+    {
+      "path": "/en/publish/2025/08/meet-the-winners-of-the-first-adobe-express-add-ons-hackathon",
+      "image": "/en/publish/2025/08/media_1ef1bcbd0c29c10a2bd351c90b92ceba7b4d20596.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Meet the Winners of the First Adobe Express Add-ons Hackathon",
+      "author": "Colene Chow",
+      "description": "We recently hosted our first Adobe Express Add-ons Hackathon on DevPost, inviting developers worldwide to pitch creative ideas for extending Adobe Express. Over the past ...",
+      "tags": "[\"Adobe-express-addons\",\"adobe-express\",\"hackathon\",\"developer\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1754599242",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
       "image": "/en/publish/2025/06/media_1fd57564c6f7e5db9a2fb23892cd6815aa1ea0f8d.jpg?width=1200&format=pjpg&optimize=medium",
@@ -772,5 +785,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-07-21T17:26:20.217Z"
+  "generatedAt": "2025-08-07T21:25:52.990Z"
 }
