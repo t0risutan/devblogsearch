@@ -1,7 +1,7 @@
 {
-  "total": 59,
+  "total": 61,
   "offset": 0,
-  "limit": 59,
+  "limit": 61,
   "data": [
     {
       "path": "/en/publish/2025/08/meet-the-winners-of-the-first-adobe-express-add-ons-hackathon",
@@ -14,6 +14,32 @@
       "imageAlt": "",
       "robots": "",
       "lastModified": "1754599242",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2025/08/get-funding-to-build-adobe-express-add-ons",
+      "image": "/en/publish/2025/08/media_1ac8ced30d9e5b0f4a3e8d48ea1f8e15c685df5d9.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Get Funding to Build Adobe Express Add-Ons",
+      "author": "Alex Castanheira",
+      "description": "At Adobe, we’re passionate about creativity — especially yours — and we know that together we can make amazing things. It’s our mission to empower ...",
+      "tags": "[\"adobe-express-addons\",\"adobe-fund-for-design\",\"adobe-express\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1755813023",
+      "Removed from Medium?": ""
+    },
+    {
+      "path": "/en/publish/2025/08/design-meets-dam-aem-assets-x-figma-a-turnkey-connector-is-here",
+      "image": "/en/publish/2025/08/media_1f87819badbe1cb78d4ed5e5dabcfd1113992f2a6.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Design Meets DAM: AEM Assets x Figma – A Turnkey Connector Is Here",
+      "author": "Aishwarya Khandelwal",
+      "description": "In a world where content is being created, personalized, and delivered faster than ever, one thing is clear — teams across design and development can’t ...",
+      "tags": "[\"aem-assets\",\"aem\",\"figma\",\"dam\",\"connector\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1755813493",
       "Removed from Medium?": ""
     },
     {
@@ -785,5 +811,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-08-07T21:25:52.990Z"
+  "generatedAt": "2025-08-21T22:24:50.795Z"
 }
