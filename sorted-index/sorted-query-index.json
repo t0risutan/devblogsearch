@@ -1,8 +1,21 @@
 {
-  "total": 61,
+  "total": 62,
   "offset": 0,
-  "limit": 61,
+  "limit": 62,
   "data": [
+    {
+      "path": "/en/publish/2025/08/inside-ai-collaborate-s-24-hour-adobe-express-add-on-hackathon",
+      "image": "/en/publish/2025/08/media_1ef79620dc5b1ad70a20666c50352185979eca05f.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Inside AI Collaborate's 24-Hour Adobe Express Add-On Hackathon",
+      "author": "Sayan Jain",
+      "description": "Sayan Jain is a recent graduate from Santa Clara University (SCU) in California, where he earned a double degree in Computer Science and Business. He ...",
+      "tags": "[\"adobe-express-addons\",\"adobe-express\",\"ai\",\"hackathon\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1756403654",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/08/meet-the-winners-of-the-first-adobe-express-add-ons-hackathon",
       "image": "/en/publish/2025/08/media_1ef1bcbd0c29c10a2bd351c90b92ceba7b4d20596.png?width=1200&format=pjpg&optimize=medium",
@@ -39,7 +52,7 @@
       "tags": "[\"aem-assets\",\"aem\",\"figma\",\"dam\",\"connector\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1755813493",
+      "lastModified": "1756403266",
       "Removed from Medium?": ""
     },
     {
@@ -811,5 +824,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-08-21T22:24:50.795Z"
+  "generatedAt": "2025-08-28T18:34:44.639Z"
 }
