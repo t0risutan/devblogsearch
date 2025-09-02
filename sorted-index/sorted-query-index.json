@@ -1,8 +1,21 @@
 {
-  "total": 62,
+  "total": 63,
   "offset": 0,
-  "limit": 62,
+  "limit": 63,
   "data": [
+    {
+      "path": "/en/publish/2025/09/introducing-the-adobe-express-add-on-dev-mcp-server-beta",
+      "image": "/en/publish/2025/09/media_18c6423a5b81077de25d9a90bfcb427e9ec1fc38c.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Introducing the Adobe Express Add-on Dev MCP Server (Beta)",
+      "author": "Colene Chow",
+      "description": "The Adobe Express Add-on Dev MCP Server Beta is now available as a free tool designed to enhance your developer workflow.",
+      "tags": "[\"adobe-express\",\"MCP-server\",\"adobe-express-add-ons\",\"add-on-development\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1756840532",
+      "Removed from Medium?": ""
+    },
     {
       "path": "/en/publish/2025/08/inside-ai-collaborate-s-24-hour-adobe-express-add-on-hackathon",
       "image": "/en/publish/2025/08/media_1ef79620dc5b1ad70a20666c50352185979eca05f.jpg?width=1200&format=pjpg&optimize=medium",
@@ -824,5 +837,5 @@
     "Removed from Medium?"
   ],
   ":type": "sheet",
-  "generatedAt": "2025-08-28T18:34:44.639Z"
+  "generatedAt": "2025-09-02T23:20:04.031Z"
 }
