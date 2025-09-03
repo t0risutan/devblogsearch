@@ -138,9 +138,18 @@ const searchParams = new URLSearchParams(window.location.search);
   }
   
 function clearSearchResults(component) {
-  const searchResults = component.querySelector('.search-results');
+  // try to find results in component first, then in topnav
+  let searchResults = component.querySelector('.search-results');
+  if (!searchResults) {
+    const topNav = document.querySelector('.feds-topnav.has-blog-nav-search');
+    if (topNav) {
+      searchResults = topNav.querySelector('.search-results');
+    }
+  }
+  if (searchResults) {
     searchResults.innerHTML = '';
   }
+}
   
 function clearSearch(component) {
   clearSearchResults(component);
@@ -154,8 +163,17 @@ function clearSearch(component) {
   
 async function renderResults(component, config, filteredData, searchTerms) {
   clearSearchResults(component);
-  const searchResults = component.querySelector('.search-results');
-    const headingTag = searchResults.dataset.h;
+  // try to find results in component first, then in topnav
+  let searchResults = component.querySelector('.search-results');
+  if (!searchResults) {
+    const topNav = document.querySelector('.feds-topnav.has-blog-nav-search');
+    if (topNav) {
+      searchResults = topNav.querySelector('.search-results');
+    }
+  }
+  if (!searchResults) return;
+  
+  const headingTag = searchResults.dataset.h;
 
     if (filteredData.length) {
       searchResults.classList.remove('no-results');
@@ -357,19 +375,21 @@ class BlogSearch extends HTMLElement {
     if (isNavSearch) {
       this.classList.add('nav-search');
       
-      // For nav search, place input directly in topnav and keep icon in component
+      // For nav search, place input in topnav and keep icon/results in component
       const topNav = document.querySelector('.feds-topnav');
       if (topNav) {
         topNav.classList.add('has-blog-nav-search');
         const input = searchInput(this, { source, placeholders });
         const icon = searchIcon();
         
-        // Add input directly to topnav
+        // Add input and results directly to topnav
+        const results = searchResultsContainer(this);
         topNav.appendChild(input);
+        topNav.appendChild(results);
         
-        // Keep only icon and results in the component
+        // Keep only icon in the component
         this.innerHTML = '';
-        this.append(icon, searchResultsContainer(this));
+        this.append(icon);
         
         // Set up nav-specific behavior
         icon.addEventListener('click', (e) => {
