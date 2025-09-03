@@ -24,13 +24,14 @@ blog-search .search-box {
     border: 1px solid var(--text-color);
   }
   
-  /* search results */
+  /* search results - COMMENTED OUT (not used since results moved to topnav) */
+  /*
   blog-search ul.search-results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-auto-rows: auto;
     grid-column-gap: 20px;
-    /* padding-left: 0; */
+    padding-left: 0; 
   }
   
   blog-search ul.search-results > li {
@@ -80,7 +81,7 @@ blog-search .search-box {
     object-fit: cover;
   }
   
-  /* no results */
+ 
   blog-search ul.search-results.no-results {
     display: block;
     margin-left: 34px;
@@ -89,6 +90,7 @@ blog-search .search-box {
   blog-search ul.search-results.no-results > li {
     border: none;
   }
+  */
   
   /* minimal variant */
   blog-search.minimal ul.search-results {
@@ -238,9 +240,10 @@ blog-search.nav-search.expanded .search-box input {
 /* search results in topnav (this is newly added, search results in top nav so I have no struggels with sizing the search results box)*/
 .feds-topnav.has-blog-nav-search .search-results {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
   grid-auto-rows: auto;
   grid-column-gap: 20px;
+  grid-row-gap: 20px;
   position: absolute;
   top: calc(100% + 60px);
   right: 0;
@@ -253,8 +256,9 @@ blog-search.nav-search.expanded .search-box input {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   z-index: 1001;
   padding: 0;
-  margin: 0;
+  padding: 20px;
   list-style: none;
+  box-sizing: border-box;
 }
 
 .feds-topnav.has-blog-nav-search .search-results:empty {
@@ -268,12 +272,16 @@ blog-search.nav-search.expanded .search-box input {
 }
 
 .feds-topnav.has-blog-nav-search .search-results > li > a {
-  display: block;
-  height: 100%;
+  display: flex;
+  height: 140px;
+  width: 100%;
+  font-size: 16px;
   background-color: transparent;
   color: currentcolor;
   cursor: pointer;
   text-decoration: none;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .feds-topnav.has-blog-nav-search .search-results > li > a:hover,
@@ -287,8 +295,10 @@ blog-search.nav-search.expanded .search-box input {
 }
 
 .feds-topnav.has-blog-nav-search .search-results > li .search-result-title {
-  font-size: var(--body-font-size-m);
-  font-weight: normal;
+  font-size: var(--body-font-size-s);
+  justify-content: center;
+  overflow: hidden;
+  /* font-weight: 2em; */
 }
 
 .feds-topnav.has-blog-nav-search .search-results > li .search-result-title a {
@@ -298,16 +308,18 @@ blog-search.nav-search.expanded .search-box input {
 
 .feds-topnav.has-blog-nav-search .search-results > li p {
   font-size: var(--body-font-size-s);
+  display: none;
 }
 
 .feds-topnav.has-blog-nav-search .search-results > li .search-result-image {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 4;
 }
 
-.feds-topnav.has-blog-nav-search .search-results > li picture img {
+.feds-topnav.has-blog-nav-search .search-results > li img {
   display: block;
-  width: 100%;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* No results in topnav */
