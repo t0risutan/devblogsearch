@@ -10,54 +10,79 @@
  * governing permissions and limitations under the License.
  */
 
-import { SITE, decorateContent, setLibs, buildDevblogAutoBlocks, addDevBlogBlockOverrides } from './devblog/devblog.js';
+/**
+ * Normalizes all headings within a container element.
+ * @param {Element} el The container element
+ * @param {array} allowedHeadings The list of allowed headings (h1 ... h6)
+ */
+export function normalizeHeadings(el, allowedHeadings) {
+  const allowed = allowedHeadings.map((h) => h.toLowerCase());
+  el.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((tag) => {
+    const h = tag.tagName.toLowerCase();
+    if (allowed.indexOf(h) === -1) {
+      // current heading is not in the allowed list -> try first to "promote" the heading
+      let level = parseInt(h.charAt(1), 10) - 1;
+      while (allowed.indexOf(`h${level}`) === -1 && level > 0) {
+        level -= 1;
+      }
+      if (level === 0) {
+        // did not find a match -> try to "downgrade" the heading
+        while (allowed.indexOf(`h${level}`) === -1 && level < 7) {
+          level += 1;
+        }
+      }
+      if (level !== 7) {
+        tag.outerHTML = `<h${level}>${tag.textContent}</h${level}>`;
+      }
+    }
+  });
+}
 
-// Add project-wide styles here.
-const STYLES = ['/styles/styles.css', '/styles/articles.css'];
+/**
+ * Returns a picture element with webp and fallbacks
+ * @param {string} src The image URL
+ * @param {string} alt The image alt text
+ * @param {boolean} eager load image eager
+ * @param {Array} breakpoints breakpoints and corresponding params (eg. width)
+ */
+export function createOptimizedPicture(
+  src,
+  alt = '',
+  eager = false,
+  breakpoints = [{ media: '(min-width: 400px)', width: '2000' }, { width: '750' }],
+) {
+  const url = new URL(src, window.location.href);
+  const picture = document.createElement('picture');
+  const { pathname } = url;
+  const ext = pathname.substring(pathname.lastIndexOf('.') + 1);
 
-// Config was copied from blog.a.c, for now disable most of it
-const CONFIG = {
-  // codeRoot: '',
-  // contentRoot: '',
-  //imsClientId: 'theblog-helix',
-  iconRoot: '/img/icons',
-  stage: {
-    //edgeConfigId: '72b074a6-76d2-43de-a210-124acc734f1c',
-    //marTechUrl: 'https://assets.adobedtm.com/d4d114c60e50/a0e989131fd5/launch-2c94beadc94f-development.min.js',
-  },
-  prod: {
-    //edgeConfigId: '913eac4d-900b-45e8-9ee7-306216765cd2',
-  },
-  locales: {
-    '': { ietf: 'en-US', tk: 'hah7vzn.css' },
-    en: { ietf: 'en-US', tk: 'hah7vzn.css' },
-    //de: { ietf: 'de', tk: 'hah7vzn.css' },
-    //ko: { ietf: 'ko', tk: 'zfo3ouc' },
-    //es: { ietf: 'es', tk: 'oln4yqj.css' },
-    //fr: { ietf: 'fr', tk: 'vrk5vyv.css' },
-    //it: { ietf: 'it', tk: 'bbf5pok.css' },
-    //jp: { ietf: 'ja-JP', tk: 'dvg6awq' },
-    //kr: { ietf: 'ko', tk: 'qjs5sfm' },
-    //br: { ietf: 'pt-BR', tk: 'inq1xob.css' },
-    //'en/uk': { ietf: 'en', tk: 'hah7vzn.css' },
-    //'en/apac': { ietf: 'en', tk: 'hah7vzn.css' },
-  },
-};
+  // webp
+  breakpoints.forEach((br) => {
+    const source = document.createElement('source');
+    if (br.media) source.setAttribute('media', br.media);
+    source.setAttribute('type', 'image/webp');
+    source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);
+    picture.appendChild(source);
+  });
 
-// Milo blocks overridden by the Blog project
-const OVERRIDE_MILO_BLOCKS = addDevBlogBlockOverrides([{
-  milo: 'table-of-contents',
-  blog: 'blog-table-of-contents',
-}, {
-  milo: 'carousel',
-  blog: 'blog-carousel',
-}]);
+  // fallback
+  breakpoints.forEach((br, i) => {
+    if (i < breakpoints.length - 1) {
+      const source = document.createElement('source');
+      if (br.media) source.setAttribute('media', br.media);
+      source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      picture.appendChild(source);
+    } else {
+      const img = document.createElement('img');
+      img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      img.setAttribute('loading', eager ? 'eager' : 'lazy');
+      img.setAttribute('alt', alt);
+      picture.appendChild(img);
+    }
+  });
 
-// Default to loading the first image as eager.
-(async function loadLCPImage() {
-  const lcpImg = document.querySelector('img');
-  lcpImg?.setAttribute('loading', 'eager');
-}());
+  return picture;
+}
 
 /*
  * ------------------------------------------------------------
@@ -65,192 +90,202 @@ const OVERRIDE_MILO_BLOCKS = addDevBlogBlockOverrides([{
  * ------------------------------------------------------------
  */
 
-const miloLibs = setLibs(SITE.prodLibsPath);
+function getImageCaption(picture) {
+  // Check if the parent element has a caption
+  const parentEl = picture.parentNode;
+  let caption = parentEl.querySelector('em');
+  if (caption) return caption;
 
-(async function loadStyles() {
-  const paths = [`${miloLibs}/styles/styles.css`];
-  const { getMetadata } = await import(`${miloLibs}/utils/utils.js`);
-
-  if (STYLES) {
-    paths.push(...(Array.isArray(STYLES) ? STYLES : [STYLES]));
-  }
-
-  function createStyleLink(path) {
-    const link = document.createElement('link');
-    link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', path);
-    document.head.appendChild(link);
-  }
-
-  paths.forEach((path) => {
-    // Load article.css only for article pages
-    if (getMetadata('content-type') === 'article' && path.includes('/articles.css')) {
-      createStyleLink(path);
-    }
-    // Load style.css for all pages
-    if (!path.includes('/articles.css')) {
-      createStyleLink(path);
-    }
-  });
-}());
-
-function decorateFigure() {
-  const imagesBlocks = document.querySelectorAll('.images, .image, .infograph, .infographic');
-  imagesBlocks.forEach((block) => {
-    if (block.classList.contains('infograph') || block.classList.contains('infographic')) {
-      const img = block.querySelector(':scope picture > img');
-      img.classList.add('infograph');
-    }
-    // eslint-disable-next-line no-unused-expressions
-    block.classList.remove('images') || block.classList.remove('image') || block.classList.remove('infograph') || block.classList.remove('infographic');
-    block.classList.add('figure');
-  });
+  // If the parent element doesn't have a caption, check if the next sibling does
+  const parentSiblingEl = parentEl.nextElementSibling;
+  caption = parentSiblingEl
+    && !parentSiblingEl.querySelector('picture')
+    && parentSiblingEl.firstChild?.tagName === 'EM'
+    ? parentSiblingEl.querySelector('em')
+    : undefined;
+  return caption;
 }
 
-function decorateVideo() {
-  const videoBlocks = document.querySelectorAll('.embed, .video, .animation');
-  videoBlocks.forEach((block) => {
-    const link = block.querySelector(':scope a');
-    const videoCaption = block.querySelector(':scope p:last-of-type');
-    const para = document.createElement('p');
-    const url = block.classList.contains('autoplay') || block.classList.contains('animation')
-      ? `${link?.href}#_autoplay`
-      : link?.href;
-    if (!url) return;
+/*
+  * Topic pages have a unique page header.
+  * Transform it into a Milo marquee with custom blog "mini" variant.
+*/
+async function topicHeader(createTag) {
+  const imageEl = document.querySelector('main > div:first-of-type > p > picture');
+  if (!imageEl) return;
 
-    link.href = url;
-    para.append(link);
-    block.insertAdjacentElement('beforebegin', para);
-    block.remove();
-
-    if (!videoCaption) return;
-    videoCaption.classList.add('video-caption');
-    para.insertAdjacentElement('afterend', videoCaption);
-  });
+  const heading = document.querySelector('main > div > p + h1, main > div > p + h2, main > div > h1, main > div > h2');
+  const container = createTag('div', { class: 'marquee mini' });
+  const background = createTag('div', { class: 'background' }, imageEl);
+  const text = createTag('div', {}, heading);
+  const foreground = createTag('div', { class: 'foreground' }, text);
+  const para = document.querySelector('main > div > p');
+  container.append(background, foreground);
+  para.replaceWith(container);
 }
 
-function getMediaFilename (a) {
-  try {
-    const mediaUrl = new URL(a.href);
-    return mediaUrl.pathname.split('/').pop();
-  } catch (e) {
-    console.error('Error parsing media url', e);
-  }
-  return '';
-};
+export async function decorateContent() {
+  const miloLibs = getLibs();
+  const imgEls = document.querySelectorAll('main > div > p > picture');
+  if (!imgEls.length) return;
 
-function decorateGif() {
-  const gifs = document.querySelectorAll(':scope p > a[href*=".gif"]');
-  gifs.forEach((gif) => {
-    const img = document.createElement('img');
-    const picture = document.createElement('picture');
+  const { createTag, loadStyle } = await import(`${miloLibs}/utils/utils.js`);
+  loadStyle(`${miloLibs}/blocks/figure/figure.css`);
 
-    img.src = getMediaFilename(gif);
-    img.setAttribute('loading', 'lazy');
-    picture.append(img);
-    gif.parentElement.append(picture);
-    gif.remove();
-  });
-}
+  if (window.location.pathname.includes('/topics/')) return topicHeader(createTag);
+  if (window.location.pathname.includes('/authors/')) return;
 
-function decorateQuote() {
-  const quoteBlocks = document.querySelectorAll('.pull-quote');
-  quoteBlocks.forEach((block) => {
-    const paras = block.querySelectorAll(':scope p');
-    paras.forEach((p) => {
-      if (p.innerHTML.startsWith('“') && p.innerHTML.endsWith('”')) {
-        const quote = p.textContent;
-        const blockquote = document.createElement('blockquote');
-        blockquote.append(quote);
-        p.insertAdjacentElement('afterend', blockquote);
-        p.remove();
-      }
-    });
-    block.classList.remove('pull-quote');
-    block.classList.add('text', 'inset', 'quote');
-  });
-}
+  imgEls.forEach((imgEl) => {
+    const block = createTag('div', { class: 'figure' });
+    const row = createTag('div');
+    const caption = getImageCaption(imgEl);
+    const parentEl = imgEl.closest('p');
 
-function overrideMiloBlocks() {
-  OVERRIDE_MILO_BLOCKS.forEach((block) => {
-    const miloBlocks = document.querySelectorAll(`.${block.milo}`);
-    miloBlocks.forEach((miloBlock) => {
-      // Need to keep the block class first in the class list
-      miloBlock.classList.replace(block.milo, block.blog);
-    });
-  });
-}
-
-function decorateTopicPage() {
-  if (window.location.href.includes('/topics/')) {
-    const sections = [...document.querySelectorAll('main > div')];
-    if (sections.length = 1) {
-      const articleFeed = document.querySelector('main div .article-feed');
-      if (!articleFeed) return;
-      const newSection = document.createElement('div');
-      newSection.append(articleFeed);
-      document.querySelector('main').append(newSection);
-    }
-  }
-}
-
-function initSidekick() {
-  const initPlugins = async () => { await import('./sidekick.js'); };
-  if (document.querySelector('helix-sidekick')) {
-    initPlugins();
-  } else {
-    document.addEventListener('sidekick-ready', () => {
-      initPlugins();
-    });
-  }
-}
-
-function decorateFeatImg(getMetadata) {
-  const featImgMeta = getMetadata('blog-featured-image');
-  if (featImgMeta === 'off') document.body.classList.add('hide-feat-img');
-}
-
-const { loadArea, setConfig, getMetadata } = await import(`${miloLibs}/utils/utils.js`);
-
-(async function loadPage() {
-  decorateFeatImg(getMetadata);
-  decorateTopicPage();
-  decorateFigure();
-  decorateVideo();
-  decorateQuote();
-  decorateGif();
-  await decorateContent();
-  setConfig({ ...CONFIG, miloLibs });
-  await buildDevblogAutoBlocks();
-  overrideMiloBlocks();
-  await loadArea();
-  
-  // Import and register search web component first
-  await import('../web-components/search/blog-search.js');
-  console.log('Search web component imported and registered');
-  
-  // Then inject search into navigation after Milo loads
-  const topNav = document.querySelector('.feds-topnav') || 
-  
-  console.log('Injecting search into navigation. Target element:', topNav);
-  const searchElement = document.createElement('blog-search');
-  // Prefer placing search before the logo so it appears to the left of it
-  const logo = topNav?.querySelector('a.feds-logo');
-  if (logo) {
-    const containerChildWithLogo = Array.from(topNav.children).find((child) => child.contains(logo));
-    if (containerChildWithLogo) {
-      topNav.insertBefore(searchElement, containerChildWithLogo);
-      console.log('Search element inserted before logo:', searchElement);
+    if (caption) {
+      const picture = createTag('p', null, imgEl.cloneNode(true));
+      const em = createTag('p', null, caption.cloneNode(true));
+      const wrapper = createTag('div');
+      wrapper.append(picture, em);
+      row.append(wrapper);
+      caption.remove();
     } else {
-      // If logo isn't within a direct child, prepend as a safe default
-      topNav.insertBefore(searchElement, topNav.firstChild);
-      console.log('Search element prepended to topNav:', searchElement);
+      const wrapper = createTag('div', null, imgEl.cloneNode(true));
+      row.append(wrapper);
+    }
+
+    block.append(row.cloneNode(true));
+    parentEl.replaceWith(block);
+  });
+}
+
+/**
+ * Builds a block DOM Element from a two dimensional array
+ * @param {string} blockName name of the block
+ * @param {any} content two dimensional array or string or object of content
+ */
+function buildBlock(blockName, content) {
+  const table = Array.isArray(content) ? content : [[content]];
+  const blockEl = document.createElement('div');
+  // build image block nested div structure
+  blockEl.classList.add(blockName);
+  table.forEach((row) => {
+    const rowEl = document.createElement('div');
+    row.forEach((col) => {
+      const colEl = document.createElement('div');
+      const vals = col.elems ? col.elems : [col];
+      vals.forEach((val) => {
+        if (val) {
+          if (typeof val === 'string') {
+            colEl.innerHTML += val;
+          } else {
+            colEl.appendChild(val);
+          }
+        }
+      });
+      rowEl.appendChild(colEl);
+    });
+    blockEl.appendChild(rowEl);
+  });
+  return (blockEl);
+}
+
+function buildAuthorHeader(mainEl) {
+  const div = mainEl.querySelector('div');
+  const heading = div.querySelector('h1, h2');
+  const bio = div.querySelector('h1 + p, h2 + p');
+  const picture = div.querySelector('picture');
+  const social = div.querySelector('h3');
+  const socialLinks = social ? social.nextElementSibling : null;
+  let title;
+
+  if (heading.tagName !== 'H1') {
+    title = document.createElement('h1');
+    title.textContent = heading.textContent;
+    title.id = heading.id;
+    heading.replaceWith(title);
+  }
+
+  const authorHeading = title ? title : heading;
+  const authorHeader = buildBlock('author-header', [
+    [{
+      elems: [
+        authorHeading,
+        picture.closest('p'),
+        bio,
+        social,
+        socialLinks,
+      ],
+    }],
+  ]);
+
+  div.prepend(authorHeader);
+}
+
+async function buildArticleHeader(el) {
+  const miloLibs = getLibs();
+  const { getMetadata, getConfig } = await import(`${miloLibs}/utils/utils.js`);
+  const { loadTaxonomy, getLinkForTopic, getTaxonomyModule } = await import(`${miloLibs}/blocks/article-feed/article-helpers.js`);
+  if (!getTaxonomyModule()) {
+    await loadTaxonomy();
+  }
+  const div = document.createElement('div');
+  // div.setAttribute('class', 'section');
+  const h1 = el.querySelector('h1');
+  const picture = el.querySelector('a[href*=".mp4"], picture');
+  const caption = getImageCaption(picture);
+  const figure = document.createElement('div');
+  figure.append(picture, caption);
+  const tag = getMetadata('article:tag');
+  const category = tag || 'News';
+  const author = getMetadata('author') || 'Adobe Communications Team';
+  const { codeRoot } = getConfig();
+  const authorURL = getMetadata('author-url') || (author ? `${codeRoot}/authors/${author.replace(/[^0-9a-z]/gi, '-').toLowerCase()}` : null);
+  const publicationDate = getMetadata('publication-date');
+
+  const categoryTag = getLinkForTopic(category);
+
+  const articleHeaderBlockEl = buildBlock('article-header', [
+    [`<p>${categoryTag}</p>`],
+    [h1],
+    [`<p>${authorURL ? `<a href="${authorURL}">${author}</a>` : author}</p>
+      <p>${publicationDate}</p>`],
+    [figure],
+  ]);
+  div.append(articleHeaderBlockEl);
+  el.prepend(div);
+}
+
+function buildTagsBlock() {
+  const tagsArray = [...document.head.querySelectorAll('meta[property="article:tag"]')].map((el) => el.content) || [];
+
+  const tagsBlock = buildBlock('tags', tagsArray.join(', '));
+  const main = document.querySelector('main');
+  const recBlock = main.querySelector('.recommended-articles');
+  if (recBlock) {
+    // Put tags block before recommended articles block
+    if (recBlock.parentElement.childElementCount === 1) {
+      recBlock.parentElement.previousElementSibling.append(tagsBlock);
+    } else {
+      recBlock.before(tagsBlock);
     }
   } else {
-    // Fallback: append if no logo was found
-    topNav.appendChild(searchElement);
-    console.log('Search element appended to topNav (logo not found):', searchElement);
+    main.lastElementChild.append(tagsBlock);
   }
-  
-  initSidekick();
-}());
+}
+
+/*export*/ async function buildAutoBlocks() {
+  const miloLibs = getLibs();
+  const { getMetadata } = await import(`${miloLibs}/utils/utils.js`);
+  const mainEl = document.querySelector('main');
+  try {
+    if (getMetadata('content-type') === 'article' && !mainEl.querySelector('.article-header')) {
+      await buildArticleHeader(mainEl);
+      buildTagsBlock();
+    } else if (getMetadata('content-type') === 'authors') {
+      buildAuthorHeader(mainEl);
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Auto Blocking failed', error);
+  }
+}

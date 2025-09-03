@@ -20,6 +20,7 @@ const CONFIG = {
   // codeRoot: '',
   // contentRoot: '',
   //imsClientId: 'theblog-helix',
+  iconRoot: '/img/icons',
   stage: {
     //edgeConfigId: '72b074a6-76d2-43de-a210-124acc734f1c',
     //marTechUrl: 'https://assets.adobedtm.com/d4d114c60e50/a0e989131fd5/launch-2c94beadc94f-development.min.js',
@@ -223,5 +224,33 @@ const { loadArea, setConfig, getMetadata } = await import(`${miloLibs}/utils/uti
   await buildDevblogAutoBlocks();
   overrideMiloBlocks();
   await loadArea();
+  
+  // Import and register search web component first
+  await import('../web-components/search/blog-search.js');
+  console.log('Search web component imported and registered');
+  
+  // Then inject search into navigation after Milo loads
+  const topNav = document.querySelector('.feds-topnav') || 
+  
+  console.log('Injecting search into navigation. Target element:', topNav);
+  const searchElement = document.createElement('blog-search');
+  // Prefer placing search before the logo so it appears to the left of it
+  const logo = topNav?.querySelector('a.feds-logo');
+  if (logo) {
+    const containerChildWithLogo = Array.from(topNav.children).find((child) => child.contains(logo));
+    if (containerChildWithLogo) {
+      topNav.insertBefore(searchElement, containerChildWithLogo);
+      console.log('Search element inserted before logo:', searchElement);
+    } else {
+      // If logo isn't within a direct child, prepend as a safe default
+      topNav.insertBefore(searchElement, topNav.firstChild);
+      console.log('Search element prepended to topNav:', searchElement);
+    }
+  } else {
+    // Fallback: append if no logo was found
+    topNav.appendChild(searchElement);
+    console.log('Search element appended to topNav (logo not found):', searchElement);
+  }
+  
   initSidekick();
 }());
