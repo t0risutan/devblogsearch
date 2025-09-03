@@ -397,6 +397,9 @@ class BlogSearch extends HTMLElement {
           this.classList.toggle('expanded');
           if (this.classList.contains('expanded')) {
             setTimeout(() => input.focus(), 300);
+          } else {
+            clearSearch(this);
+            input.value = '';
           }
         });
 
@@ -405,6 +408,7 @@ class BlogSearch extends HTMLElement {
           if (!this.contains(e.target) && !input.contains(e.target)) {
             this.classList.remove('expanded');
             clearSearch(this);
+            input.value = '';
           }
         });
 
