@@ -1,4 +1,6 @@
 .hlx/*
+playwright-report/
+test-results/
 coverage/*
 logs/*
 node_modules/*
