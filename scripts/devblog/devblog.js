@@ -83,6 +83,14 @@ export function addDevBlogBlockOverrides(overrides) {
     milo: 'article-feed',
     blog: 'article-feed-post-process',
   });
+  overrides.push({
+    milo: 'article-header',
+    blog: 'article-header-post-process',
+  });
+  overrides.push({
+    milo: 'author-header',
+    blog: 'author-header-post-process',
+  });
   return overrides;
 }
 
@@ -262,25 +270,48 @@ export async function decorateContent() {
   if (window.location.pathname.includes('/authors/')) return;
 
   imgEls.forEach((imgEl) => {
+    const parentEl = imgEl.closest('p');
+    if (!parentEl) return;
+
     const block = createTag('div', { class: 'figure' });
     const row = createTag('div');
     const caption = getImageCaption(imgEl);
-    const parentEl = imgEl.closest('p');
+
+    const wrapper = createTag('div', null, imgEl.cloneNode(true));
+    row.append(wrapper);
 
     if (caption) {
-      const picture = createTag('p', null, imgEl.cloneNode(true));
       const em = createTag('p', null, caption.cloneNode(true));
-      const wrapper = createTag('div');
-      wrapper.append(picture, em);
-      row.append(wrapper);
+      row.append(em);
       caption.remove();
-    } else {
-      const wrapper = createTag('div', null, imgEl.cloneNode(true));
-      row.append(wrapper);
     }
 
-    block.append(row.cloneNode(true));
-    parentEl.replaceWith(block);
+    block.append(row);
+
+    // Preserve text before and after image
+    const nodes = Array.from(parentEl.childNodes);
+    const imgIndex = nodes.indexOf(imgEl);
+
+    const beforeNodes = nodes.slice(0, imgIndex);
+    const afterNodes = nodes.slice(imgIndex + 1);
+
+    const fragment = document.createDocumentFragment();
+
+    if (beforeNodes.length) {
+      const beforeP = document.createElement('p');
+      beforeNodes.forEach(n => beforeP.appendChild(n.cloneNode(true)));
+      fragment.appendChild(beforeP);
+    }
+
+    fragment.appendChild(block);
+
+    if (afterNodes.length) {
+      const afterP = document.createElement('p');
+      afterNodes.forEach(n => afterP.appendChild(n.cloneNode(true)));
+      fragment.appendChild(afterP);
+    }
+
+    parentEl.replaceWith(fragment);
   });
 }
 
@@ -383,6 +414,36 @@ function buildAuthorPage(mainEl) {
   div.prepend(authorHeader);
 }
 
+function buildAuthorHeader(mainEl, social = null, socialLinks = null) {
+  const div = mainEl.querySelector('div');
+  const heading = div.querySelector('h1, h2');
+  const bio = div.querySelector('h1 + p, h2 + p');
+  const picture = div.querySelector('picture');
+
+  let title;
+  if (heading.tagName !== 'H1') {
+    title = document.createElement('h1');
+    title.textContent = heading.textContent;
+    title.id = heading.id;
+    heading.replaceWith(title);
+  }
+
+  const authorHeading = title ? title : heading;
+  const authorHeader = buildBlock('author-header', [
+    [{
+      elems: [
+        authorHeading,
+        picture.closest('p'),
+        bio,
+        social,
+        socialLinks,
+      ],
+    }],
+  ]);
+
+  div.prepend(authorHeader);
+}
+
 async function buildArticleHeader(el) {
   const miloLibs = getLibs();
   const { getMetadata, getConfig } = await import(`${miloLibs}/utils/utils.js`);
@@ -403,13 +464,13 @@ async function buildArticleHeader(el) {
   const { codeRoot } = getConfig();
   const authorURL = getMetadata('author-url') || getAuthorPagePath(codeRoot, author);
   const publicationDate = getMetadata('publication-date');
-
+  const authorImageFilename = author.replace(/[^0-9a-z]/gi, '-').toLowerCase();
   const categoryTag = getLinkForTopic(category);
 
   const articleHeaderBlockEl = buildBlock('article-header', [
     [`<p>${categoryTag}</p>`],
     [h1],
-    [`<p>${authorURL ? `<a href="${authorURL}">${author}</a>` : author}</p>
+    [`<p>${authorURL ? `<a href="${authorURL}" data-author-image="/images/authors/${authorImageFilename}.png">${author}</a>` : author}</p>
       <p>${publicationDate}</p>`],
     [figure],
   ]);
@@ -525,7 +586,31 @@ export async function buildDevblogAutoBlocks() {
   setupTaxonomyProxy();
   eagerLoadCssForLCP();
   const mainEl = document.querySelector('main');
-  if(window.location.pathname.match(/\/authors\//)) {
+  if (window.location.pathname.match(/\/authors\//)) {
+    const path = window.location.pathname;
+
+  try {
+    const res = await fetch(`${path}.plain.html`);
+
+    if (res.ok) {
+      const text = await res.text();
+
+      // Check if it's a real author doc (not the generic template)
+      if (text && text.trim().length > 0 && !text.includes('$AUTHOR$')) {
+
+        const parser = new DOMParser();
+        const fetchedDoc = parser.parseFromString(text, 'text/html');
+        const social = fetchedDoc.querySelector('h3');
+        const socialLinks = social ? social.nextElementSibling : null;
+        buildAuthorHeader(mainEl, social, socialLinks);
+        return;
+      }
+    }
+  } catch (e) {
+    console.warn('Error fetching author doc:', e);
+  }
+
+  // No specific doc → fallback to generic
     buildAuthorPage(mainEl);
   } else if(window.location.pathname.match(/\/topics\//)) {
     buildTopicPage(mainEl);
