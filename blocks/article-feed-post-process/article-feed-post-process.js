@@ -7,10 +7,12 @@
 import { setLibs, getLibs } from '../../scripts/devblog/devblog.js';
 import { recreatePicture, createOptimizedPicture, getDefaultImageNumber, SITE } from '../../scripts/devblog/devblog.js';
 setLibs(SITE.prodLibsPath);
-const miloBlock = await import(`${getLibs()}/blocks/article-feed/article-feed.js`);
+// Importing the local article-feed override instead of the default Milo block.
+// See blocks/article-feed/article-feed.js for details on the custom behavior.
+const miloBlock = await import('../article-feed/article-feed.js');
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
 
-function processArticleCard(card) {
+async function processArticleCard(card) {
   const eager = false;
   card.querySelectorAll('picture').forEach(pic => {
     const src = pic.querySelector('source').getAttribute('srcset');
@@ -29,6 +31,7 @@ function processArticleCard(card) {
       console.error('missing', div);
     }
   });
+
 }
 
 function blockChanged(records, _observer) {
