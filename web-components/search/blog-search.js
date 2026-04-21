@@ -1,4 +1,5 @@
 import { getLibs } from '../../scripts/devblog/devblog.js';
+import { filterData } from './blog-search-filter-data.js';
 
 // These will be loaded dynamically in the functions that need them
 let createOptimizedPicture, decorateIcons, fetchPlaceholders;
@@ -213,82 +214,7 @@ function compareFound(hit1, hit2) {
   return hit1.minIdx - hit2.minIdx;
 }
 
-// Write documentation for the updated version of the filter function later
-
-function filterData(searchTerms, data) {
-  const fullPhrase = searchTerms.join(' ');
-  const exactMatches = [];
-  const phraseMatches = [];
-  const foundInHeader = [];
-  const foundInMeta = [];
-
-  data.forEach((result) => {
-    const title = (result.header || result.title).toLowerCase();
-    const metaContents = `${result.title} ${result.description} ${result.path.split('/').pop()}`.toLowerCase();
-
-    if (title.includes(fullPhrase)) {
-      exactMatches.push({minIdx: title.indexOf(fullPhrase), result});
-      return;
-    }
-
-    if (metaContents.includes(fullPhrase)) {
-      phraseMatches.push({minIdx: metaContents.indexOf(fullPhrase), result});
-      return;
-    }
-
-    let minIdx = -1;
-    let matchCount = 0;
-
-    searchTerms.forEach((term) => {
-      const idx = title.indexOf(term);
-      if (idx >= 0) {
-        matchCount++;
-        if (minIdx === -1 || idx < minIdx) minIdx = idx;
-      }
-    });
-
-    if (minIdx >= 0) {
-      foundInHeader.push({minIdx, result, matchCount });
-      return;
-    }
-
-    minIdx = -1;
-    matchCount = 0;
-
-    searchTerms.forEach((term) => {
-      const idx = metaContents.indexOf(term);
-      if (idx >= 0) {
-        matchCount++;
-        if (minIdx === -1 || idx < minIdx) minIdx = idx;
-      }
-    });
-
-    if (minIdx >= 0) {
-      foundInMeta.push({minIdx, result, matchCount });
-    }
-  });
-  // First, sort everything
-  const sorted = [
-    ...exactMatches.sort((a, b) => a.minIdx - b.minIdx),
-    ...phraseMatches.sort((a, b) => a.minIdx - b.minIdx),
-    ...foundInHeader.sort((a, b) => b.matchCount - a.matchCount || a.minIdx - b.minIdx),
-    ...foundInMeta.sort((a, b) => b.matchCount - a.matchCount || a.minIdx - b.minIdx),
-  ];
-
-  // Then deduplicate by title, keeping first occurrence (best ranked)
-  const seen = new Set();
-  const uniqueResults = [];
-  
-  sorted.forEach(item => {
-    const key = item.result.title.toLowerCase();  // Note: item.result.title, not item.title
-    if (!seen.has(key)) {
-      seen.add(key);
-      uniqueResults.push(item.result);  // Push the actual result, not the wrapper
-    }
-  });
-  
-  return uniqueResults;
-}
+// filterData: see ./blog-search-filter-data.js (unit-tested in Node)
 
 async function handleSearch(e, component, config) {
   const searchValue = e.target.value;
