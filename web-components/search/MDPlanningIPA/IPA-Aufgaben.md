@@ -10,14 +10,18 @@
 
 | # | Aufgabe | Soll (h) | Status |
 |---|---------|----------|--------|
-| 1.1 | Codebase-Analyse (`blog-search.js`, CSS, bestehende Tests) | 3 | [ ] |
-| 1.2 | `query-index.json` Metadaten analysieren – verfügbare Filterfelder identifizieren | 2 | [ ] |
-| 1.3 | Entwicklungsumgebung verifizieren (lokaler Dev-Server, Testing-Framework läuft) | 1 | [ ] |
-| 1.4 | Wireframe / Mockup entwerfen (erste Version, iterativ) | 5 | [ ] |
-| 1.5 | Arbeitsjournal Tag 1–2 schreiben & Dokumentation pflegen | 3 | [ ] |
+| 1.1 | Anforderungsanalyse – Detail-Spec durcharbeiten, Anforderungen in Tabelle oder Use-Case-/Kontextdiagramm dokumentieren (→ A01) | 2 | [ ] |
+| 1.2 | Projektmethode (Wasserfall) schriftlich begründen + Organigramm der Projektrollen erstellen (→ A01, A11) | 1 | [ ] |
+| 1.3 | Codebase-Analyse (`blog-search.js`, CSS, bestehende Tests) | 3 | [ ] |
+| 1.4 | `query-index.json` Metadaten analysieren – verfügbare Filterfelder identifizieren | 2 | [ ] |
+| 1.5 | Entwicklungsumgebung verifizieren (lokaler Dev-Server, Testing-Framework läuft) | 1 | [ ] |
+| 1.6 | Wireframe / Mockup entwerfen (erste Version, iterativ) | 4 | [ ] |
+| 1.7 | Arbeitsjournal Tag 1–2 schreiben & Dokumentation pflegen | 3 | [ ] |
 | – | Pufferzeit | 2 | – |
 
 **Notizen:**
+- Anforderungsanalyse: aus Detail-Spec eine strukturierte Requirements-Tabelle (funktional / nicht-funktional) oder Kontextdiagramm ableiten
+- Organigramm: Kandidat, Berufsbildner (Ingo Eichel), Experten, evtl. weitere Stakeholder
 - Bestehende Funktionen verstehen: `filterData()`, `renderResults()`, Shadow DOM Struktur
 - Metadatenfelder im `query-index.json`: Kategorie, Produkt, Autor, Publikationsdatum (bereits vorhanden), Artikel-Typ (noch nicht überall gesetzt)
 - Sicherstellen dass Chrome, Safari, Edge lokal testbar sind
