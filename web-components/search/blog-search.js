@@ -407,6 +407,44 @@ class BlogSearch extends HTMLElement {
       decorateIcons(this.shadowRoot);
     }
   }
+
+  generateFacets(data) {
+    const catSet = new Set();
+    const prodSet = new Set();
+    const authorSet = new Set();
+    const dateSet = new Set();
+    const typeSet = new Set();
+
+    data.forEach((article) => {
+      if (article.tags) {
+        try {
+          const tags = JSON.parse(article.tags);
+          if (Array.isArray(tags)) {
+            tags.forEach((tag) => {
+              if (tag) catSet.add(tag);
+            });
+          }
+        } catch {
+          // eslint-disable-next-line no-console
+        }
+      }
+      if (article.adobeCloud) prodSet.add(article.adobeCloud);
+      if (article.adobeApp) prodSet.add(article.adobeApp);
+      if (article.author) authorSet.add(article.author);
+      if (article.sortDate) dateSet.add(article.sortDate);
+      if (article.articleType) typeSet.add(article.articleType);
+    });
+
+    const sorted = (set) => [...set].sort();
+
+    return {
+      cat: sorted(catSet),
+      prod: sorted(prodSet),
+      author: sorted(authorSet),
+      date: sorted(dateSet),
+      type: sorted(typeSet),
+    };
+  }
 }
 
 customElements.define('blog-search', BlogSearch);

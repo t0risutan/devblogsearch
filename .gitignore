@@ -8,4 +8,4 @@ node_modules/*
 .idea
 sorted-index/analyze-tags.js
 agents/*
-web-components/search/MDPlanningIPA/*
+web-components/MDPlanningIPA/*
