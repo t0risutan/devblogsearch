@@ -1,8 +1,10 @@
 import { getLibs } from '../../scripts/devblog/devblog.js';
-import { filterData } from './blog-search-filter-data.js';
+import filterData from './blog-search-filter-data.js';
 
 // These will be loaded dynamically in the functions that need them
-let createOptimizedPicture, decorateIcons, fetchPlaceholders;
+let createOptimizedPicture;
+let decorateIcons;
+let fetchPlaceholders;
 let currentRenderId = 0;
 let searchDebounceTimer;
 
@@ -12,7 +14,7 @@ async function loadMiloUtils() {
     const utils = await import(`${miloLibs}/utils/utils.js`);
     createOptimizedPicture = utils.createOptimizedPicture;
     decorateIcons = utils.decorateIcons;
-    
+
     // Try to get fetchPlaceholders, fallback to empty function
     fetchPlaceholders = utils.fetchPlaceholders || (() => Promise.resolve({}));
   }
@@ -79,7 +81,7 @@ function highlightTextElements(terms, elements) {
   });
 }
 
-export async function fetchData(source) {
+async function fetchData(source) {
   const response = await fetch(source);
   if (!response.ok) {
     // eslint-disable-next-line no-console
@@ -158,10 +160,10 @@ async function renderResult(result, searchTerms, titleTag) {
   li.append(a);
   return li;
 }
-  
+
 function clearSearchResults(component) {
   // looks for the results in theshadow dom first else it will fallback to the light dom
-  let searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
+  const searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
   if (searchResults) {
     searchResults.innerHTML = '';
   }
@@ -178,40 +180,37 @@ function clearSearch(component) {
 }
 
 async function renderResults(component, config, filteredData, searchTerms) {
-  const renderId = ++currentRenderId;
+  currentRenderId += 1;
+  const renderId = currentRenderId;
 
   clearSearchResults(component);
   // looks for the results in theshadow dom first else it will fallback to the light dom
-  let searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
+  const searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
   if (!searchResults) return;
 
   const headingTag = searchResults.dataset.h;
 
   if (filteredData.length) {
     searchResults.classList.remove('no-results');
-    
+
     // Render all results in parallel
     const results = await Promise.all(
-      filteredData.map(result => renderResult(result, searchTerms, headingTag))
+      filteredData.map((result) => renderResult(result, searchTerms, headingTag)),
     );
-    
+
     // Check if this render is still current (not cancelled by a newer search)
-    if (renderId !== currentRenderId) return;  // ← ADD THIS CHECK
-    
+    if (renderId !== currentRenderId) return;
+
     // Append all results at once
-    results.forEach(li => searchResults.append(li));
+    results.forEach((li) => searchResults.append(li));
   } else {
-    if (renderId !== currentRenderId) return;  // ← ADD THIS CHECK ALSO
+    if (renderId !== currentRenderId) return;
 
     const noResultsMessage = document.createElement('li');
     searchResults.classList.add('no-results');
     noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
     searchResults.append(noResultsMessage);
   }
-}
-
-function compareFound(hit1, hit2) {
-  return hit1.minIdx - hit2.minIdx;
 }
 
 // filterData: see ./blog-search-filter-data.js (unit-tested in Node)
@@ -255,6 +254,7 @@ async function handleSearch(e, component, config) {
     const filteredData = filterData(searchTerms, scopedData);
     await renderResults(component, config, filteredData, searchTerms);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error in handleSearch:', error);
   }
 }
@@ -276,7 +276,7 @@ function searchInput(component, config) {
   input.setAttribute('aria-label', searchPlaceholder);
 
   input.addEventListener('input', (e) => {
-    const currentTarget = e.target;  // Capture the input element reference
+    const currentTarget = e.target; // Capture the input element reference
     clearTimeout(searchDebounceTimer);
     searchDebounceTimer = setTimeout(() => {
       // Create a fake event object with the target
@@ -330,56 +330,56 @@ function searchBox(component, config) {
 
   return box;
 }
-  
+
 class BlogSearch extends HTMLElement {
-  async connectedCallback() {               // expected to be synchronous (should not be asynchronous)
+  // Note: async connectedCallback is valid; the browser awaits the returned promise.
+  async connectedCallback() {
     // shadow dom gets created first
     this.attachShadow({ mode: 'open' });
-    
+
     if (searchParams.get('q')) {
       searchParams.delete('q');
       if (window.history.replaceState) {
         const url = new URL(window.location.href);
         url.search = searchParams.toString();
         window.history.replaceState({}, '', url.toString());
-      } 
+      }
     }
 
     await loadMiloUtils();
-    
+
     // the css gets loaded into the shadow dom
     const cssResponse = await fetch('/web-components/search/blog-search.css');
     const cssText = await cssResponse.text();
     const styleSheet = new CSSStyleSheet();
     await styleSheet.replace(cssText);
-    this.shadowRoot.adoptedStyleSheets = [styleSheet]; 
-    
+    this.shadowRoot.adoptedStyleSheets = [styleSheet];
+
     const placeholders = await fetchPlaceholders();
     const source = this.getAttribute('data-source') || '/en/query-index.json';
-    
-    
+
     // Detect if this search should be nav-style
     const isNavSearch = document.querySelector('header') || this.classList.contains('nav-search');
     if (isNavSearch) {
       this.classList.add('nav-search');
-      
+
       // For nav search, everything goes in Shadow DOM but uses positioning to span full width
       const topNav = document.querySelector('.feds-topnav');
       if (topNav) {
         topNav.classList.add('has-blog-nav-search');
-        
+
         // creates nav-search-container which is important for the positioning
         const searchContainer = document.createElement('div');
         searchContainer.className = 'nav-search-container';
-        
+
         const icon = searchIcon();
         const input = searchInput(this, { source, placeholders });
         const results = searchResultsContainer(this);
-        
+
         // adds all elements to the shadow dom
         searchContainer.append(icon, input, results);
         this.shadowRoot.appendChild(searchContainer);
-        
+
         // Close search on escape key
         input.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
@@ -406,7 +406,6 @@ class BlogSearch extends HTMLElement {
     if (typeof decorateIcons === 'function') {
       decorateIcons(this.shadowRoot);
     }
-    
   }
 }
 
