@@ -331,6 +331,15 @@ function searchBox(component, config) {
   return box;
 }
 
+/**
+ * @typedef {Object} ActiveFilters
+ * @property {string[]} cat
+ * @property {string[]} prod
+ * @property {string[]} author
+ * @property {string[]} date
+ * @property {string[]} type
+ */
+
 class BlogSearch extends HTMLElement {
   // Note: async connectedCallback is valid; the browser awaits the returned promise.
   async connectedCallback() {
@@ -408,6 +417,7 @@ class BlogSearch extends HTMLElement {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   generateFacets(data) {
     const catSet = new Set();
     const prodSet = new Set();
@@ -445,6 +455,53 @@ class BlogSearch extends HTMLElement {
       type: sorted(typeSet),
     };
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  applyFilters(data, activeFilters) {
+    return data.filter((article) => (
+      Object.entries(activeFilters).every(([group, activeValues]) => {
+        if (activeValues.length === 0) return true;
+
+        if (group === 'date') {
+          if (!article.sortDate) return false;
+          const articleDate = new Date(article.sortDate);
+          const now = new Date();
+          const cutoff = new Date(now);
+          const preset = activeValues[0];
+          if (preset === 'last-week') cutoff.setDate(now.getDate() - 7);
+          else if (preset === 'last-month') cutoff.setMonth(now.getMonth() - 1);
+          else if (preset === 'last-year') cutoff.setFullYear(now.getFullYear() - 1);
+          return articleDate >= cutoff;
+        }
+
+        let values = [];
+        switch (group) {
+          case 'cat':
+            if (article.tags) {
+              try {
+                const parsed = JSON.parse(article.tags);
+                if (Array.isArray(parsed)) values = parsed.filter(Boolean);
+              } catch { /* invalid JSON, no match */ }
+            }
+            break;
+          case 'prod':
+            values = [article.adobeCloud, article.adobeApp].filter(Boolean);
+            break;
+          case 'author':
+            if (article.author) values = [article.author];
+            break;
+          case 'type':
+            if (article.articleType) values = [article.articleType];
+            break;
+          default:
+            break;
+        }
+
+        return activeValues.some((v) => values.includes(v));
+      })
+    ));
+  }
 }
 
 customElements.define('blog-search', BlogSearch);
+export default BlogSearch;
