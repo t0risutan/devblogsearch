@@ -501,6 +501,17 @@ class BlogSearch extends HTMLElement {
       })
     ));
   }
+
+  loadFiltersFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      cat: params.getAll('cat').filter(Boolean),
+      prod: params.getAll('prod').filter(Boolean),
+      author: params.getAll('author').filter(Boolean),
+      date: params.getAll('date').filter(Boolean),
+      type: params.getAll('type').filter(Boolean),
+    }
+  }
 }
 
 customElements.define('blog-search', BlogSearch);
