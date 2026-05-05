@@ -91,6 +91,10 @@ export function addDevBlogBlockOverrides(overrides) {
     milo: 'author-header',
     blog: 'author-header-post-process',
   });
+  overrides.push({
+    milo: 'authors-list',
+    blog: 'authors-list',
+  });
   return overrides;
 }
 
@@ -110,6 +114,7 @@ export const [setLibs, getLibs] = (() => {
         const local = hostname.includes('local');
         if (!(hlxPipeline || local)) return prodLibs;
         const branch = new URLSearchParams(search).get('milolibs') || 'main';
+        if (!/^[a-zA-Z0-9_-]+$/.test(branch)) throw new Error('Invalid branch name.');
         if (branch === 'local') return 'http://localhost:6456/libs';
         return branch.includes('--') ? `https://${branch}.aem.live/libs` : `https://${branch}--milo--adobecom.aem.live/libs`;
       })();
@@ -581,14 +586,36 @@ function redirectTaggedPath() {
   window.location = `/en/topics/${tag}`;
 }
 
+function buildAuthorsListPage(mainEl) {
+  document.title = 'Authors';
+
+  // Clear out any $AUTHORS$ placeholder text and empty sections
+  mainEl.innerHTML = '';
+
+  // Build a section with the authors-list block and inject it
+  const section = document.createElement('div');
+  const authorsListBlock = buildBlock('authors-list', []);
+  section.append(authorsListBlock);
+  mainEl.append(section);
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
   addLangRoot();
   setupTaxonomyProxy();
   eagerLoadCssForLCP();
   const mainEl = document.querySelector('main');
-  if (window.location.pathname.match(/\/authors\//)) {
+  if (window.location.pathname.match(/\/authors(\/|$)/)) {
     const path = window.location.pathname;
+
+    // Authors list root page — inject authors-list block, no author-header needed
+    if (path.replace(/\/$/, '') === SITE.authorsRoot) {
+      buildAuthorsListPage(mainEl);
+      loadWebComponents();
+      setupDefaultImages();
+      watchAutoLinks();
+      return;
+    }
 
   try {
     const res = await fetch(`${path}.plain.html`);
