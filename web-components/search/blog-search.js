@@ -512,6 +512,24 @@ class BlogSearch extends HTMLElement {
       type: params.getAll('type').filter(Boolean),
     }
   }
+
+  updateURLState(activeFilters) {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+
+    const newParams = new URLSearchParams();
+
+    if (q) newParams.set('q', q);
+
+    Object.entries(activeFilters).forEach(([group, values]) => {
+      if (values.length > 0) values.forEach((value) => 
+        newParams.append(group, value));
+    });
+
+    const url = new URL(window.location.href);
+    url.search = newParams.toString();
+    window.history.replaceState({}, '', url.toString());
+  }
 }
 
 customElements.define('blog-search', BlogSearch);
