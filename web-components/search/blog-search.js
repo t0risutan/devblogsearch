@@ -502,6 +502,7 @@ class BlogSearch extends HTMLElement {
     ));
   }
 
+  // eslint-disable-next-line class-methods-use-this
   loadFiltersFromURL() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -510,9 +511,10 @@ class BlogSearch extends HTMLElement {
       author: params.getAll('author').filter(Boolean),
       date: params.getAll('date').filter(Boolean),
       type: params.getAll('type').filter(Boolean),
-    }
+    };
   }
 
+  // eslint-disable-next-line class-methods-use-this
   updateURLState(activeFilters) {
     const params = new URLSearchParams(window.location.search);
     const q = params.get('q');
@@ -522,8 +524,11 @@ class BlogSearch extends HTMLElement {
     if (q) newParams.set('q', q);
 
     Object.entries(activeFilters).forEach(([group, values]) => {
-      if (values.length > 0) values.forEach((value) => 
-        newParams.append(group, value));
+      if (values.length > 0) {
+        values.forEach((value) => {
+          newParams.append(group, value);
+        });
+      }
     });
 
     const url = new URL(window.location.href);
