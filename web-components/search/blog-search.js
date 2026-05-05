@@ -535,6 +535,67 @@ class BlogSearch extends HTMLElement {
     url.search = newParams.toString();
     window.history.replaceState({}, '', url.toString());
   }
+
+  renderFilterBar(facets) {
+    const filterBar = document.createElement('div');
+    filterBar.className = 'filter-bar';
+
+    Object.entries(facets).forEach(([group, values]) => {
+      if (group === 'date') {
+        const dateSelect = document.createElement('select');
+        [
+          { value: 'last-week', label: 'Last week' },
+          { value: 'last-month', label: 'Last month' },
+          { value: 'last-year', label: 'Last year' },
+        ].forEach(({ value, label }) => {
+          const option = document.createElement('option');
+          option.value = value;
+          option.textContent = label;
+          dateSelect.append(option);
+        });
+        filterBar.append(dateSelect);
+        return;
+      }
+
+      if (values.length === 0) return;
+      const toggle = document.createElement('button');
+
+      toggle.className = 'filter-dropdown-toggle';
+      toggle.setAttribute('aria-expanded', 'false');
+      const labels = { cat: 'Category', prod: 'Product', author: 'Author', type: 'Type' };
+      toggle.textContent = labels[group];
+
+      const menu = document.createElement('ul');
+
+      values.forEach((value) => {
+        const item = document.createElement('li');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = value;
+        item.append(checkbox);
+
+        const label = document.createElement('label');
+        label.textContent = value;
+        item.append(label);
+
+        menu.append(item);
+      });
+
+      toggle.addEventListener('click', () => {
+        const currentlyOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!currentlyOpen));
+        menu.classList.toggle('show', !currentlyOpen);
+      });
+
+      const dropdown = document.createElement('div');
+      dropdown.className = 'filter-dropdown';
+      dropdown.append(toggle, menu);
+      filterBar.append(dropdown);
+    });
+    this.shadowRoot.append(filterBar);
+    return filterBar;
+  }
 }
 
 customElements.define('blog-search', BlogSearch);
