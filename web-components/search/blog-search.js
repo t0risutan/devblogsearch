@@ -454,9 +454,9 @@ class BlogSearch extends HTMLElement {
       }
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (searchInput && searchInput.value.length >= 3) {
-        handleSearch({ target: searchInput }, this, this.config);
+      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (queryInput && queryInput.value.length >= 3) {
+        handleSearch({ target: queryInput }, this, this.config);
       }
     });
 
@@ -466,9 +466,9 @@ class BlogSearch extends HTMLElement {
       this.activeFilters[group] = this.activeFilters[group].filter((v) => v !== value);
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (searchInput && searchInput.value.length >= 3) {
-        handleSearch({ target: searchInput }, this, this.config);
+      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (queryInput && queryInput.value.length >= 3) {
+        handleSearch({ target: queryInput }, this, this.config);
       }
     });
 
@@ -479,9 +479,9 @@ class BlogSearch extends HTMLElement {
       });
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (searchInput && searchInput.value.length >= 3) {
-        handleSearch({ target: searchInput }, this, this.config);
+      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (queryInput && queryInput.value.length >= 3) {
+        handleSearch({ target: queryInput }, this, this.config);
       }
     });
   }
