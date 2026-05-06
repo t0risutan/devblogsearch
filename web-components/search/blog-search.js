@@ -442,8 +442,19 @@ class BlogSearch extends HTMLElement {
     this.renderFilterBar(facets);
     this.renderChips(this.activeFilters);
     this.updateFilterCounts(this.allData);
-
+    
     this.shadowRoot.querySelector('.filter-bar').addEventListener('change', (e) => {
+      if (e.target.tagName === 'SELECT') {
+        const { value } = e.target;
+        this.activeFilters.date = value ? [value] : [];
+        this.renderChips(this.activeFilters);
+        this.updateURLState(this.activeFilters);
+        const queryInput = this.shadowRoot.querySelector('input[type="search"]');
+        if (queryInput && queryInput.value.length >= 3) {
+          handleSearch({ target: queryInput }, this, this.config);
+        }
+        return;
+      }
       if (e.target.type !== 'checkbox') return;
       const { group } = e.target.closest('.filter-dropdown').dataset;
       const { value } = e.target;
@@ -612,6 +623,10 @@ class BlogSearch extends HTMLElement {
     Object.entries(facets).forEach(([group, values]) => {
       if (group === 'date') {
         const dateSelect = document.createElement('select');
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'All dates';
+        dateSelect.append(defaultOption);
         [
           { value: 'last-week', label: 'Last week' },
           { value: 'last-month', label: 'Last month' },
@@ -669,9 +684,8 @@ class BlogSearch extends HTMLElement {
   }
 
   renderChips(activeFilters) {
-    if (!Object.values(activeFilters).some((values) => values.length > 0)) return;
-
     this.shadowRoot.querySelector('.filter-chips')?.remove();
+    if (!Object.values(activeFilters).some((values) => values.length > 0)) return;
     const chipsContainer = document.createElement('div');
     chipsContainer.className = 'filter-chips';
 
