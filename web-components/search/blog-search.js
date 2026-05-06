@@ -590,6 +590,8 @@ class BlogSearch extends HTMLElement {
 
       const dropdown = document.createElement('div');
       dropdown.className = 'filter-dropdown';
+      // used to identify the group of the filter
+      dropdown.dataset.group = group; 
       dropdown.append(toggle, menu);
       filterBar.append(dropdown);
     });
@@ -630,6 +632,26 @@ class BlogSearch extends HTMLElement {
     });
     chipsContainer.append(clearButton);
     this.shadowRoot.querySelector('.filter-bar')?.append(chipsContainer);
+  }
+
+  getArticleValues(article, group) {
+    switch (group) {
+      case 'cat':
+        if (article.tags) {
+          try {
+            return JSON.parse(article.tags).filter(Boolean);
+          } catch { /* invalid JSON, no match */ }
+        }
+        return [];
+      case 'prod':
+        return [article.adobeCloud, article.adobeApp].filter(Boolean);
+      case 'author':
+        return article.author ? [article.author] : [];
+      case 'type':
+        return article.articleType ? [article.articleType] : [];
+      default:
+        return [];
+    }
   }
 }
 customElements.define('blog-search', BlogSearch);
