@@ -591,7 +591,7 @@ class BlogSearch extends HTMLElement {
       const dropdown = document.createElement('div');
       dropdown.className = 'filter-dropdown';
       // used to identify the group of the filter
-      dropdown.dataset.group = group; 
+      dropdown.dataset.group = group;
       dropdown.append(toggle, menu);
       filterBar.append(dropdown);
     });
@@ -634,6 +634,7 @@ class BlogSearch extends HTMLElement {
     this.shadowRoot.querySelector('.filter-bar')?.append(chipsContainer);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   getArticleValues(article, group) {
     switch (group) {
       case 'cat':
@@ -652,6 +653,32 @@ class BlogSearch extends HTMLElement {
       default:
         return [];
     }
+  }
+
+  updateFilterCounts(data) {
+    const filterBar = this.shadowRoot.querySelector('.filter-bar');
+    if (!filterBar) return;
+    const filterDropdowns = filterBar.querySelectorAll('.filter-dropdown');
+    filterDropdowns.forEach((dropdown) => {
+      const { group } = dropdown.dataset;
+
+      dropdown.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        const { value } = checkbox;
+        const count = data.filter((article) => (
+          this.getArticleValues(article, group).includes(value)
+        )).length;
+
+        const label = checkbox.nextElementSibling;
+        label.textContent = '';
+
+        const textNode = document.createTextNode(`${value} `);
+        const countSpan = document.createElement('span');
+        countSpan.className = 'filter-count';
+        countSpan.textContent = `(${count})`;
+
+        label.append(textNode, countSpan);
+      });
+    });
   }
 }
 customElements.define('blog-search', BlogSearch);
