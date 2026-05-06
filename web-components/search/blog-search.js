@@ -341,6 +341,17 @@ function searchBox(component, config) {
  */
 
 class BlogSearch extends HTMLElement {
+  constructor() {
+    super();
+    this.activeFilters = {
+      cat: [],
+      prod: [],
+      author: [],
+      date: [],
+      type: [],
+    };
+  }
+
   // Note: async connectedCallback is valid; the browser awaits the returned promise.
   async connectedCallback() {
     // shadow dom gets created first
@@ -415,6 +426,50 @@ class BlogSearch extends HTMLElement {
     if (typeof decorateIcons === 'function') {
       decorateIcons(this.shadowRoot);
     }
+
+    // Integration of filter functionality within the shadow DOM
+    // load data
+    this.allData = await fetchData(source);
+    if (!this.allData) return;
+
+    // load active filters from URL
+    this.activeFilters = this.loadFiltersFromURL();
+
+    // render filter bar
+    const facets = this.generateFacets(this.allData);
+    this.renderFilterBar(facets);
+    this.renderChips(this.activeFilters);
+    this.updateFilterCounts(this.allData);
+
+    this.shadowRoot.querySelector('.filter-bar').addEventListener('change', (e) => {
+      if (e.target.type !== 'checkbox') return;
+      const { group } = e.target.closest('.filter-dropdown').dataset.group;
+      const { value } = e.target;
+      if (e.target.checked) {
+        this.activeFilters[group].push(value);
+      } else {
+        this.activeFilters[group] = this.activeFilters[group].filter((v) => v !== value);
+      }
+      this.renderChips(this.activeFilters);
+      this.updateURLState(this.activeFilters);
+    });
+
+    // X-Button on filter chips
+    this.addEventListener('remove-filter', (e) => {
+      const { group, value } = e.detail;
+      this.activeFilters[group] = this.activeFilters[group].filter((v) => v !== value);
+      this.renderChips(this.activeFilters);
+      this.updateURLState(this.activeFilters);
+    });
+
+    // Clear all filters button
+    this.addEventListener('clear-all-filters', () => {
+      Object.keys(this.activeFilters).forEach((key) => {
+        this.activeFilters[key] = [];
+      });
+      this.renderChips(this.activeFilters);
+      this.updateURLState(this.activeFilters);
+    });
   }
 
   // eslint-disable-next-line class-methods-use-this
