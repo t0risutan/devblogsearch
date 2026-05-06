@@ -252,7 +252,8 @@ async function handleSearch(e, component, config) {
     }
 
     const filteredData = filterData(searchTerms, scopedData);
-    await renderResults(component, config, filteredData, searchTerms);
+    const facetFilteredData = component.applyFilters(filteredData, component.activeFilters);
+    await renderResults(component, config, facetFilteredData, searchTerms);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error in handleSearch:', error);
@@ -443,7 +444,7 @@ class BlogSearch extends HTMLElement {
 
     this.shadowRoot.querySelector('.filter-bar').addEventListener('change', (e) => {
       if (e.target.type !== 'checkbox') return;
-      const { group } = e.target.closest('.filter-dropdown').dataset.group;
+      const { group } = e.target.closest('.filter-dropdown').dataset;
       const { value } = e.target;
       if (e.target.checked) {
         this.activeFilters[group].push(value);
