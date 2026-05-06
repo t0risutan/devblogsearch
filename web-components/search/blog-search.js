@@ -378,6 +378,7 @@ class BlogSearch extends HTMLElement {
 
     const placeholders = await fetchPlaceholders();
     const source = this.getAttribute('data-source') || '/en/query-index.json';
+    this.config = { source, placeholders };
 
     // Detect if this search should be nav-style
     const isNavSearch = document.querySelector('header') || this.classList.contains('nav-search');
@@ -453,6 +454,10 @@ class BlogSearch extends HTMLElement {
       }
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
+      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (searchInput && searchInput.value.length >= 3) {
+        handleSearch({ target: searchInput }, this, this.config);
+      }
     });
 
     // X-Button on filter chips
@@ -461,6 +466,10 @@ class BlogSearch extends HTMLElement {
       this.activeFilters[group] = this.activeFilters[group].filter((v) => v !== value);
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
+      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (searchInput && searchInput.value.length >= 3) {
+        handleSearch({ target: searchInput }, this, this.config);
+      }
     });
 
     // Clear all filters button
@@ -470,6 +479,10 @@ class BlogSearch extends HTMLElement {
       });
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
+      const searchInput = this.shadowRoot.querySelector('input[type="search"]');
+      if (searchInput && searchInput.value.length >= 3) {
+        handleSearch({ target: searchInput }, this, this.config);
+      }
     });
   }
 
