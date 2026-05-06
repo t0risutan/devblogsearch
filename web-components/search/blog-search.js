@@ -596,7 +596,41 @@ class BlogSearch extends HTMLElement {
     this.shadowRoot.append(filterBar);
     return filterBar;
   }
-}
 
+  renderChips(activeFilters) {
+    if (!Object.values(activeFilters).some((values) => values.length > 0)) return;
+
+    this.shadowRoot.querySelector('.filter-chips')?.remove();
+    const chipsContainer = document.createElement('div');
+    chipsContainer.className = 'filter-chips';
+
+    Object.entries(activeFilters).forEach(([group, values]) => {
+      values.forEach((value) => {
+        const chip = document.createElement('span');
+        chip.className = 'filter-chip';
+        chip.textContent = value;
+
+        const removeButton = document.createElement('button');
+        removeButton.className = 'filter-chip-remove';
+        removeButton.textContent = 'x';
+        removeButton.addEventListener('click', () => {
+          this.dispatchEvent(new CustomEvent('remove-filter', { detail: { group, value }, bubbles: true }));
+        });
+
+        chip.append(removeButton);
+        chipsContainer.append(chip);
+      });
+    });
+
+    const clearButton = document.createElement('button');
+    clearButton.className = 'filter-clear-all';
+    clearButton.textContent = 'Clear all';
+    clearButton.addEventListener('click', () => {
+      this.dispatchEvent(new CustomEvent('clear-all-filters', { bubbles: true }));
+    });
+    chipsContainer.append(clearButton);
+    this.shadowRoot.querySelector('.filter-bar')?.append(chipsContainer);
+  }
+}
 customElements.define('blog-search', BlogSearch);
 export default BlogSearch;
