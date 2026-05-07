@@ -81,18 +81,25 @@ function highlightTextElements(terms, elements) {
   });
 }
 
+// eslint-disable-next-line no-console
+const logError = (ctx, msg, err = null) => console.error(`[blog-search][${new Date().toISOString()}] ${ctx}: ${msg}`, err || '');
+
 async function fetchData(source) {
-  const response = await fetch(source);
+  let response;
+  try {
+    response = await fetch(source);
+  } catch (err) {
+    logError('fetchData', `network error fetching ${source}`, err);
+    return null;
+  }
   if (!response.ok) {
-    // eslint-disable-next-line no-console
-    console.error('error loading API response', response);
+    logError('fetchData', 'non-2xx response', response);
     return null;
   }
 
   const json = await response.json();
   if (!json) {
-    // eslint-disable-next-line no-console
-    console.error('empty API response', source);
+    logError('fetchData', `empty response from ${source}`);
     return null;
   }
 
@@ -255,8 +262,7 @@ async function handleSearch(e, component, config) {
     const facetFilteredData = component.applyFilters(filteredData, component.activeFilters);
     await renderResults(component, config, facetFilteredData, searchTerms);
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Error in handleSearch:', error);
+    logError('handleSearch', error.message, error);
   }
 }
 
@@ -432,7 +438,10 @@ class BlogSearch extends HTMLElement {
     // Integration of filter functionality within the shadow DOM
     // load data
     this.allData = await fetchData(source);
-    if (!this.allData) return;
+    if (!this.allData) {
+      logError('connectedCallback', `data load failed for ${source}, filter bar skipped`);
+      return;
+    }
 
     // load active filters from URL
     this.activeFilters = this.loadFiltersFromURL();
@@ -442,7 +451,7 @@ class BlogSearch extends HTMLElement {
     this.renderFilterBar(facets);
     this.renderChips(this.activeFilters);
     this.updateFilterCounts(this.allData);
-    
+
     this.shadowRoot.querySelector('.filter-bar').addEventListener('change', (e) => {
       if (e.target.tagName === 'SELECT') {
         const { value } = e.target;
