@@ -668,6 +668,8 @@ export async function buildDevblogAutoBlocks() {
     // search page- leave search page as is
   } else if(window.location.pathname.match(/\/gnav$\//)) {
     // gnav page- leave gnav page as is
+  } else if (document.head.querySelector('meta[name="template"][content="404"]')) {
+  // 404 page — do nothing, let Milo's 404.js handle it
   } else {
     // article page
     await buildArticleHeader(mainEl);
