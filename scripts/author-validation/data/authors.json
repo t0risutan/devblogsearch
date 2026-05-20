@@ -745,6 +745,26 @@
     "isComplete": true
   },
   {
+    "name": "Sonya P",
+    "slug": "sonya-p",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/sonya-p",
+    "title": "Software Developer &#x26; Tech Content Creator.",
+    "linkedin": "https://www.linkedin.com/in/sonyablibli",
+    "links": [],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": true,
+    "hasDoc": true,
+    "docUrl": "/en/authors/sonya-p",
+    "docImage": "./media_1ae343503462921003c6e429758b673abd30855ec.jpg?width=750&#x26;format=jpg&#x26;optimize=medium",
+    "image": "/images/authors/sonya-p.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections",
+      "date": "2026-05-19"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Steve Kwak",
     "slug": "steve-kwak",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/steve-kwak",
