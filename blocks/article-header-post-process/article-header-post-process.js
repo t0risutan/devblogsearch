@@ -42,9 +42,19 @@ export default async function init(blockEl) {
   function extractYouTubeId(url = '') {
     try {
       const p = new URL(url);
+
       if (p.hostname.includes('youtu.be')) return p.pathname.replace('/', '').split('?')[0];
-      if (p.hostname.includes('youtube.com')) return p.searchParams.get('v');
+
+      // youtube.com/watch?v=<id> & youtube.com/shorts/<id>
+      if (p.hostname.includes('youtube.com')) {
+        const watchId = p.searchParams.get('v');
+        if (watchId) return watchId;
+
+        const shortsMatch = p.pathname.match(/\/shorts\/([^/?]+)/);
+        if (shortsMatch) return shortsMatch[1];
+      }
     } catch { /* noop */ }
+
     return null;
   }
 
