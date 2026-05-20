@@ -1,8 +1,27 @@
 {
-  "total": 86,
+  "total": 87,
   "offset": 0,
-  "limit": 86,
+  "limit": 87,
   "data": [
+    {
+      "path": "/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections",
+      "image": "/default-meta-image.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections",
+      "author": "Sonya P",
+      "description": "Editor’s Note: Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!",
+      "tags": "[\"add-on\",\"extensibility\",\"review process\",\"developer distribution\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1779287128",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1779148800",
+      "sortDate": "2026-05-19",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": ""
+    },
     {
       "path": "/en/publish/2026/05/help-your-adobe-express-add-on-reach-enterprise-users-with-granular-admin-approvals",
       "image": "/en/publish/2026/05/media_13a4c9d41e9648c8c0ec28d344e35261ef47f9038.jpg?width=1200&format=pjpg&optimize=medium",
@@ -1658,5 +1677,5 @@
     "adobeApp"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-19T12:21:25.371Z"
+  "generatedAt": "2026-05-20T14:45:23.311Z"
 }
