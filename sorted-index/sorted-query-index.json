@@ -5,7 +5,7 @@
   "data": [
     {
       "path": "/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections",
-      "image": "https://i.ytimg.com/vi/hRNmOtOWna0/maxresdefault.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/default-meta-image.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections",
       "author": "Sonya P",
@@ -1677,5 +1677,5 @@
     "adobeApp"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-20T15:06:53.980Z"
+  "generatedAt": "2026-05-20T15:19:42.164Z"
 }
