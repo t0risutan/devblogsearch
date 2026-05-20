@@ -48,6 +48,8 @@ export default async function init(blockEl) {
 
       if (ytUrl.includes('youtu.be/')) {
         videoId = ytUrl.split('youtu.be/')[1]?.split(/[?&]/)[0] || '';
+      } else if (ytUrl.includes('/shorts/')) {
+        videoId = ytUrl.split('/shorts/')[1]?.split(/[?&]/)[0] || '';
       } else {
         videoId = ytUrl.match(/[?&]v=([^&]+)/)?.[1] || '';
       }

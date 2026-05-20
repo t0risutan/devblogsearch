@@ -572,6 +572,10 @@ function getYoutubeVideoId(url = '') {
   if (url.includes('youtu.be/')) {
     return url.split('youtu.be/')[1]?.split(/[?&]/)[0] || '';
   }
+
+  if (url.includes('/shorts/')) {
+    return url.split('/shorts/')[1]?.split(/[?&]/)[0] || '';
+  }
   return url.match(/[?&]v=([^&]+)/)?.[1] || '';
 }
 

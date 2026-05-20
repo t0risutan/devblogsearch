@@ -6,7 +6,7 @@ const miloBlock = await import(`${getLibs()}/blocks/featured-article/featured-ar
 const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
 
 const extractYouTubeId = (url = '') =>
-  url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)?.[1];
+  url.match(/(?:youtube\.com\/watch\?v=|youtube\.com\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/)?.[1];
 
 const isGif = (url = '') => /\.gif(\?.*)?$/i.test(url);
 
