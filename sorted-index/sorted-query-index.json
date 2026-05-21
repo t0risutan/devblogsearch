@@ -153,7 +153,7 @@
       "tags": "[\"Adobe-UXP\",\"adobe-creative-cloud-plugins\",\"plugin-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1778681177",
+      "lastModified": "1779372646",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772755200",
       "sortDate": "2026-03-06",
@@ -161,7 +161,7 @@
       "updatedDate": "",
       "adobeCloud": "Creative Cloud",
       "adobeApp": "Photoshop, Premiere Pro, InDesign",
-      "mediaUrl": ""
+      "mediaUrl": "https://youtu.be/yyQLXh-kCGY"
     },
     {
       "path": "/en/publish/2026/03/from-local-to-live-how-to-publish-your-adobe-express-add-on",
@@ -173,7 +173,7 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1778680587",
+      "lastModified": "1779372747",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772582400",
       "sortDate": "2026-03-04",
@@ -181,7 +181,7 @@
       "updatedDate": "",
       "adobeCloud": "",
       "adobeApp": "",
-      "mediaUrl": ""
+      "mediaUrl": "https://youtu.be/lm02Mowy9uo"
     },
     {
       "path": "/en/publish/2026/02/new-app-builder-console-features-logs-ui-and-cdn-management",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-21T13:59:22.156Z"
+  "generatedAt": "2026-05-21T14:15:02.880Z"
 }
