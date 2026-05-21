@@ -625,6 +625,19 @@ function buildMediaElement({description = '', image, imageAlt, title, eager}) {
 
     return video;
   }
+    // TODO: remove once Shorts thumbnail extraction is fixed
+  if (title.includes('How to Get Your Adobe Express Add-on Approved:')) {
+    const tempVideoId = 'hRNmOtOWna0';
+    const img = document.createElement('img');
+
+    img.src = `https://i.ytimg.com/vi/${tempVideoId}/maxresdefault.jpg`;
+    img.alt = imageAlt || title;
+    img.loading = eager ? 'eager' : 'lazy';
+    img.style.cssText = `width: 100%; height: 100%; object-fit: initial;`;
+    img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${tempVideoId}/hqdefault.jpg`; };
+
+    return img;
+  }
   // Default CMS image
   return createOptimizedPicture(image,imageAlt || title,eager,[{ width: '750' }]);
 }
