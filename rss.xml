@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 14:12:27 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 05:38:39 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -18,8 +18,8 @@
       <description><![CDATA[Editor’s Note: Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!]]></description>
       <dc:creator><![CDATA[Sonya P]]></dc:creator>
       <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/default-meta-image.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/default-meta-image.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/vi/hRNmOtOWna0/maxresdefault.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/vi/hRNmOtOWna0/maxresdefault.jpg" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Help Your Adobe Express Add-on Reach Enterprise Users with Granular Admin Approvals]]></title>
