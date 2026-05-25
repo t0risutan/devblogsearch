@@ -145,7 +145,7 @@
     },
     {
       "path": "/en/publish/2026/03/introducing-webview-ui-in-bolt-uxp-build-richer-adobe-plugins-faster",
-      "image": "/default-meta-image.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/yyQLXh-kCGY/maxresdefault.jpg",
       "date": "",
       "title": "Introducing Webview UI in Bolt UXP: Build Richer Adobe Plugins Faster",
       "author": "Ingo Eichel",
@@ -153,7 +153,7 @@
       "tags": "[\"Adobe-UXP\",\"adobe-creative-cloud-plugins\",\"plugin-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1779372646",
+      "lastModified": "1779711144",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772755200",
       "sortDate": "2026-03-06",
@@ -161,11 +161,11 @@
       "updatedDate": "",
       "adobeCloud": "Creative Cloud",
       "adobeApp": "Photoshop, Premiere Pro, InDesign",
-      "mediaUrl": "https://youtu.be/yyQLXh-kCGY"
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/from-local-to-live-how-to-publish-your-adobe-express-add-on",
-      "image": "/default-meta-image.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/lm02Mowy9uo/maxresdefault.jpg",
       "date": "",
       "title": "From Local to Live: How to Publish Your Adobe Express Add-on",
       "author": "Ingo Eichel",
@@ -173,7 +173,7 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1779372747",
+      "lastModified": "1779711268",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772582400",
       "sortDate": "2026-03-04",
@@ -181,7 +181,7 @@
       "updatedDate": "",
       "adobeCloud": "",
       "adobeApp": "",
-      "mediaUrl": "https://youtu.be/lm02Mowy9uo"
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/new-app-builder-console-features-logs-ui-and-cdn-management",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-22T05:48:23.796Z"
+  "generatedAt": "2026-05-25T12:19:22.250Z"
 }
