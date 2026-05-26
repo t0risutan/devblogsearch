@@ -568,29 +568,15 @@ function formatLongMonthDate(date) {
  * @param {Element} article The article data to be placed in card.
  * @returns card Generated card
  */
-function getYoutubeVideoId(url = '') {
-  if (url.includes('youtu.be/')) {
-    return url.split('youtu.be/')[1]?.split(/[?&]/)[0] || '';
-  }
+function buildMediaElement({image, imageAlt, title, eager}) {
 
-  if (url.includes('/shorts/')) {
-    return url.split('/shorts/')[1]?.split(/[?&]/)[0] || '';
-  }
-  return url.match(/[?&]v=([^&]+)/)?.[1] || '';
-}
+  // Handle YouTube thumbnail paths from image metadata
+  if (image?.includes('/vi/')) {
+    const match = image.match(/\/vi\/([^/]+)/);
 
-function buildMediaElement({description = '', image, imageAlt, title, eager}) {
+    if (match?.[1]) {
+      const videoId = match[1];
 
-  // YouTube → thumbnail image
-
-  const youtubeMatch = description.match(
-    /(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/\S+/i,
-  );
-
-  if (youtubeMatch) {
-    const videoId = getYoutubeVideoId(youtubeMatch[0]);
-
-    if (videoId) {
       const img = document.createElement('img');
 
       img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
@@ -602,43 +588,6 @@ function buildMediaElement({description = '', image, imageAlt, title, eager}) {
       return img;
     }
   }
-
-  // MP4 / WebM → native video first frame
-
-  const videoMatch = description.match(
-    /https?:\/\/\S+\.(mp4|webm)(\?\S*)?/i,
-  );
-
-  if (videoMatch) {
-    const video = document.createElement('video');
-
-    video.src = videoMatch[0];
-    video.muted = true;
-    video.preload = 'metadata';
-    video.playsInline = true;
-    video.disablePictureInPicture = true;
-    video.tabIndex = -1;
-
-    video.setAttribute('aria-hidden', 'true');
-
-    video.style.cssText = `width: 100%; height: 100%; object-fit: initial;`;
-
-    return video;
-  }
-    // TODO: remove once Shorts thumbnail extraction is fixed
-  if (title.includes('How to Get Your Adobe Express Add-on Approved:')) {
-    const tempVideoId = 'hRNmOtOWna0';
-    const img = document.createElement('img');
-
-    img.src = `https://i.ytimg.com/vi/${tempVideoId}/maxresdefault.jpg`;
-    img.alt = imageAlt || title;
-    img.loading = eager ? 'eager' : 'lazy';
-    img.style.cssText = `width: 100%; height: 100%; object-fit: initial;`;
-    img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${tempVideoId}/hqdefault.jpg`; };
-
-    return img;
-  }
-  // Default CMS image
   return createOptimizedPicture(image,imageAlt || title,eager,[{ width: '750' }]);
 }
 
@@ -649,7 +598,7 @@ async function buildArticleCard(article, type = 'article', eager = false) {
 
   const path = article.path.split('.')[0];
 
-  const mediaEl = buildMediaElement({description,image, imageAlt, title, eager});
+  const mediaEl = buildMediaElement({image, imageAlt, title, eager});
 
   const card = document.createElement('a');
 
