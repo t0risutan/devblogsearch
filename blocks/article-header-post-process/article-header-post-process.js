@@ -89,9 +89,68 @@ export default async function init(blockEl) {
     removeMiloCaption();
     setTimeout(() => { removeHeroMediaLink(url); removeMiloCaption(); }, 600);
   }
+  /**
+    Portrait video support for in-body videos.  youtube.com/shorts/<id>  — YouTube Shorts URL ,  any YouTube URL + #portrait  — author explicitly marks it portrait
+    Portrait videos bypass Milo and render as custom iframes. 
+    Extract YouTube video ID from any YouTube URL
+  */
+
+  function extractYouTubeIdFromUrl(url = '') {
+    try {
+      const clean = url.replace(/#portrait$/i, '');
+      const p = new URL(clean);
+      if (p.hostname.includes('youtu.be')) return p.pathname.slice(1).split('?')[0];
+      if (p.hostname.includes('youtube.com')) {
+        const watchId = p.searchParams.get('v');
+        if (watchId) return watchId;
+        const shortsMatch = p.pathname.match(/\/shorts\/([^/?]+)/);
+        if (shortsMatch) return shortsMatch[1];
+        const liveMatch = p.pathname.match(/\/live\/([^/?]+)/);
+        if (liveMatch) return liveMatch[1];
+      }
+    } catch { /* noop */ }
+    return null;
+  }
+
+  // Detect portrait video URLs.
+  function isPortraitUrl(url = '') {
+    return url.includes('youtube.com/shorts/') || /#portrait$/i.test(url);
+  }
+
+  // Replace portrait video links with custom portrait embeds before Milo runs.
+  function injectPortraitVideos() {
+    document.querySelectorAll('main a[href]').forEach((a) => {
+      // Skip anything inside the article-header block itself.
+      if (blockEl.contains(a)) return;
+
+      const href = a.getAttribute('href') || '';
+      if (!isPortraitUrl(href)) return;
+
+      const videoId = extractYouTubeIdFromUrl(href);
+      if (!videoId) return;
+
+    // Use <figure> instead of <div> to prevent Franklin from auto-loading it as a block.
+      const wrapper = document.createElement('figure');
+      wrapper.className = 'portrait-video-wrapper';
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+
+      wrapper.appendChild(iframe);
+
+      // Replace original link with portrait embed.
+      const container = a.closest('p') || a;
+      container.replaceWith(wrapper);
+    });
+  }
 
   // Main flow 
 
+  injectPortraitVideos();  // run before Milo processing
   const mediaUrl = await getHeroMediaUrl();
   await miloBlock.default(blockEl);
 
