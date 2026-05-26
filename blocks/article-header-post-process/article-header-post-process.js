@@ -118,7 +118,10 @@ export default async function init(blockEl) {
   }
 
   // Replace portrait video links with custom portrait embeds before Milo runs.
-  function injectPortraitVideos() {
+  // heroUrl is excluded — it belongs to the hero, not the body.
+  function injectPortraitVideos(heroUrl = '') {
+    const heroId = heroUrl ? extractYouTubeIdFromUrl(heroUrl) : null;
+
     document.querySelectorAll('main a[href]').forEach((a) => {
       // Skip anything inside the article-header block itself.
       if (blockEl.contains(a)) return;
@@ -129,7 +132,10 @@ export default async function init(blockEl) {
       const videoId = extractYouTubeIdFromUrl(href);
       if (!videoId) return;
 
-    // Use <figure> instead of <div> to prevent Franklin from auto-loading it as a block.
+      // Skip if this link is the hero media URL.
+      if (heroId && videoId === heroId) return;
+
+      // Use <figure> instead of <div> to prevent Franklin from auto-loading it as a block.
       const wrapper = document.createElement('figure');
       wrapper.className = 'portrait-video-wrapper';
 
@@ -148,10 +154,10 @@ export default async function init(blockEl) {
     });
   }
 
-  // Main flow 
+  // Main flow — get hero URL first so injectPortraitVideos can exclude it.
 
-  injectPortraitVideos();  // run before Milo processing
   const mediaUrl = await getHeroMediaUrl();
+  injectPortraitVideos(mediaUrl);  // run before Milo processing
   await miloBlock.default(blockEl);
 
   if (!mediaUrl) {
@@ -160,17 +166,6 @@ export default async function init(blockEl) {
   } else {
     // Custom hero flow (YouTube / MP4 / WebM).
     runCleanup(mediaUrl);
-
-    // Remove the duplicate lite-youtube Milo renders in the body for the HERO, We match by video ID, not just any lite-youtube.
-    new MutationObserver(() => {
-      document.querySelectorAll('main .milo-video').forEach((w) => {
-        if (blockEl.contains(w)) return; // skip the hero block itself
-        const liteYt = w.querySelector('lite-youtube');
-        if (!liteYt) return;
-        // Only remove if this embed's video ID matches the hero video ID.
-        if (liteYt.getAttribute('videoid') === videoId) w.remove();
-      });
-    }).observe(document.querySelector('main'), { childList: true, subtree: true });
 
     // Build the correct media element (iframe for YouTube, <video> for MP4)
 
