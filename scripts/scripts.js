@@ -351,6 +351,7 @@ const { loadArea, setConfig, getMetadata } = await import(`${miloLibs}/utils/uti
 
   console.log('Injecting search into navigation. Target element:', topNav);
   const searchElement = document.createElement('blog-search');
+  searchElement.classList.add('nav-search');
 
   const nav = document.querySelector('.feds-nav');
   const navWrapper = document.querySelector('.feds-nav-wrapper');
@@ -383,6 +384,21 @@ const { loadArea, setConfig, getMetadata } = await import(`${miloLibs}/utils/uti
 
   moveSearch(mq);
   mq.addEventListener('change', moveSearch);
+
+  function injectExploreFacets() {
+    const articleFeed = document.querySelector('main .article-feed, main .article-feed-post-process');
+    if (!articleFeed || document.querySelector('blog-search.explore-facets')) return;
+
+    const exploreFacets = document.createElement('blog-search');
+    exploreFacets.classList.add('explore-facets');
+    exploreFacets.setAttribute('variant', 'explore');
+    const dataSource = searchElement.getAttribute('data-source');
+    if (dataSource) exploreFacets.setAttribute('data-source', dataSource);
+
+    articleFeed.parentElement.insertBefore(exploreFacets, articleFeed);
+  }
+
+  injectExploreFacets();
 
   initSidekick();
 

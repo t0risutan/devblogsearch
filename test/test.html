@@ -13,12 +13,16 @@
     
     <h2>Search in Header (Nav Style):</h2>
     <header>
-        <nav>
+        <nav class="feds-nav">
             <span>Logo</span>
             <span>Menu</span>
-            <blog-search></blog-search>
+            <blog-search class="nav-search"></blog-search>
         </nav>
     </header>
+
+    <h2>Explore all posts (facets + grid):</h2>
+    <blog-search class="explore-facets" variant="explore"></blog-search>
+    <div class="article-feed"></div>
     
     <script type="module">
         import '../web-components/search/blog-search.js';

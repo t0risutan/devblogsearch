@@ -8,21 +8,27 @@ const { test, expect } = require('@playwright/test');
 
 const START_PATH = process.env.E2E_START_PATH || '/';
 
-// helper: navigate to page and wait for blog-search to be ready
-async function loadPage(page, url = START_PATH) {
+// helper: navigate to page and wait for in-page explore facets to be ready
+async function loadExploreFacets(page, url = START_PATH) {
   await page.goto(url, { waitUntil: 'domcontentloaded' });
-  const bs = page.locator('blog-search').first();
-  await expect(bs.locator('input[type="search"]')).toBeVisible({ timeout: 60_000 });
+  const bs = page.locator('blog-search.explore-facets');
+  await expect(bs).toHaveCount(1, { timeout: 60_000 });
+  await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 60_000 });
   return bs;
+}
+
+async function openExploreSearch(bs) {
+  await bs.locator('.explore-search-trigger').click();
+  return bs.locator('.explore-search-input');
 }
 
 // T06: 0 results: "No results" message appears
 
 test('T06 — zero-result filter: "No results" message is shown', async ({ page }) => {
-  const bs = await loadPage(page, `${START_PATH}?cat=NONEXISTENT_CATEGORY_XYZ`);
+  const bs = await loadExploreFacets(page, `${START_PATH}?cat=NONEXISTENT_CATEGORY_XYZ`);
 
-  // trigger handleSearch + applyFilters
-  await bs.locator('input[type="search"]').fill('the');
+  const input = await openExploreSearch(bs);
+  await input.fill('the');
 
   // expect a "No results" message to be visible
   await expect(bs.locator('text=No results')).toBeVisible({ timeout: 8_000 });
@@ -31,7 +37,7 @@ test('T06 — zero-result filter: "No results" message is shown', async ({ page 
 // T07: Clear All removes all filters, chips and URL params
 
 test('T07 — Clear All removes all filters, chips and URL parameters', async ({ page }) => {
-  const bs = await loadPage(page, `${START_PATH}?cat=UXP`);
+  const bs = await loadExploreFacets(page, `${START_PATH}?cat=UXP`);
   await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 15_000 });
 
   // chip for UXP is visible before clearing
@@ -50,7 +56,7 @@ test('T07 — Clear All removes all filters, chips and URL parameters', async ({
 // T08: Filter state persists after page reload
 
 test('T08 — filter state is restored after page reload', async ({ page }) => {
-  const bs = await loadPage(page, `${START_PATH}?cat=UXP`);
+  const bs = await loadExploreFacets(page, `${START_PATH}?cat=UXP`);
   await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 15_000 });
 
   // chip for UXP visible after reload, state restored from URL
@@ -61,7 +67,7 @@ test('T08 — filter state is restored after page reload', async ({ page }) => {
 // T09: Filter activation does not add a browser history entry
 
 test('T09 — activating a filter does not create a new browser history entry', async ({ page }) => {
-  const bs = await loadPage(page);
+  const bs = await loadExploreFacets(page);
   await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 15_000 });
 
   const lengthBefore = await page.evaluate(() => window.history.length);
@@ -81,7 +87,7 @@ test('T09 — activating a filter does not create a new browser history entry', 
 // expected to fail (not implemented)
 
 test('T10 — "Show more" button appears when dropdown has more than 10 options', async ({ page }) => {
-  const bs = await loadPage(page);
+  const bs = await loadExploreFacets(page);
   await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 15_000 });
 
   // open first dropdown (category typically has >10 options)
@@ -100,8 +106,7 @@ test('T11 — invalid URL parameters cause no errors', async ({ page }) => {
     if (msg.type() === 'error') consoleErrors.push(msg.text());
   });
 
-  const bs = await loadPage(page, `${START_PATH}?cat=TOTALLY_INVALID_VALUE_XYZ`);
-  await expect(bs.locator('.filter-bar')).toBeVisible({ timeout: 15_000 });
+  const bs = await loadExploreFacets(page, `${START_PATH}?cat=TOTALLY_INVALID_VALUE_XYZ`);
 
   // only flag uncontrolled errors from blog-search (structured logError messages are allowed)
   const unexpectedErrors = consoleErrors.filter(
@@ -109,8 +114,7 @@ test('T11 — invalid URL parameters cause no errors', async ({ page }) => {
   );
   expect(unexpectedErrors).toHaveLength(0);
 
-  // app remains functional
-  await expect(bs.locator('input[type="search"]')).toBeVisible();
+  await expect(bs.locator('.explore-results')).toBeVisible();
 });
 
 // T12: XSS via URL parameter is not executed
@@ -123,7 +127,7 @@ test('T12 — XSS string in URL parameter is not executed as script', async ({ p
   });
 
   const xssUrl = `${START_PATH}?cat=${encodeURIComponent('<script>alert(1)</script>')}`;
-  await loadPage(page, xssUrl);
+  await loadExploreFacets(page, xssUrl);
 
   expect(dialogFired).toBe(false);
 });
@@ -137,8 +141,9 @@ test('T13 — XSS string typed into search input is not executed as script', asy
     await dialog.dismiss();
   });
 
-  const bs = await loadPage(page);
-  await bs.locator('input[type="search"]').fill('<script>alert(1)</script>');
+  const bs = await loadExploreFacets(page);
+  const input = await openExploreSearch(bs);
+  await input.fill('<script>alert(1)</script>');
 
   // wait for debounce to fire
   await page.waitForTimeout(500);

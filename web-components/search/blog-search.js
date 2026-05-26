@@ -186,6 +186,39 @@ function clearSearch(component) {
   }
 }
 
+function exploreResultsContainer(component) {
+  const grid = document.createElement('ul');
+  grid.className = 'explore-results';
+  grid.dataset.h = findNextHeading(component);
+  return grid;
+}
+
+async function renderExploreResults(component, config, filteredData, searchTerms) {
+  currentRenderId += 1;
+  const renderId = currentRenderId;
+
+  const exploreResults = component.shadowRoot?.querySelector('.explore-results');
+  if (!exploreResults) return;
+
+  exploreResults.innerHTML = '';
+  const headingTag = exploreResults.dataset.h;
+
+  if (filteredData.length) {
+    exploreResults.classList.remove('no-results');
+    const results = await Promise.all(
+      filteredData.map((result) => renderResult(result, searchTerms, headingTag)),
+    );
+    if (renderId !== currentRenderId) return;
+    results.forEach((li) => exploreResults.append(li));
+  } else {
+    if (renderId !== currentRenderId) return;
+    const noResultsMessage = document.createElement('li');
+    exploreResults.classList.add('no-results');
+    noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
+    exploreResults.append(noResultsMessage);
+  }
+}
+
 async function renderResults(component, config, filteredData, searchTerms) {
   currentRenderId += 1;
   const renderId = currentRenderId;
@@ -233,6 +266,11 @@ async function handleSearch(e, component, config) {
     const url = new URL(window.location.href);
     url.search = searchParams.toString();
     window.history.replaceState({}, '', url.toString());
+  }
+
+  if (component.classList.contains('explore-facets')) {
+    await component.refreshExploreView();
+    return;
   }
 
   if (searchValue.length < 3) {
@@ -386,9 +424,55 @@ class BlogSearch extends HTMLElement {
     const source = this.getAttribute('data-source') || '/en/query-index.json';
     this.config = { source, placeholders };
 
-    // Detect if this search should be nav-style
-    const isNavSearch = document.querySelector('header') || this.classList.contains('nav-search');
-    if (isNavSearch) {
+    const isExploreFacets = this.classList.contains('explore-facets')
+      || this.getAttribute('variant') === 'explore';
+    const isNavSearch = !isExploreFacets
+      && (this.classList.contains('nav-search') || !!this.closest('header, .feds-topnav, .feds-nav'));
+
+    if (isExploreFacets) {
+      this.classList.add('explore-facets');
+      const toolbar = document.createElement('div');
+      toolbar.className = 'explore-toolbar';
+
+      const filtersLabel = document.createElement('span');
+      filtersLabel.className = 'explore-filters-label';
+      filtersLabel.textContent = 'Filters:';
+      toolbar.append(filtersLabel);
+
+      const searchWrap = document.createElement('div');
+      searchWrap.className = 'explore-search';
+      const icon = searchIcon();
+      icon.classList.add('explore-search-trigger');
+      icon.setAttribute('role', 'button');
+      icon.setAttribute('tabindex', '0');
+      icon.setAttribute('aria-label', placeholders.searchPlaceholder || 'Search');
+      const input = searchInput(this, { source, placeholders });
+      input.classList.add('explore-search-input');
+      input.hidden = true;
+      const toggleSearch = () => {
+        const expanded = searchWrap.classList.toggle('expanded');
+        input.hidden = !expanded;
+        if (expanded) input.focus();
+      };
+      icon.addEventListener('click', toggleSearch);
+      icon.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleSearch();
+        }
+      });
+      searchWrap.append(icon, input);
+      toolbar.append(searchWrap);
+
+      this.shadowRoot.append(toolbar, exploreResultsContainer(this));
+
+      const articleFeed = document.querySelector('.article-feed');
+      if (articleFeed) {
+        articleFeed.classList.add('explore-facets-suppressed');
+        articleFeed.parentElement?.querySelector('.filter-container')?.classList.add('explore-facets-suppressed');
+        articleFeed.parentElement?.querySelector('.selected-container')?.classList.add('explore-facets-suppressed');
+      }
+    } else if (isNavSearch) {
       this.classList.add('nav-search');
 
       // For nav search, everything goes in Shadow DOM but uses positioning to span full width
@@ -435,33 +519,81 @@ class BlogSearch extends HTMLElement {
       decorateIcons(this.shadowRoot);
     }
 
-    // Integration of filter functionality within the shadow DOM
-    // load data
-    this.allData = await fetchData(source);
-    if (!this.allData) {
-      logError('connectedCallback', `data load failed for ${source}, filter bar skipped`);
+    if (isExploreFacets) {
+      await this.initFacets({ explore: true });
       return;
     }
 
-    // load active filters from URL
-    this.activeFilters = this.loadFiltersFromURL();
+    if (isNavSearch) {
+      return;
+    }
 
-    // render filter bar
+    await this.initFacets({ explore: false });
+  }
+
+  async refreshExploreView() {
+    if (!this.allData) return;
+
+    let scopedData = this.allData;
+    if (currentTopic) {
+      scopedData = this.allData.filter((item) => {
+        if (!item.tags) return false;
+        try {
+          const tags = JSON.parse(item.tags);
+          return tags.includes(currentTopic);
+        } catch {
+          return item.tags.includes(currentTopic);
+        }
+      });
+    }
+
+    const queryInput = this.shadowRoot.querySelector('.explore-search-input');
+    const searchValue = queryInput?.value?.trim() || '';
+    let searchTerms = [];
+    let data = scopedData;
+
+    if (searchValue.length >= 3) {
+      searchTerms = searchValue.toLowerCase().split(/\s+/).filter((term) => term.length >= 3);
+      data = filterData(searchTerms, scopedData);
+    }
+
+    const facetFilteredData = this.applyFilters(data, this.activeFilters);
+    this.updateFilterCounts(facetFilteredData);
+    await renderExploreResults(this, this.config, facetFilteredData, searchTerms);
+  }
+
+  applyFilterChange() {
+    if (this.classList.contains('explore-facets')) {
+      this.refreshExploreView();
+      return;
+    }
+    const queryInput = this.shadowRoot.querySelector('input[type="search"]');
+    if (queryInput && queryInput.value.length >= 3) {
+      handleSearch({ target: queryInput }, this, this.config);
+    }
+  }
+
+  async initFacets({ explore }) {
+    const { source } = this.config;
+    this.allData = await fetchData(source);
+    if (!this.allData) {
+      logError('initFacets', `data load failed for ${source}, filter bar skipped`);
+      return;
+    }
+
+    this.activeFilters = this.loadFiltersFromURL();
     const facets = this.generateFacets(this.allData);
-    this.renderFilterBar(facets);
+    this.renderFilterBar(facets, { explore });
     this.renderChips(this.activeFilters);
     this.updateFilterCounts(this.allData);
 
-    this.shadowRoot.querySelector('.filter-bar').addEventListener('change', (e) => {
+    this.shadowRoot.querySelector('.filter-bar')?.addEventListener('change', (e) => {
       if (e.target.tagName === 'SELECT') {
         const { value } = e.target;
         this.activeFilters.date = value ? [value] : [];
         this.renderChips(this.activeFilters);
         this.updateURLState(this.activeFilters);
-        const queryInput = this.shadowRoot.querySelector('input[type="search"]');
-        if (queryInput && queryInput.value.length >= 3) {
-          handleSearch({ target: queryInput }, this, this.config);
-        }
+        this.applyFilterChange();
         return;
       }
       if (e.target.type !== 'checkbox') return;
@@ -474,36 +606,29 @@ class BlogSearch extends HTMLElement {
       }
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (queryInput && queryInput.value.length >= 3) {
-        handleSearch({ target: queryInput }, this, this.config);
-      }
+      this.applyFilterChange();
     });
 
-    // X-Button on filter chips
     this.addEventListener('remove-filter', (e) => {
       const { group, value } = e.detail;
       this.activeFilters[group] = this.activeFilters[group].filter((v) => v !== value);
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (queryInput && queryInput.value.length >= 3) {
-        handleSearch({ target: queryInput }, this, this.config);
-      }
+      this.applyFilterChange();
     });
 
-    // Clear all filters button
     this.addEventListener('clear-all-filters', () => {
       Object.keys(this.activeFilters).forEach((key) => {
         this.activeFilters[key] = [];
       });
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
-      const queryInput = this.shadowRoot.querySelector('input[type="search"]');
-      if (queryInput && queryInput.value.length >= 3) {
-        handleSearch({ target: queryInput }, this, this.config);
-      }
+      this.applyFilterChange();
     });
+
+    if (explore) {
+      await this.refreshExploreView();
+    }
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -625,16 +750,28 @@ class BlogSearch extends HTMLElement {
     window.history.replaceState({}, '', url.toString());
   }
 
-  renderFilterBar(facets) {
+  renderFilterBar(facets, { explore = false } = {}) {
     const filterBar = document.createElement('div');
     filterBar.className = 'filter-bar';
+    if (explore) filterBar.classList.add('filter-bar-explore');
 
-    Object.entries(facets).forEach(([group, values]) => {
+    const labels = explore
+      ? { cat: 'Category', prod: 'Products', type: 'Topic' }
+      : { cat: 'Category', prod: 'Product', author: 'Author', type: 'Type' };
+    const exploreGroups = new Set(['prod', 'cat', 'type', 'date']);
+    const facetEntries = explore
+      ? ['prod', 'cat', 'type', 'date'].map((group) => [group, facets[group]])
+      : Object.entries(facets);
+
+    facetEntries.forEach(([group, values]) => {
       if (group === 'date') {
+        if (explore && !exploreGroups.has('date')) return;
         const dateSelect = document.createElement('select');
+        dateSelect.className = 'filter-date-select';
+        dateSelect.setAttribute('aria-label', 'Date');
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
-        defaultOption.textContent = 'All dates';
+        defaultOption.textContent = explore ? 'Date' : 'All dates';
         dateSelect.append(defaultOption);
         [
           { value: 'last-week', label: 'Last week' },
@@ -646,17 +783,20 @@ class BlogSearch extends HTMLElement {
           option.textContent = label;
           dateSelect.append(option);
         });
+        if (explore && this.activeFilters.date[0]) {
+          dateSelect.value = this.activeFilters.date[0];
+        }
         filterBar.append(dateSelect);
         return;
       }
 
+      if (explore && !exploreGroups.has(group)) return;
       if (values.length === 0) return;
       const toggle = document.createElement('button');
 
       toggle.className = 'filter-dropdown-toggle';
       toggle.setAttribute('aria-expanded', 'false');
-      const labels = { cat: 'Category', prod: 'Product', author: 'Author', type: 'Type' };
-      toggle.textContent = labels[group];
+      toggle.textContent = labels[group] || group;
 
       const menu = document.createElement('ul');
 
@@ -688,7 +828,14 @@ class BlogSearch extends HTMLElement {
       dropdown.append(toggle, menu);
       filterBar.append(dropdown);
     });
-    this.shadowRoot.append(filterBar);
+
+    const toolbar = this.shadowRoot.querySelector('.explore-toolbar');
+    if (explore && toolbar) {
+      const searchWrap = toolbar.querySelector('.explore-search');
+      toolbar.insertBefore(filterBar, searchWrap);
+    } else {
+      this.shadowRoot.append(filterBar);
+    }
     return filterBar;
   }
 
@@ -723,7 +870,10 @@ class BlogSearch extends HTMLElement {
       this.dispatchEvent(new CustomEvent('clear-all-filters', { bubbles: true }));
     });
     chipsContainer.append(clearButton);
-    this.shadowRoot.querySelector('.filter-bar')?.append(chipsContainer);
+    const chipsParent = this.classList.contains('explore-facets')
+      ? this.shadowRoot.querySelector('.explore-toolbar')
+      : this.shadowRoot.querySelector('.filter-bar');
+    chipsParent?.append(chipsContainer);
   }
 
   // eslint-disable-next-line class-methods-use-this
