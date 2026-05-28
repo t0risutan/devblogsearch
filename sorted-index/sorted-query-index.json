@@ -1525,7 +1525,7 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_10fbb9c7241719a44f099cc8414ad5989bd872d5a.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
@@ -1533,7 +1533,7 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1779979944",
+      "lastModified": "1779980399",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1625,7 +1625,7 @@
     },
     {
       "path": "/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package",
-      "image": "/en/publish/2019/06/media_10fbb9c7241719a44f099cc8414ad5989bd872d5a.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2019/06/media_1182762f67fcb5d4ffea8714b18a61aaf0506d309.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "How to Customize Your Adobe Creative Cloud Extension Package",
       "author": "Steve Kwak",
@@ -1633,7 +1633,7 @@
       "tags": "[\"adobe-cep\",\"adobe-exchange\",\"creative-cloud\",\"extenstion\",\"plugins\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1779979730",
+      "lastModified": "1779980435",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1534809600",
       "sortDate": "2018-08-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-28T14:56:54.201Z"
+  "generatedAt": "2026-05-28T15:03:17.502Z"
 }
