@@ -48,9 +48,9 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
-    "docUrl": "/en/authors/ayan-choudhary",
+    "name": "Sharayoo Jog",
+    "slug": "sharayoo-jog",
+    "docUrl": "/en/authors/sharayoo-jog",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -72,9 +72,9 @@
     ]
   },
   {
-    "name": "Sharayoo Jog",
-    "slug": "sharayoo-jog",
-    "docUrl": "/en/authors/sharayoo-jog",
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "docUrl": "/en/authors/ayan-choudhary",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -96,9 +96,9 @@
     ]
   },
   {
-    "name": "Namita Krishnan",
-    "slug": "namita-krishnan",
-    "docUrl": "/en/authors/namita-krishnan",
+    "name": "Kerri Shotts",
+    "slug": "kerri-shotts",
+    "docUrl": "/en/authors/kerri-shotts",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -108,9 +108,9 @@
     ]
   },
   {
-    "name": "Kerri Shotts",
-    "slug": "kerri-shotts",
-    "docUrl": "/en/authors/kerri-shotts",
+    "name": "Namita Krishnan",
+    "slug": "namita-krishnan",
+    "docUrl": "/en/authors/namita-krishnan",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -168,9 +168,9 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
-    "docUrl": "/en/authors/david-sankel",
+    "name": "Arvind Sridhar",
+    "slug": "arvind-sridhar",
+    "docUrl": "/en/authors/arvind-sridhar",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -180,9 +180,9 @@
     ]
   },
   {
-    "name": "Arvind Sridhar",
-    "slug": "arvind-sridhar",
-    "docUrl": "/en/authors/arvind-sridhar",
+    "name": "David Sankel",
+    "slug": "david-sankel",
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -213,6 +213,15 @@
       "Missing headline/title",
       "Missing LinkedIn URL",
       "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Sonya P",
+    "slug": "sonya-p",
+    "docUrl": "/en/authors/sonya-p",
+    "hasDoc": true,
+    "issues": [
+      "Missing LinkedIn URL"
     ]
   }
 ]

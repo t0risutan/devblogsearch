@@ -749,7 +749,7 @@
     "slug": "sonya-p",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/sonya-p",
     "title": "Software Developer &#x26; Tech Content Creator.",
-    "linkedin": "https://www.linkedin.com/in/sonyablibli",
+    "linkedin": "",
     "links": [],
     "isAdobeEmployee": false,
     "isDeveloperChampion": true,
@@ -762,7 +762,7 @@
       "title": "How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections",
       "date": "2026-05-19"
     },
-    "isComplete": true
+    "isComplete": false
   },
   {
     "name": "Steve Kwak",
