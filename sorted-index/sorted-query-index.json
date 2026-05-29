@@ -1529,11 +1529,11 @@
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
-      "description": "https://youtu.be/oyp4Sr-s3no?si=8FMnVcLoIqx8J_mR When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand ...",
+      "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780040349",
+      "lastModified": "1780040371",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-29T07:42:09.558Z"
+  "generatedAt": "2026-05-29T07:46:33.707Z"
 }
