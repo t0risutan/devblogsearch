@@ -905,15 +905,15 @@
     },
     {
       "path": "/en/publish/2024/02/c-and-the-next-30-years",
-      "image": "/en/publish/2024/02/media_1d05c99ec44fc0d706fd7f7b7fee20362cf47b844.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/huAgzp7FD9c/maxresdefault.jpg",
       "date": "",
       "title": "C++ and The Next 30 Years",
       "author": "David Sankel",
       "description": "I delivered a keynote, C++ and the Next 30 Years, at the 2023 CPP-Summit conference in Beijing, China. Experiencing the culture, the people, and the ...",
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-engineering\",\"adobe\"]",
-      "imageAlt": "Tokyo cityscape",
+      "imageAlt": "Chart percent usage of package managers",
       "robots": "",
-      "lastModified": "1778824163",
+      "lastModified": "1780036031",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1713744000",
       "sortDate": "2024-04-22",
@@ -1525,15 +1525,15 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/BeH1I5n-798/maxresdefault.jpg",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
-      "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
+      "description": "https://youtu.be/oyp4Sr-s3no?si=8FMnVcLoIqx8J_mR When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand ...",
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1779980399",
+      "lastModified": "1780035783",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-28T15:03:17.502Z"
+  "generatedAt": "2026-05-29T06:30:47.522Z"
 }
