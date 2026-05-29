@@ -913,7 +913,7 @@
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-engineering\",\"adobe\"]",
       "imageAlt": "Chart percent usage of package managers",
       "robots": "",
-      "lastModified": "1780041004",
+      "lastModified": "1780041778",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1713744000",
       "sortDate": "2024-04-22",
@@ -1525,7 +1525,7 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_192343466cf7681472d95bd45f038cc7337df1d53.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_1a7bd2d68874b1bc033bb1240a204654d234ee49a.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
@@ -1533,7 +1533,7 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780040705",
+      "lastModified": "1780041729",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-29T07:53:22.204Z"
+  "generatedAt": "2026-05-29T08:46:43.002Z"
 }
