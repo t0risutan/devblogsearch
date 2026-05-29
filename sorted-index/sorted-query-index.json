@@ -1525,15 +1525,15 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_1f8fcd7ee1999d53b7e029c564bdeada848697e13.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
       "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
       "tags": "[]",
-      "imageAlt": "Viewing the sites in China",
+      "imageAlt": "",
       "robots": "",
-      "lastModified": "1780052856",
+      "lastModified": "1780053278",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-29T11:09:47.942Z"
+  "generatedAt": "2026-05-29T11:17:06.867Z"
 }
