@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 15:00:35 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 08:02:58 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -468,8 +468,8 @@
       <description><![CDATA[I delivered a keynote, C++ and the Next 30 Years, at the 2023 CPP-Summit conference in Beijing, China. Experiencing the culture, the people, and the ...]]></description>
       <dc:creator><![CDATA[David Sankel]]></dc:creator>
       <pubDate>Mon, 22 Apr 2024 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2024/02/media_1d05c99ec44fc0d706fd7f7b7fee20362cf47b844.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2024/02/media_1d05c99ec44fc0d706fd7f7b7fee20362cf47b844.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2024/02/media_1deef01e3f5fdad13c3af318847f5c4ca59cb27e3.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2024/02/media_1deef01e3f5fdad13c3af318847f5c4ca59cb27e3.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Important Cross-Origin Isolation Update for Adobe Express Add-on Developers]]></title>
@@ -778,8 +778,8 @@
       <description><![CDATA[When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...]]></description>
       <dc:creator><![CDATA[Devblogs]]></dc:creator>
       <pubDate>Sat, 21 Mar 2020 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/03/media_1a7bd2d68874b1bc033bb1240a204654d234ee49a.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/03/media_1a7bd2d68874b1bc033bb1240a204654d234ee49a.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Learning by Doing: Porting “Free Stock Search” from CEP to UXP in Adobe XD]]></title>
