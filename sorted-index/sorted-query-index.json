@@ -913,7 +913,7 @@
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-engineering\",\"adobe\"]",
       "imageAlt": "Chart percent usage of package managers",
       "robots": "",
-      "lastModified": "1780040194",
+      "lastModified": "1780041004",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1713744000",
       "sortDate": "2024-04-22",
@@ -1533,7 +1533,7 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780040371",
+      "lastModified": "1780040705",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-29T07:46:33.707Z"
+  "generatedAt": "2026-05-29T07:53:22.204Z"
 }
