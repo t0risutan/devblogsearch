@@ -1505,7 +1505,7 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1080-720",
-      "image": "/en/publish/2026/03/media_172c7a2e72ec9698e5c846dc19b5383d096506b57.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_139b4d2b8454c9b4c81be7ee25cadceb202e27d21.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1080 × 720",
       "author": "Devblogs",
@@ -1513,7 +1513,7 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780049359",
+      "lastModified": "1780050862",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584835200",
       "sortDate": "2020-03-22",
@@ -1525,7 +1525,7 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/vi/xDq3ij-oHJA/maxresdefault.jpg",
+      "image": "/vi/3kE_zKEUk2U/maxresdefault.jpg",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
@@ -1533,7 +1533,7 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780048810",
+      "lastModified": "1780050644",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-05-29T10:14:40.480Z"
+  "generatedAt": "2026-05-29T10:37:01.987Z"
 }
