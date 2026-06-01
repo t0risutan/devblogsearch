@@ -12,9 +12,9 @@
     ]
   },
   {
-    "name": "Ash Ryan Arnwine",
-    "slug": "ash-ryan-arnwine",
-    "docUrl": "/en/authors/ash-ryan-arnwine",
+    "name": "Steve Kwak",
+    "slug": "steve-kwak",
+    "docUrl": "/en/authors/steve-kwak",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -24,9 +24,9 @@
     ]
   },
   {
-    "name": "Steve Kwak",
-    "slug": "steve-kwak",
-    "docUrl": "/en/authors/steve-kwak",
+    "name": "Ash Ryan Arnwine",
+    "slug": "ash-ryan-arnwine",
+    "docUrl": "/en/authors/ash-ryan-arnwine",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -60,18 +60,6 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
-    "docUrl": "/en/authors/ayan-choudhary",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Mike Zahorik",
     "slug": "mike-zahorik",
     "docUrl": "/en/authors/mike-zahorik",
@@ -96,6 +84,18 @@
     ]
   },
   {
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "docUrl": "/en/authors/ayan-choudhary",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
     "name": "Kerri Shotts",
     "slug": "kerri-shotts",
     "docUrl": "/en/authors/kerri-shotts",
@@ -108,9 +108,9 @@
     ]
   },
   {
-    "name": "Namita Krishnan",
-    "slug": "namita-krishnan",
-    "docUrl": "/en/authors/namita-krishnan",
+    "name": "Pratibha Sharma & Asim Chatterjee",
+    "slug": "pratibha-sharma-asim-chatterjee",
+    "docUrl": "/en/authors/pratibha-sharma-asim-chatterjee",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -120,9 +120,9 @@
     ]
   },
   {
-    "name": "Pratibha Sharma & Asim Chatterjee",
-    "slug": "pratibha-sharma-asim-chatterjee",
-    "docUrl": "/en/authors/pratibha-sharma-asim-chatterjee",
+    "name": "Namita Krishnan",
+    "slug": "namita-krishnan",
+    "docUrl": "/en/authors/namita-krishnan",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
