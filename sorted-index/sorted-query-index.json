@@ -705,7 +705,7 @@
     },
     {
       "path": "/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader",
-      "image": "/en/publish/2024/12/media_17a838f5f71fbbefd484f970bdd4b70bd3f622cc7.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2024/12/media_1dfb7f044c0776249cb2c6c73fd4fbd37913604fa.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
       "author": "Renae Kang",
@@ -713,7 +713,7 @@
       "tags": "[\"devsecops\",\"cloud-security\",\"security\",\"security-culture\",\"product-security\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1780388718",
+      "lastModified": "1780388862",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1733356800",
       "sortDate": "2024-12-05",
@@ -1765,5 +1765,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-06-02T08:26:39.904Z"
+  "generatedAt": "2026-06-02T08:32:14.684Z"
 }
