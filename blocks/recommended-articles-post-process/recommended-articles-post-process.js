@@ -5,6 +5,8 @@
 // A bit of hack, but the alternative is to completely
 // override the original block, which is not better.
 import { setLibs, getLibs, recreatePicture, createOptimizedPicture, getDefaultImageNumber, SITE } from '../../scripts/devblog/devblog.js';
+import { wrapWithPlayOverlay } from '../../scripts/utils.js';
+
 setLibs(SITE.prodLibsPath);
 const miloBlock = await import(`${getLibs()}/blocks/recommended-articles/recommended-articles.js`);
 
@@ -49,7 +51,7 @@ function buildMediaElement(ogImage, alt = '', eager = false) {
     img.loading = eager ? 'eager' : 'lazy';
     img.style.cssText = 'width:100%;height:100%;object-fit:initial;';
     img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
-    return img;
+    return wrapWithPlayOverlay(img);
   }
 
   return createOptimizedPicture(ogImage, alt, eager, SITE.articleCard.breakpoints);

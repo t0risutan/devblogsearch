@@ -11,6 +11,7 @@ const {
   getConfig,
   createIntersectionObserver
 } = await import(`${getLibs()}/utils/utils.js`);
+import { wrapWithPlayOverlay } from '../../scripts/utils.js';
 
 const {
   stamp,
@@ -585,7 +586,7 @@ function buildMediaElement({image, imageAlt, title, eager}) {
       img.style.cssText = `width: 100%; height: 100%; object-fit: initial;`;
       img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
 
-      return img;
+      return wrapWithPlayOverlay(img);
     }
   }
   return createOptimizedPicture(image,imageAlt || title,eager,[{ width: '750' }]);

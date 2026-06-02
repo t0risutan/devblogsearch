@@ -84,6 +84,22 @@ export function createOptimizedPicture(
   return picture;
 }
 
+const PLAY_ICON = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,0.55)"/><polygon points="9.5,7 18,12 9.5,17" fill="#fff"/></svg>`;
+
+export function wrapWithPlayOverlay(mediaEl) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'media-play-wrapper';
+
+  const overlay = document.createElement('span');
+  overlay.className = 'media-play-overlay';
+
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = PLAY_ICON;
+
+  wrapper.append(mediaEl, overlay);
+  return wrapper;
+}
+
 /*
  * ------------------------------------------------------------
  * Edit below at your own risk
