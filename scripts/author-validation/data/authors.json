@@ -125,6 +125,26 @@
     "isComplete": false
   },
   {
+    "name": "Asim Chatterjee",
+    "slug": "asim-chatterjee",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/asim-chatterjee",
+    "title": "",
+    "linkedin": "",
+    "links": [],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": false,
+    "hasDoc": false,
+    "docUrl": "/en/authors/asim-chatterjee",
+    "docImage": "",
+    "image": "/images/authors/asim-chatterjee.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09"
+    },
+    "isComplete": false
+  },
+  {
     "name": "Aubrey Cattell",
     "slug": "aubrey-cattell",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/aubrey-cattell",
@@ -580,18 +600,18 @@
     "isComplete": false
   },
   {
-    "name": "Pratibha Sharma & Asim Chatterjee",
-    "slug": "pratibha-sharma-asim-chatterjee",
-    "profileUrl": "https://blog.developer.adobe.com/en/authors/pratibha-sharma-asim-chatterjee",
+    "name": "Pratibha Sharma",
+    "slug": "pratibha-sharma",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/pratibha-sharma",
     "title": "",
     "linkedin": "",
     "links": [],
     "isAdobeEmployee": false,
     "isDeveloperChampion": false,
     "hasDoc": false,
-    "docUrl": "/en/authors/pratibha-sharma-asim-chatterjee",
+    "docUrl": "/en/authors/pratibha-sharma",
     "docImage": "",
-    "image": "/images/authors/pratibha-sharma-asim-chatterjee.png",
+    "image": "/images/authors/pratibha-sharma.png",
     "fallbackImage": "/images/default-images/default-image-1.png",
     "latestArticle": {
       "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
