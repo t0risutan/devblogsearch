@@ -8,9 +8,19 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2026 10:02:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 14:09:32 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title><![CDATA[3 Risk Checks for Developers Before Vibe Code Becomes a Production Problem]]></title>
+      <link>https://blog.developer.adobe.com/en/publish/2026/06/3-risk-checks-for-developers-before-vibe-code-becomes-a-production-problem</link>
+      <guid isPermaLink="true">https://blog.developer.adobe.com/en/publish/2026/06/3-risk-checks-for-developers-before-vibe-code-becomes-a-production-problem</guid>
+      <description><![CDATA[If you’re a developer and you don’t love how casually people trust AI-generated code or vibe code, you’re not alone.]]></description>
+      <dc:creator><![CDATA[Justin Taylor]]></dc:creator>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/06/media_122e43cda4daa5a6994132067cf781af53517f993.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/06/media_122e43cda4daa5a6994132067cf781af53517f993.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+    </item>
     <item>
       <title><![CDATA[How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections]]></title>
       <link>https://blog.developer.adobe.com/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections</link>
