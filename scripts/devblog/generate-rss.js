@@ -29,6 +29,15 @@ function getImageMimeType(url = '') {
   return 'image/jpeg';
 }
 
+// Resolve the correct public image URL from the query-index image field - If the path is a YouTube /vi/ID/ thumbnail, rewrite to i.ytimg.com.
+
+function resolveImageUrl(image = '') {
+  if (!image) return '';
+  const ytMatch = image.match(/\/vi\/([a-zA-Z0-9_-]{11})\//);
+  if (ytMatch?.[1]) return `https://i.ytimg.com/vi/${ytMatch[1]}/maxresdefault.jpg`;
+  return `${BASE_URL}${image}`;
+}
+
 async function generateRss() {
   const res = await fetch(INDEX_URL);
   if (!res.ok) throw new Error(`Failed to fetch index: ${res.status}`);
@@ -47,7 +56,7 @@ async function generateRss() {
 
     const description = post.description;
 
-    const imageUrl = post.image ? `${BASE_URL}${post.image}` : '';
+    const imageUrl = resolveImageUrl(post.image);
     const mimeType = getImageMimeType(imageUrl);
 
     return `
