@@ -410,6 +410,31 @@
     "isComplete": true
   },
   {
+    "name": "Justin Taylor",
+    "slug": "justin-taylor",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/justin-taylor",
+    "title": "Helping creative teams automate the boring so they can create they amazing",
+    "linkedin": "https://www.linkedin.com/in/justin-taylor-3716222b/",
+    "links": [
+      {
+        "url": "https://hyperbrew.co/",
+        "label": "Personal Blog"
+      }
+    ],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": true,
+    "hasDoc": true,
+    "docUrl": "/en/authors/justin-taylor",
+    "docImage": "./media_15167048fde8f789505d1bd61d865d2e0b416993a.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/justin-taylor.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "3 Risk Checks for Developers Before Vibe Code Becomes a Production Problem",
+      "date": "2026-06-04"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Kalyan Dechiraju",
     "slug": "kalyan-dechiraju",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/kalyan-dechiraju",
@@ -779,7 +804,7 @@
     "image": "/images/authors/sonya-p.png",
     "fallbackImage": "/images/default-images/default-image-1.png",
     "latestArticle": {
-      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections",
+      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding Common Rejections",
       "date": "2026-05-19"
     },
     "isComplete": true

@@ -85,14 +85,14 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
+    "name": "Ashikka Gupta",
+    "slug": "ashikka-gupta",
     "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+      "title": "Building an Image Search Plugin for Photoshop",
+      "date": "2021-12-31",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/03/building-an-image-search-plugin-for-photoshop"
     },
-    "docUrl": "/en/authors/ayan-choudhary",
+    "docUrl": "/en/authors/ashikka-gupta",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -102,14 +102,14 @@
     ]
   },
   {
-    "name": "Ashikka Gupta",
-    "slug": "ashikka-gupta",
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
     "latestArticle": {
-      "title": "Building an Image Search Plugin for Photoshop",
-      "date": "2021-12-31",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/03/building-an-image-search-plugin-for-photoshop"
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
     },
-    "docUrl": "/en/authors/ashikka-gupta",
+    "docUrl": "/en/authors/ayan-choudhary",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
