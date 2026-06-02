@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2026 14:09:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 14:19:34 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -22,7 +22,7 @@
       <media:content url="https://blog.developer.adobe.com/en/publish/2026/06/media_122e43cda4daa5a6994132067cf781af53517f993.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
-      <title><![CDATA[How to Get Your Adobe Express Add-on Approved: Avoiding the Most Common Rejections]]></title>
+      <title><![CDATA[How to Get Your Adobe Express Add-on Approved: Avoiding Common Rejections]]></title>
       <link>https://blog.developer.adobe.com/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections</link>
       <guid isPermaLink="true">https://blog.developer.adobe.com/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections</guid>
       <description><![CDATA[Editor’s Note: Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!]]></description>
