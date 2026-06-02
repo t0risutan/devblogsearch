@@ -105,8 +105,24 @@ async function renderResult(result, searchTerms, titleTag) {
     const wrapper = document.createElement('div');
     wrapper.className = 'search-result-image';
 
-    // Fallback if createOptimizedPicture isn't available
-    if (typeof createOptimizedPicture === 'function') {
+    // Fallback if createOptimizedPicture isn't available - Handle YouTube thumbnail metadata
+
+    if (result.image?.includes('/vi/')) {
+      const match = result.image.match(/\/vi\/([^/]+)/);
+
+      if (match?.[1]) {
+        const videoId = match[1];
+
+        const img = document.createElement('img');
+
+        img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+        img.alt = result.title || '';
+        img.loading = 'lazy';
+        img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
+
+        wrapper.append(img);
+      }
+    } else if (typeof createOptimizedPicture === 'function') {
       const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
       wrapper.append(pic);
     } else {
