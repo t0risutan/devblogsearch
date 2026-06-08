@@ -79,7 +79,7 @@ indices:
       - /en/publish/**
     exclude:
       - '**/Document.*'
-    target: /en/article-management.json
+    target: /en/article-management.xlsx
 
     properties:
       article:
