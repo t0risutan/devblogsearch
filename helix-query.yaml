@@ -87,6 +87,16 @@ indices:
         value: |
           textContent(el)
 
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+
       publishedDate:
         select: head > meta[name="m_date"]
         value: |
