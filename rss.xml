@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2026 08:01:55 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 14:46:04 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -88,8 +88,8 @@
       <description><![CDATA[The destination is usually clear. The architectural benefits are understood. What burns time is the mechanical work: decomposing existing pages into reusable blocks, reconstructing a ...]]></description>
       <dc:creator><![CDATA[Sherrie Rohde]]></dc:creator>
       <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/03/media_17f86b4d53528a2670391feba30d7243a81b30d28.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2026/03/media_17f86b4d53528a2670391feba30d7243a81b30d28.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/03/media_12dd57fecb4a6fb5b36b201cd337726a5f0189a06.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/03/media_12dd57fecb4a6fb5b36b201cd337726a5f0189a06.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Introducing Webview UI in Bolt UXP: Build Richer Adobe Plugins Faster]]></title>
@@ -118,8 +118,8 @@
       <description><![CDATA[Building serverless integrations should be fast and simple. That's the core promise of Adobe App Builder: remove infrastructure complexity so developers can focus on building ...]]></description>
       <dc:creator><![CDATA[Rohan Kapoor]]></dc:creator>
       <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_1c00002ba6ead45eb625a39ed67f2d62809eec440.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_1c00002ba6ead45eb625a39ed67f2d62809eec440.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_19dc81bac32d18c072ef59b30ba6d5d1d8be4136c.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_19dc81bac32d18c072ef59b30ba6d5d1d8be4136c.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[The Agentic Evolution of Adobe Experience Manager]]></title>
@@ -128,8 +128,8 @@
       <description><![CDATA[Adobe Experience Manager is entering a new phase. And this one changes how work actually gets done.]]></description>
       <dc:creator><![CDATA[Sherrie Rohde]]></dc:creator>
       <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_1068272d182892f013bdb465375b826e00879c5e6.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_1068272d182892f013bdb465375b826e00879c5e6.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_1d2483bd04b1b6cc7af831423ff0d371df7cd4917.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_1d2483bd04b1b6cc7af831423ff0d371df7cd4917.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Building the Agentic Web with Adobe Experience Manager]]></title>
@@ -138,8 +138,8 @@
       <description><![CDATA[If you’ve been building on the web for a while, this moment probably feels familiar.]]></description>
       <dc:creator><![CDATA[Sherrie Rohde]]></dc:creator>
       <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_1e891152a9b84a74db1edb2d98ee7122a1c451155.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_1e891152a9b84a74db1edb2d98ee7122a1c451155.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2026/02/media_13bbec63042a5f1e47426c35f8ee7589127f1edcf.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2026/02/media_13bbec63042a5f1e47426c35f8ee7589127f1edcf.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Building Adobe Express Add‑ons in 24 Hours: Pixel Pluck’s Hackathon Story]]></title>
@@ -178,8 +178,8 @@
       <description><![CDATA[This article is for you if you publish plugins, integrations, applications, or solutions on the Adobe Exchange Marketplace, or public add-ons for Adobe Express.]]></description>
       <dc:creator><![CDATA[Madhur Sharma]]></dc:creator>
       <pubDate>Tue, 16 Dec 2025 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2025/12/media_14403fac9216de0745ee674fdbe0389fba25936e4.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2025/12/media_14403fac9216de0745ee674fdbe0389fba25936e4.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2025/12/media_1ae592bccba91c9351bfb8f6d85e13046971e5f40.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2025/12/media_1ae592bccba91c9351bfb8f6d85e13046971e5f40.png?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[UXP Arrives in Premiere: A New Era for Plugin Development]]></title>
@@ -188,8 +188,8 @@
       <description><![CDATA[We’re thrilled to announce that the Unified Extensibility Platform (UXP) has officially graduated from beta and is now available in Adobe Premiere 25.6!]]></description>
       <dc:creator><![CDATA[Arvind Sridhar]]></dc:creator>
       <pubDate>Tue, 16 Dec 2025 00:00:00 GMT</pubDate>
-      <enclosure url="https://blog.developer.adobe.com/en/publish/2025/12/media_16fb76c13ccdb8b86d8f2e8f53a95f94ceca1e3f1.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
-      <media:content url="https://blog.developer.adobe.com/en/publish/2025/12/media_16fb76c13ccdb8b86d8f2e8f53a95f94ceca1e3f1.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
+      <enclosure url="https://blog.developer.adobe.com/en/publish/2025/12/media_18bc8a022ec9551de1f3669ee7056e543ffaa6c9a.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/jpeg" length="0"/>
+      <media:content url="https://blog.developer.adobe.com/en/publish/2025/12/media_18bc8a022ec9551de1f3669ee7056e543ffaa6c9a.jpg?width=1200&amp;format=pjpg&amp;optimize=medium" medium="image"/>
     </item>
     <item>
       <title><![CDATA[Adobe Express Add-on Platform Updates: Fall 2025 Digest]]></title>
