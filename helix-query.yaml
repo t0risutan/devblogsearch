@@ -74,6 +74,39 @@ indices:
         value: |
           attribute(el, 'content')
 
+  article-management:
+    include:
+      - /en/publish/**
+    exclude:
+      - '**/Document.*'
+    target: /en/article-management.json
+
+    properties:
+      article:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+
+      publishedDate:
+        select: head > meta[name="m_date"]
+        value: |
+          attribute(el, 'content')
+
+      updatedDate:
+        select: head > meta[name="updated_date"]
+        value: |
+          attribute(el, 'content')
+
+      author:
+        select: head > meta[name="author"]
+        value: |
+          attribute(el, 'content')
+
+      shortDescription:
+        select: head > meta[name="short_description"]
+        value: |
+          attribute(el, 'content')
+
 # The blog.a.c config includes multiple additional languages, similar to this:
 # french:
 #    <<: *default
