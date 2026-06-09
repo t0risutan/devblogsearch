@@ -83,6 +83,35 @@ function fetchData(url) {
   });
 }
 
+async function hasHeroVideo(articlePath) {
+  try {
+    const articleUrl = `https://blog.developer.adobe.com${articlePath}`;
+    const html = await fetchData(articleUrl);
+
+    const afterH1 = html.split(/<\/h1>/i)[1];
+    if (!afterH1) return false;
+
+    const firstParagraphMatch = afterH1.match(/<p>([\s\S]*?)<\/p>/i);
+
+    if (!firstParagraphMatch) return false;
+
+    const firstParagraph = firstParagraphMatch[1];
+
+    const hrefMatch = firstParagraph.match(/href="([^"]+)"/i);
+
+    if (!hrefMatch) return false;
+
+    const href = hrefMatch[1];
+
+    return (
+      href.includes('youtube.com') || href.includes('youtu.be') || /\.(mp4|webm)(\?|$)/i.test(href)
+    );
+  } catch (err) {
+    console.warn(`Failed to fetch ${articlePath}`, err.message);
+    return false;
+  }
+}
+
 function ensureDirectory(filePath) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
@@ -99,6 +128,11 @@ async function fetchAndSort() {
     console.log(`Fetching ${QUERY_INDEX_URL}`);
     const response = await fetchData(QUERY_INDEX_URL);
     const blogData = JSON.parse(response);
+
+    for (const article of blogData.data) {
+      article.isHeroVideo = await hasHeroVideo(article.path);
+    }
+
     blogData.generatedAt = new Date().toISOString();
 
     if (!Array.isArray(blogData.data)) {

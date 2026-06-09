@@ -569,27 +569,23 @@ function formatLongMonthDate(date) {
  * @param {Element} article The article data to be placed in card.
  * @returns card Generated card
  */
-function buildMediaElement({image, imageAlt, title, eager}) {
+function buildMediaElement({ image, imageAlt, title, eager, hasHeroVideo }) {
 
   // Handle YouTube thumbnail paths from image metadata
-  if (image?.includes('/vi/')) {
-    const match = image.match(/\/vi\/([^/]+)/);
-
-    if (match?.[1]) {
-      const videoId = match[1];
-
-      const img = document.createElement('img');
-
-      img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-      img.alt = imageAlt || title;
-      img.loading = eager ? 'eager' : 'lazy';
-      img.style.cssText = `width: 100%; height: 100%; object-fit: initial;`;
-      img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
-
-      return wrapWithPlayOverlay(img);
-    }
+  const ytMatch = image?.match(/\/vi\/([^/?]+)/);
+  if (ytMatch?.[1]) {
+    const videoId = ytMatch[1];
+    const img = document.createElement('img');
+    img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+    img.alt = imageAlt || title;
+    img.loading = eager ? 'eager' : 'lazy';
+    img.style.cssText = 'width:100%;height:100%;object-fit:initial;';
+    img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
+    return hasHeroVideo ? wrapWithPlayOverlay(img) : img;
   }
-  return createOptimizedPicture(image,imageAlt || title,eager,[{ width: '750' }]);
+
+  const picture = createOptimizedPicture(image, imageAlt || title, eager, [{ width: '750' }]);
+  return hasHeroVideo ? wrapWithPlayOverlay(picture) : picture;
 }
 
 async function buildArticleCard(article, type = 'article', eager = false) {
@@ -598,8 +594,8 @@ async function buildArticleCard(article, type = 'article', eager = false) {
   } = article;
 
   const path = article.path.split('.')[0];
-
-  const mediaEl = buildMediaElement({image, imageAlt, title, eager});
+  const hasHeroVideo = article.isHeroVideo === true;
+  const mediaEl = buildMediaElement({ image, imageAlt, title, eager, hasHeroVideo });
 
   const card = document.createElement('a');
 

@@ -10,6 +10,20 @@ import { wrapWithPlayOverlay } from '../../scripts/utils.js';
 setLibs(SITE.prodLibsPath);
 const miloBlock = await import(`${getLibs()}/blocks/recommended-articles/recommended-articles.js`);
 
+let heroVideoIndex = null;
+async function getHeroVideoIndex() {
+  if (heroVideoIndex) return heroVideoIndex;
+  try {
+    const res = await fetch('/sorted-index/sorted-query-index.json');
+    if (!res.ok) return (heroVideoIndex = {});
+    const json = await res.json();
+    heroVideoIndex = Object.fromEntries((json.data || []).map((e) => [e.path, e.isHeroVideo === true]));
+  } catch {
+    heroVideoIndex = {};
+  }
+  return heroVideoIndex;
+}
+
 async function loadCSS(href) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
@@ -39,10 +53,10 @@ async function fetchOGImage(articlePath) {
   }
 }
 
-function buildMediaElement(ogImage, alt = '', eager = false) {
+function buildMediaElement(ogImage, alt = '', eager = false, hasHeroVideo = false) {
   if (!ogImage) return null;
 
-  const ytMatch = ogImage.match(/\/vi\/([a-zA-Z0-9_-]{11})\//);
+  const ytMatch = ogImage.match(/\/vi\/([^/?]+)/);
   if (ytMatch?.[1]) {
     const videoId = ytMatch[1];
     const img = document.createElement('img');
@@ -51,22 +65,27 @@ function buildMediaElement(ogImage, alt = '', eager = false) {
     img.loading = eager ? 'eager' : 'lazy';
     img.style.cssText = 'width:100%;height:100%;object-fit:initial;';
     img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
-    return wrapWithPlayOverlay(img);
+    return hasHeroVideo ? wrapWithPlayOverlay(img) : img;
   }
 
-  return createOptimizedPicture(ogImage, alt, eager, SITE.articleCard.breakpoints);
+  const picture = createOptimizedPicture(ogImage, alt, eager, SITE.articleCard.breakpoints);
+  return hasHeroVideo ? wrapWithPlayOverlay(picture) : picture;
 }
 
 export default async function init(blockEl) {
   await miloBlock.default(blockEl);
+
+  const videoIndex = await getHeroVideoIndex();
 
   for (const article of blockEl.querySelectorAll('a.article-card')) {
     const imageContainer = article.querySelector('div.article-card-image');
     if (!imageContainer || !article.href) continue;
 
     const alt = article.querySelector('h3')?.textContent || '';
+    const articlePath = new URL(article.href).pathname.split('.')[0];
+    const hasHeroVideo = videoIndex[articlePath] === true;
     const ogImage = await fetchOGImage(article.href);
-    const mediaEl = buildMediaElement(ogImage, alt, false);
+    const mediaEl = buildMediaElement(ogImage, alt, false, hasHeroVideo);
 
     imageContainer.replaceChildren(...(mediaEl ? [mediaEl] : []));
 
