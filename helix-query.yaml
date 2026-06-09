@@ -102,8 +102,18 @@ indices:
         value: |
           attribute(el, 'content')
 
+      description: 
+        select: head > meta[name="description"] 
+        value: | 
+          attribute(el, 'content')
+
       shortDescription:
         select: head > meta[name="short_description"]
+        value: |
+          attribute(el, 'content')
+
+      url:
+        select: head > meta[property="og:url"]
         value: |
           attribute(el, 'content')
 
