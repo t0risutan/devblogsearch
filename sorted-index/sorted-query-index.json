@@ -1622,7 +1622,7 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_139f5cefb805da24d916844fad6e774d15a2788d7.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
@@ -1639,7 +1639,7 @@
       "adobeCloud": "",
       "adobeApp": "",
       "mediaUrl": "",
-      "isHeroVideo": false
+      "isHeroVideo": true
     },
     {
       "path": "/en/publish/2020/01/learning-by-doing-porting-free-stock-search-from-cep-to-uxp-in-adobe-xd",
@@ -1873,5 +1873,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-06-09T06:01:49.697Z"
+  "generatedAt": "2026-06-09T06:47:05.688Z"
 }
