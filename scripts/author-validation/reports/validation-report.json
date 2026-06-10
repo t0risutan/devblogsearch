@@ -17,23 +17,6 @@
     ]
   },
   {
-    "name": "Steve Kwak",
-    "slug": "steve-kwak",
-    "latestArticle": {
-      "title": "How to Customize Your Adobe Creative Cloud Extension Package",
-      "date": "2018-08-21",
-      "url": "https://blog.developer.adobe.com/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package"
-    },
-    "docUrl": "/en/authors/steve-kwak",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Ash Ryan Arnwine",
     "slug": "ash-ryan-arnwine",
     "latestArticle": {
@@ -51,14 +34,14 @@
     ]
   },
   {
-    "name": "Abhishek Jain",
-    "slug": "abhishek-jain",
+    "name": "Steve Kwak",
+    "slug": "steve-kwak",
     "latestArticle": {
-      "title": "Troubleshoot Issues Installing Extensions and Add-ons for Creative Cloud apps",
-      "date": "2019-11-29",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/01/troubleshoot-issues-installing-extensions-and-add-ons-for-creative-cloud-apps"
+      "title": "How to Customize Your Adobe Creative Cloud Extension Package",
+      "date": "2018-08-21",
+      "url": "https://blog.developer.adobe.com/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package"
     },
-    "docUrl": "/en/authors/abhishek-jain",
+    "docUrl": "/en/authors/steve-kwak",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -110,6 +93,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
     },
     "docUrl": "/en/authors/ayan-choudhary",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Abhishek Jain",
+    "slug": "abhishek-jain",
+    "latestArticle": {
+      "title": "Troubleshoot Issues Installing Extensions and Add-ons for Creative Cloud apps",
+      "date": "2019-11-29",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/01/troubleshoot-issues-installing-extensions-and-add-ons-for-creative-cloud-apps"
+    },
+    "docUrl": "/en/authors/abhishek-jain",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -255,14 +255,14 @@
     ]
   },
   {
-    "name": "Arvind Sridhar",
-    "slug": "arvind-sridhar",
+    "name": "David Sankel",
+    "slug": "david-sankel",
     "latestArticle": {
-      "title": "UXP Arrives in Premiere: A New Era for Plugin Development",
-      "date": "2025-12-16",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/12/uxp-arrives-in-premiere-a-new-era-for-plugin-development"
+      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
+      "date": "2024-04-26",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
     },
-    "docUrl": "/en/authors/arvind-sridhar",
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -272,14 +272,14 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
+    "name": "Arvind Sridhar",
+    "slug": "arvind-sridhar",
     "latestArticle": {
-      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
-      "date": "2024-04-26",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+      "title": "UXP Arrives in Premiere: A New Era for Plugin Development",
+      "date": "2025-12-16",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/12/uxp-arrives-in-premiere-a-new-era-for-plugin-development"
     },
-    "docUrl": "/en/authors/david-sankel",
+    "docUrl": "/en/authors/arvind-sridhar",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
