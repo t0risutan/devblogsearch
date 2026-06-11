@@ -1,4 +1,5 @@
 import { getLibs } from '../../scripts/devblog/devblog.js';
+import { wrapWithPlayOverlay } from '../../scripts/utils.js';
 
 // These will be loaded dynamically in the functions that need them
 let createOptimizedPicture, decorateIcons, fetchPlaceholders;
@@ -105,33 +106,31 @@ async function renderResult(result, searchTerms, titleTag) {
     const wrapper = document.createElement('div');
     wrapper.className = 'search-result-image';
 
-    // Fallback if createOptimizedPicture isn't available - Handle YouTube thumbnail metadata
+    let mediaEl;
 
     if (result.image?.includes('/vi/')) {
-      const match = result.image.match(/\/vi\/([^/]+)/);
-
+      const match = result.image.match(/\/vi\/([^/?]+)/);
       if (match?.[1]) {
         const videoId = match[1];
-
         const img = document.createElement('img');
-
         img.src = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
         img.alt = result.title || '';
         img.loading = 'lazy';
         img.onerror = () => { if (!img.src.includes('hqdefault')) img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`; };
-
-        wrapper.append(img);
+        mediaEl = img;
       }
     } else if (typeof createOptimizedPicture === 'function') {
-      const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
-      wrapper.append(pic);
+      mediaEl = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
     } else {
-      // Simple img fallback
       const img = document.createElement('img');
       img.src = result.image;
       img.alt = result.title || '';
       img.loading = 'lazy';
-      wrapper.append(img);
+      mediaEl = img;
+    }
+
+    if (mediaEl) {
+      wrapper.append(result.isHeroVideo === true ? wrapWithPlayOverlay(mediaEl) : mediaEl);
     }
     a.append(wrapper);
   }
@@ -445,7 +444,7 @@ class BlogSearch extends HTMLElement {
     this.shadowRoot.adoptedStyleSheets = [styleSheet]; 
     
     const placeholders = await fetchPlaceholders();
-    const source = this.getAttribute('data-source') || '/en/query-index.json';
+    const source = this.getAttribute('data-source') || '/sorted-index/sorted-query-index.json';
     
     
     // Detect if this search should be nav-style
