@@ -1,8 +1,29 @@
 {
-  "total": 89,
+  "total": 90,
   "offset": 0,
-  "limit": 89,
+  "limit": 90,
   "data": [
+    {
+      "path": "/en/publish/2026/06/meet-the-new-team-members-who-build-support-and-improve-uxp-for-third-party-developers",
+      "image": "/en/publish/2026/06/media_1e7f3cda8759f6f1be54bdaefd2436de43dbed7ae.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Meet the new team members who build, support, and improve UXP for third-party developers",
+      "author": "Kasi Viswanathan K",
+      "description": "The Unified Extensibility Platform (UXP) community has grown into something special — a place where developers push the limits of what's possible with Adobe's creative ...",
+      "tags": "[\"Uxp\",\"creative cloud\",\"team\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1781562446",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1781481600",
+      "sortDate": "2026-06-15",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": "",
+      "isHeroVideo": false
+    },
     {
       "path": "/en/publish/2026/06/the-architectural-foundations-of-an-agentic-commerce-platform",
       "image": "/en/publish/2026/06/media_10e095e25d951b7a5483d95a397d2b197b0b31793.png?width=1200&format=pjpg&optimize=medium",
@@ -1894,5 +1915,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-06-12T16:49:26.103Z"
+  "generatedAt": "2026-06-15T23:52:09.047Z"
 }
