@@ -17,23 +17,6 @@
     ]
   },
   {
-    "name": "Ash Ryan Arnwine",
-    "slug": "ash-ryan-arnwine",
-    "latestArticle": {
-      "title": "Using ES2015 template strings in CEP",
-      "date": "2018-02-08",
-      "url": "https://blog.developer.adobe.com/en/publish/2019/06/using-es2015-template-strings-in-cep"
-    },
-    "docUrl": "/en/authors/ash-ryan-arnwine",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Steve Kwak",
     "slug": "steve-kwak",
     "latestArticle": {
@@ -51,48 +34,14 @@
     ]
   },
   {
-    "name": "Sharayoo Jog",
-    "slug": "sharayoo-jog",
+    "name": "Ash Ryan Arnwine",
+    "slug": "ash-ryan-arnwine",
     "latestArticle": {
-      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
-      "date": "2021-11-30",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
+      "title": "Using ES2015 template strings in CEP",
+      "date": "2018-02-08",
+      "url": "https://blog.developer.adobe.com/en/publish/2019/06/using-es2015-template-strings-in-cep"
     },
-    "docUrl": "/en/authors/sharayoo-jog",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
-    "name": "Ashikka Gupta",
-    "slug": "ashikka-gupta",
-    "latestArticle": {
-      "title": "Building an Image Search Plugin for Photoshop",
-      "date": "2021-12-31",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/03/building-an-image-search-plugin-for-photoshop"
-    },
-    "docUrl": "/en/authors/ashikka-gupta",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
-    "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
-    },
-    "docUrl": "/en/authors/ayan-choudhary",
+    "docUrl": "/en/authors/ash-ryan-arnwine",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -119,6 +68,40 @@
     ]
   },
   {
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "latestArticle": {
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+    },
+    "docUrl": "/en/authors/ayan-choudhary",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Ashikka Gupta",
+    "slug": "ashikka-gupta",
+    "latestArticle": {
+      "title": "Building an Image Search Plugin for Photoshop",
+      "date": "2021-12-31",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/03/building-an-image-search-plugin-for-photoshop"
+    },
+    "docUrl": "/en/authors/ashikka-gupta",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
     "name": "Mike Zahorik",
     "slug": "mike-zahorik",
     "latestArticle": {
@@ -127,6 +110,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
     },
     "docUrl": "/en/authors/mike-zahorik",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Sharayoo Jog",
+    "slug": "sharayoo-jog",
+    "latestArticle": {
+      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
+      "date": "2021-11-30",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
+    },
+    "docUrl": "/en/authors/sharayoo-jog",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -170,23 +170,6 @@
     ]
   },
   {
-    "name": "Pratibha Sharma",
-    "slug": "pratibha-sharma",
-    "latestArticle": {
-      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
-      "date": "2025-06-09",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
-    },
-    "docUrl": "/en/authors/pratibha-sharma",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Asim Chatterjee",
     "slug": "asim-chatterjee",
     "latestArticle": {
@@ -204,14 +187,14 @@
     ]
   },
   {
-    "name": "Honwai Wong",
-    "slug": "honwai-wong",
+    "name": "Pratibha Sharma",
+    "slug": "pratibha-sharma",
     "latestArticle": {
-      "title": "Powering Adobe MAX with App Builder and I/O Runtime",
-      "date": "2022-01-17",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/00/powering-adobe-max-with-app-builder-io-runtime"
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
     },
-    "docUrl": "/en/authors/honwai-wong",
+    "docUrl": "/en/authors/pratibha-sharma",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -238,14 +221,14 @@
     ]
   },
   {
-    "name": "Sayan Jain",
-    "slug": "sayan-jain",
+    "name": "Honwai Wong",
+    "slug": "honwai-wong",
     "latestArticle": {
-      "title": "Inside AI Collaborate's 24-Hour Adobe Express Add-On Hackathon",
-      "date": "2025-08-28",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/08/inside-ai-collaborate-s-24-hour-adobe-express-add-on-hackathon"
+      "title": "Powering Adobe MAX with App Builder and I/O Runtime",
+      "date": "2022-01-17",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/00/powering-adobe-max-with-app-builder-io-runtime"
     },
-    "docUrl": "/en/authors/sayan-jain",
+    "docUrl": "/en/authors/honwai-wong",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -255,14 +238,14 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
+    "name": "Sayan Jain",
+    "slug": "sayan-jain",
     "latestArticle": {
-      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
-      "date": "2024-04-26",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+      "title": "Inside AI Collaborate's 24-Hour Adobe Express Add-On Hackathon",
+      "date": "2025-08-28",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/08/inside-ai-collaborate-s-24-hour-adobe-express-add-on-hackathon"
     },
-    "docUrl": "/en/authors/david-sankel",
+    "docUrl": "/en/authors/sayan-jain",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -297,6 +280,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
     },
     "docUrl": "/en/authors/renae-kang",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "David Sankel",
+    "slug": "david-sankel",
+    "latestArticle": {
+      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
+      "date": "2024-04-26",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+    },
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",

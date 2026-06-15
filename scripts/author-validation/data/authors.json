@@ -830,6 +830,26 @@
     "isComplete": false
   },
   {
+    "name": "Surya Lamech",
+    "slug": "surya-lamech",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/surya-lamech",
+    "title": "Principal Product Marketing Manager",
+    "linkedin": "https://www.linkedin.com/in/surya-lamech/",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/surya-lamech",
+    "docImage": "./media_17a415b5da6febb6103ec9e8a07c9c1b7d6c334bb.jpg?width=750&#x26;format=jpg&#x26;optimize=medium",
+    "image": "/images/authors/surya-lamech.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "The Architectural Foundations of an Agentic Commerce Platform",
+      "date": "2026-06-12"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Taylor Krusen",
     "slug": "taylor-krusen",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/taylor-krusen",
