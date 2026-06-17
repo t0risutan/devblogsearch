@@ -449,6 +449,10 @@ class BlogSearch extends HTMLElement {
       const input = searchInput(this, { source, placeholders });
       input.classList.add('explore-search-input');
       input.hidden = true;
+      const collapseSearch = () => {
+        searchWrap.classList.remove('expanded');
+        input.hidden = true;
+      };
       const toggleSearch = () => {
         const expanded = searchWrap.classList.toggle('expanded');
         input.hidden = !expanded;
@@ -459,6 +463,20 @@ class BlogSearch extends HTMLElement {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleSearch();
+        }
+      });
+      // Native search clear (X) fires a 'search' event; collapse the field when emptied.
+      input.addEventListener('search', () => {
+        if (input.value === '') {
+          collapseSearch();
+          this.refreshExploreView();
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          input.value = '';
+          collapseSearch();
+          this.refreshExploreView();
         }
       });
       searchWrap.append(icon, input);
@@ -621,6 +639,18 @@ class BlogSearch extends HTMLElement {
       Object.keys(this.activeFilters).forEach((key) => {
         this.activeFilters[key] = [];
       });
+      // Reset the visible controls so the UI matches the cleared state.
+      this.shadowRoot.querySelectorAll('.filter-bar input[type="checkbox"]:checked').forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      const dateSelect = this.shadowRoot.querySelector('.filter-date-select');
+      if (dateSelect) dateSelect.value = '';
+      const searchField = this.shadowRoot.querySelector('.explore-search-input');
+      if (searchField) {
+        searchField.value = '';
+        searchField.hidden = true;
+      }
+      this.shadowRoot.querySelector('.explore-search')?.classList.remove('expanded');
       this.renderChips(this.activeFilters);
       this.updateURLState(this.activeFilters);
       this.applyFilterChange();
@@ -771,8 +801,21 @@ class BlogSearch extends HTMLElement {
         dateSelect.setAttribute('aria-label', 'Date');
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
-        defaultOption.textContent = explore ? 'Date' : 'All dates';
+        defaultOption.textContent = 'Date';
+        // In explore mode the select itself acts as the "Date" label, so hide the
+        // placeholder from the open list and offer an explicit "All dates" reset.
+        if (explore) {
+          defaultOption.hidden = true;
+        } else {
+          defaultOption.textContent = 'All dates';
+        }
         dateSelect.append(defaultOption);
+        if (explore) {
+          const allDatesOption = document.createElement('option');
+          allDatesOption.value = '';
+          allDatesOption.textContent = 'All dates';
+          dateSelect.append(allDatesOption);
+        }
         [
           { value: 'last-week', label: 'Last week' },
           { value: 'last-month', label: 'Last month' },
@@ -783,8 +826,9 @@ class BlogSearch extends HTMLElement {
           option.textContent = label;
           dateSelect.append(option);
         });
-        if (explore && this.activeFilters.date[0]) {
-          dateSelect.value = this.activeFilters.date[0];
+        const [activeDate] = this.activeFilters.date;
+        if (explore && activeDate) {
+          dateSelect.value = activeDate;
         }
         filterBar.append(dateSelect);
         return;
@@ -796,7 +840,10 @@ class BlogSearch extends HTMLElement {
 
       toggle.className = 'filter-dropdown-toggle';
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = labels[group] || group;
+      const baseLabel = labels[group] || group;
+      toggle.textContent = baseLabel;
+      // Keep the plain label so we can re-append a selection count later.
+      toggle.dataset.baseLabel = baseLabel;
 
       const menu = document.createElement('ul');
 
@@ -817,6 +864,12 @@ class BlogSearch extends HTMLElement {
 
       toggle.addEventListener('click', () => {
         const currentlyOpen = toggle.getAttribute('aria-expanded') === 'true';
+        // Close every other open dropdown so only one is open at a time.
+        filterBar.querySelectorAll('.filter-dropdown-toggle[aria-expanded="true"]').forEach((other) => {
+          if (other === toggle) return;
+          other.setAttribute('aria-expanded', 'false');
+          other.parentElement.querySelector('ul')?.classList.remove('show');
+        });
         toggle.setAttribute('aria-expanded', String(!currentlyOpen));
         menu.classList.toggle('show', !currentlyOpen);
       });
@@ -839,7 +892,42 @@ class BlogSearch extends HTMLElement {
     return filterBar;
   }
 
+  syncExploreControls(activeFilters) {
+    const filterBar = this.shadowRoot.querySelector('.filter-bar-explore');
+    if (filterBar) {
+      filterBar.querySelectorAll('.filter-dropdown').forEach((dropdown) => {
+        const { group } = dropdown.dataset;
+        const toggle = dropdown.querySelector('.filter-dropdown-toggle');
+        const base = toggle.dataset.baseLabel || toggle.textContent;
+        const count = (activeFilters[group] || []).length;
+        toggle.textContent = count ? `${base} (${count})` : base;
+        toggle.classList.toggle('has-active', count > 0);
+      });
+    }
+
+    const toolbar = this.shadowRoot.querySelector('.explore-toolbar');
+    if (!toolbar) return;
+    let clearBtn = toolbar.querySelector('.explore-clear-all');
+    if (!clearBtn) {
+      clearBtn = document.createElement('button');
+      clearBtn.className = 'filter-clear-all explore-clear-all';
+      clearBtn.textContent = 'Clear all';
+      clearBtn.addEventListener('click', () => {
+        this.dispatchEvent(new CustomEvent('clear-all-filters', { bubbles: true }));
+      });
+      const searchWrap = toolbar.querySelector('.explore-search');
+      toolbar.insertBefore(clearBtn, searchWrap);
+    }
+    const anyActive = Object.values(activeFilters).some((values) => values.length > 0);
+    clearBtn.hidden = !anyActive;
+  }
+
   renderChips(activeFilters) {
+    // Explore mode shows selection counts on the filter buttons instead of chips.
+    if (this.classList.contains('explore-facets')) {
+      this.syncExploreControls(activeFilters);
+      return;
+    }
     this.shadowRoot.querySelector('.filter-chips')?.remove();
     if (!Object.values(activeFilters).some((values) => values.length > 0)) return;
     const chipsContainer = document.createElement('div');
@@ -898,6 +986,8 @@ class BlogSearch extends HTMLElement {
   }
 
   updateFilterCounts(data) {
+    // Explore mode keeps option lists clean (names only, no per-option counts).
+    if (this.classList.contains('explore-facets')) return;
     const filterBar = this.shadowRoot.querySelector('.filter-bar');
     if (!filterBar) return;
     const filterDropdowns = filterBar.querySelectorAll('.filter-dropdown');
