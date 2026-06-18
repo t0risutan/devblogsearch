@@ -101,6 +101,11 @@ indices:
         select: head > meta[name="author"]
         value: |
           attribute(el, 'content')
+    
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
 
       description: 
         select: head > meta[name="description"] 
@@ -114,6 +119,21 @@ indices:
 
       url:
         select: head > meta[property="og:url"]
+        value: |
+          attribute(el, 'content')
+
+      adobeCloud:
+        select: head > meta[name="adobe-cloud"]
+        value: |
+          attribute(el, 'content')
+
+      adobeApp:
+        select: head > meta[name="adobe-app"]
+        value: |
+          attribute(el, 'content')
+
+      newsletterPlanned:
+        select: head > meta[name="newsletter_planned"]
         value: |
           attribute(el, 'content')
 
