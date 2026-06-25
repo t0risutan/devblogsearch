@@ -1,19 +1,40 @@
 {
-  "total": 91,
+  "total": 92,
   "offset": 0,
-  "limit": 91,
+  "limit": 92,
   "data": [
+    {
+      "path": "/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now",
+      "image": "/en/publish/2026/06/media_1678e569ebf2763f58a39d560501e6435b18ce5c0.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Upcoming Photoshop UI Changes: Test Your UXP Plugin Now",
+      "author": "Cory Shubert",
+      "description": "Corey Shubert is a Product Manager on the Photoshop Desktop Team at Adobe",
+      "tags": "[\"Photoshop\",\"uxp\",\"UI\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1782388438",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782345600",
+      "sortDate": "2026-06-25",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": "",
+      "isHeroVideo": false
+    },
     {
       "path": "/en/publish/2026/06/new-community-resource-hub-for-adobe-express-and-creative-cloud-developers",
       "image": "/en/publish/2026/06/media_132b48cb686fe58f357dfcc76097269e78493299f.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "New Community Resource Hub for Adobe Express and Creative Cloud Developers",
       "author": "Erin Finnegan",
-      "description": "Sometimes the best documentation, tutorials, and code samples don’t come from the official source; the best developer resources often come from the community of developers. ...",
-      "tags": "[\"Blog\",\"github\",\"developer resources\",\"links\",\"developer tools\",\"uxp\",\"express\",\"add-ons\",\"cep\"]",
+      "description": "Sometimes the best documentation, tutorials, and code samples don’t come from the official source. Often, the most helpful developer resources come from the community itself. ...",
+      "tags": "[\"developer resources\",\"Blog\",\"github\",\"links\",\"developer tools\",\"uxp\",\"express\",\"add-ons\",\"cep\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1782347784",
+      "lastModified": "1782389219",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1782259200",
       "sortDate": "2026-06-24",
@@ -1936,5 +1957,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-06-25T09:05:47.691Z"
+  "generatedAt": "2026-06-25T14:46:09.718Z"
 }
