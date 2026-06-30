@@ -786,11 +786,11 @@ class BlogSearch extends HTMLElement {
     if (explore) filterBar.classList.add('filter-bar-explore');
 
     const labels = explore
-      ? { cat: 'Category', prod: 'Products', type: 'Topic' }
+      ? { cat: 'Category', prod: 'Products', type: 'Topic', author: 'Author' }
       : { cat: 'Category', prod: 'Product', author: 'Author', type: 'Type' };
-    const exploreGroups = new Set(['prod', 'cat', 'type', 'date']);
+    const exploreGroups = new Set(['prod', 'cat', 'type', 'author', 'date']);
     const facetEntries = explore
-      ? ['prod', 'cat', 'type', 'date'].map((group) => [group, facets[group]])
+      ? ['prod', 'cat', 'type', 'author', 'date'].map((group) => [group, facets[group]])
       : Object.entries(facets);
 
     facetEntries.forEach(([group, values]) => {
