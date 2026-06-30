@@ -639,6 +639,7 @@ class BlogSearch extends HTMLElement {
       Object.keys(this.activeFilters).forEach((key) => {
         this.activeFilters[key] = [];
       });
+      this.closeFacetPanels(this.shadowRoot.querySelector('.filter-bar'));
       // Reset the visible controls so the UI matches the cleared state.
       this.shadowRoot.querySelectorAll('.filter-bar input[type="checkbox"]:checked').forEach((checkbox) => {
         checkbox.checked = false;
