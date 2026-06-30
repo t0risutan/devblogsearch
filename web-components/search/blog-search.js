@@ -201,11 +201,14 @@ async function renderResult(result, searchTerms, titleTag, { showDate = false } 
 }
 
 function clearSearchResults(component) {
-  // looks for the results in theshadow dom first else it will fallback to the light dom
-  const searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
+  const searchResults = getSearchResultsEl(component);
   if (searchResults) {
     searchResults.innerHTML = '';
   }
+}
+
+function getSearchResultsEl(component) {
+  return component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
 }
 
 function clearSearch(component) {
@@ -232,25 +235,26 @@ async function renderExploreResults(component, config, filteredData, searchTerms
   const exploreResults = component.shadowRoot?.querySelector('.explore-results');
   if (!exploreResults) return;
 
-  exploreResults.innerHTML = '';
   const headingTag = exploreResults.dataset.h;
 
   if (filteredData.length) {
-    exploreResults.classList.remove('no-results');
     const dateOpts = { showDate: true };
     const results = await Promise.all(
       filteredData.map((result) => renderResult(result, searchTerms, headingTag, dateOpts)),
     );
     if (renderId !== currentRenderId) return;
-    results.forEach((li) => exploreResults.append(li));
+
+    exploreResults.classList.remove('no-results');
+    exploreResults.replaceChildren(...results);
   } else {
     if (renderId !== currentRenderId) return;
+
     const noResultsMessage = document.createElement('li');
     noResultsMessage.className = 'explore-no-results-message';
     noResultsMessage.setAttribute('role', 'status');
     noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
     exploreResults.classList.add('no-results');
-    exploreResults.append(noResultsMessage);
+    exploreResults.replaceChildren(noResultsMessage);
   }
 }
 
@@ -258,33 +262,28 @@ async function renderResults(component, config, filteredData, searchTerms) {
   currentRenderId += 1;
   const renderId = currentRenderId;
 
-  clearSearchResults(component);
-  // looks for the results in theshadow dom first else it will fallback to the light dom
-  const searchResults = component.shadowRoot?.querySelector('.search-results') || component.querySelector('.search-results');
+  const searchResults = getSearchResultsEl(component);
   if (!searchResults) return;
 
   const headingTag = searchResults.dataset.h;
 
   if (filteredData.length) {
-    searchResults.classList.remove('no-results');
-
-    // Render all results in parallel
     const results = await Promise.all(
       filteredData.map((result) => renderResult(result, searchTerms, headingTag)),
     );
 
-    // Check if this render is still current (not cancelled by a newer search)
     if (renderId !== currentRenderId) return;
 
-    // Append all results at once
-    results.forEach((li) => searchResults.append(li));
+    searchResults.classList.remove('no-results');
+    // replaceChildren avoids a paint frame where :empty hides the panel (display: none)
+    searchResults.replaceChildren(...results);
   } else {
     if (renderId !== currentRenderId) return;
 
     const noResultsMessage = document.createElement('li');
-    searchResults.classList.add('no-results');
     noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
-    searchResults.append(noResultsMessage);
+    searchResults.classList.add('no-results');
+    searchResults.replaceChildren(noResultsMessage);
   }
 }
 
@@ -316,7 +315,13 @@ async function handleSearch(e, component, config) {
   const searchTerms = searchValue.toLowerCase().split(/\s+/).filter((term) => term.length >= 3);
 
   try {
-    const data = await fetchData(config.source);
+    let data = component.searchIndexData;
+    if (!data) {
+      data = await fetchData(config.source);
+      if (data) component.searchIndexData = data;
+    }
+    if (!data) return;
+
     let scopedData = data;
 
     if (currentTopic) {
@@ -578,6 +583,9 @@ class BlogSearch extends HTMLElement {
     }
 
     if (isNavSearch) {
+      fetchData(source).then((data) => {
+        if (data) this.searchIndexData = data;
+      });
       return;
     }
 
