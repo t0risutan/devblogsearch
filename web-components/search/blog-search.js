@@ -213,8 +213,10 @@ async function renderExploreResults(component, config, filteredData, searchTerms
   } else {
     if (renderId !== currentRenderId) return;
     const noResultsMessage = document.createElement('li');
-    exploreResults.classList.add('no-results');
+    noResultsMessage.className = 'explore-no-results-message';
+    noResultsMessage.setAttribute('role', 'status');
     noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
+    exploreResults.classList.add('no-results');
     exploreResults.append(noResultsMessage);
   }
 }
