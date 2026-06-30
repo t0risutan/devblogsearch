@@ -1710,11 +1710,11 @@
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
       "author": "Devblogs",
-      "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
+      "description": "1280 × 720 (~2.13:1) is suitable for: Faster loading, Standard usage scenarios.Clear composition guidelines can improve visual consistency",
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780992980",
+      "lastModified": "1782805181",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
@@ -1957,5 +1957,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-06-25T14:46:09.718Z"
+  "generatedAt": "2026-06-30T08:05:07.197Z"
 }
