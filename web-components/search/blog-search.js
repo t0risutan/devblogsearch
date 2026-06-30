@@ -867,18 +867,20 @@ class BlogSearch extends HTMLElement {
 
       const menu = document.createElement('ul');
 
-      values.forEach((value) => {
+      values.forEach((value, index) => {
         const item = document.createElement('li');
 
+        const checkboxId = `filter-${group}-${index}`;
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
+        checkbox.id = checkboxId;
         checkbox.value = value;
-        item.append(checkbox);
 
         const label = document.createElement('label');
+        label.setAttribute('for', checkboxId);
         label.textContent = value;
-        item.append(label);
 
+        item.append(checkbox, label);
         menu.append(item);
       });
 
