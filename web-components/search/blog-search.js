@@ -660,6 +660,23 @@ class BlogSearch extends HTMLElement {
     if (explore) {
       await this.refreshExploreView();
     }
+
+    this.bindOutsideClickClose();
+  }
+
+  bindOutsideClickClose() {
+    if (this.outsideClickHandler) return;
+    this.outsideClickHandler = (e) => {
+      if (e.composedPath().includes(this)) return;
+      this.closeFacetPanels(this.shadowRoot?.querySelector('.filter-bar'));
+    };
+    document.addEventListener('click', this.outsideClickHandler);
+  }
+
+  disconnectedCallback() {
+    if (!this.outsideClickHandler) return;
+    document.removeEventListener('click', this.outsideClickHandler);
+    this.outsideClickHandler = null;
   }
 
   // eslint-disable-next-line class-methods-use-this
