@@ -106,7 +106,30 @@ async function fetchData(source) {
   return json.data;
 }
 
-async function renderResult(result, searchTerms, titleTag) {
+function formatLongMonthDate(date) {
+  if (!date) return '';
+
+  const [year, month, day] = date.split('-');
+  const jsDate = new Date(Date.UTC(year, month - 1, day));
+
+  return jsDate.toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+function formatArticleCardDate(sortDate, updatedDate) {
+  if (updatedDate && sortDate) {
+    return `${formatLongMonthDate(updatedDate)} • First published ${formatLongMonthDate(sortDate)}`;
+  }
+  if (sortDate) return formatLongMonthDate(sortDate);
+  if (updatedDate) return formatLongMonthDate(updatedDate);
+  return '';
+}
+
+async function renderResult(result, searchTerms, titleTag, { showDate = false } = {}) {
   await loadMiloUtils();
   const li = document.createElement('li');
   const a = document.createElement('a');
@@ -164,6 +187,15 @@ async function renderResult(result, searchTerms, titleTag) {
     highlightTextElements(searchTerms, [description]);
     a.append(description);
   }
+  if (showDate) {
+    const dateDisplay = formatArticleCardDate(result.sortDate, result.updatedDate);
+    if (dateDisplay) {
+      const dateElement = document.createElement('p');
+      dateElement.className = 'search-result-date';
+      dateElement.textContent = dateDisplay;
+      a.append(dateElement);
+    }
+  }
   li.append(a);
   return li;
 }
@@ -205,8 +237,9 @@ async function renderExploreResults(component, config, filteredData, searchTerms
 
   if (filteredData.length) {
     exploreResults.classList.remove('no-results');
+    const dateOpts = { showDate: true };
     const results = await Promise.all(
-      filteredData.map((result) => renderResult(result, searchTerms, headingTag)),
+      filteredData.map((result) => renderResult(result, searchTerms, headingTag, dateOpts)),
     );
     if (renderId !== currentRenderId) return;
     results.forEach((li) => exploreResults.append(li));

@@ -494,6 +494,20 @@ header nav.has-blog-nav-search {
   color: #505050;
 }
 
+.explore-results .search-result-date {
+  padding: 0 16px 16px;
+  margin: 0;
+  margin-top: auto;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6e6e6e;
+  text-transform: none;
+}
+
+.explore-results > li > a > p:not(.search-result-date) {
+  flex: 1;
+}
+
 .explore-results.no-results {
   display: flex;
   justify-content: center;
