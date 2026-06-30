@@ -780,6 +780,17 @@ class BlogSearch extends HTMLElement {
     window.history.replaceState({}, '', url.toString());
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  closeFacetPanels(filterBar, { exceptToggle = null } = {}) {
+    if (!filterBar) return;
+    filterBar.querySelectorAll('.filter-dropdown-toggle').forEach((toggle) => {
+      if (toggle === exceptToggle) return;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.parentElement?.querySelector('ul')?.classList.remove('show');
+    });
+    filterBar.querySelector('.filter-date-select')?.blur();
+  }
+
   renderFilterBar(facets, { explore = false } = {}) {
     const filterBar = document.createElement('div');
     filterBar.className = 'filter-bar';
@@ -830,6 +841,14 @@ class BlogSearch extends HTMLElement {
         if (explore && activeDate) {
           dateSelect.value = activeDate;
         }
+        const closeCustomDropdowns = () => {
+          filterBar.querySelectorAll('.filter-dropdown-toggle[aria-expanded="true"]').forEach((toggle) => {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.parentElement?.querySelector('ul')?.classList.remove('show');
+          });
+        };
+        dateSelect.addEventListener('mousedown', closeCustomDropdowns);
+        dateSelect.addEventListener('focus', closeCustomDropdowns);
         filterBar.append(dateSelect);
         return;
       }
@@ -864,14 +883,14 @@ class BlogSearch extends HTMLElement {
 
       toggle.addEventListener('click', () => {
         const currentlyOpen = toggle.getAttribute('aria-expanded') === 'true';
-        // Close every other open dropdown so only one is open at a time.
-        filterBar.querySelectorAll('.filter-dropdown-toggle[aria-expanded="true"]').forEach((other) => {
-          if (other === toggle) return;
-          other.setAttribute('aria-expanded', 'false');
-          other.parentElement.querySelector('ul')?.classList.remove('show');
-        });
-        toggle.setAttribute('aria-expanded', String(!currentlyOpen));
-        menu.classList.toggle('show', !currentlyOpen);
+        if (currentlyOpen) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('show');
+          return;
+        }
+        this.closeFacetPanels(filterBar);
+        toggle.setAttribute('aria-expanded', 'true');
+        menu.classList.add('show');
       });
 
       const dropdown = document.createElement('div');
