@@ -136,6 +136,9 @@ async function fetchAndSort() {
 
     console.log(`Found ${blogData.data.length} blog posts in the query index`);
 
+    // filter out draft articles before sorting
+    blogData.data = blogData.data.filter((article) => !article.path.includes('/drafts/'));
+
     // Build cache keyed by path from the existing sorted JSON.
     // Each cached entry stores { isHeroVideo, lastModified } so we can detect
     // whether the article has changed since the last run.
