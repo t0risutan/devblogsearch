@@ -250,6 +250,31 @@
     "isComplete": true
   },
   {
+    "name": "Cory Shubert",
+    "slug": "cory-shubert",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/cory-shubert",
+    "title": "PM Photoshop Desktop",
+    "linkedin": "https://www.linkedin.com/in/cory-shubert-45439b8/",
+    "links": [
+      {
+        "url": "https://www.behance.net/shubertmedia",
+        "label": "Shubert Media"
+      }
+    ],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/cory-shubert",
+    "docImage": "./media_15f7d582865511a2f312b3a6a73730deb4ea2cdce.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/cory-shubert.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Upcoming Photoshop UI Changes: Test Your UXP Plugin Now",
+      "date": "2026-06-25"
+    },
+    "isComplete": true
+  },
+  {
     "name": "David Sankel",
     "slug": "david-sankel",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/david-sankel",
@@ -334,8 +359,8 @@
     "image": "/images/authors/erin-finnegan.png",
     "fallbackImage": "/images/default-images/default-image-1.png",
     "latestArticle": {
-      "title": "Introducing the Creative Cloud Developer Champion Program",
-      "date": "2025-01-13"
+      "title": "New Community Resource Hub for Adobe Express and Creative Cloud Developers",
+      "date": "2026-06-24"
     },
     "isComplete": true
   },
@@ -453,6 +478,26 @@
       "date": "2026-03-16"
     },
     "isComplete": false
+  },
+  {
+    "name": "Kasi Viswanathan K",
+    "slug": "kasi-viswanathan-k",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/kasi-viswanathan-k",
+    "title": "Sr. Developer Relations Engineer",
+    "linkedin": "https://linkedin.com/in/kasivis",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/kasi-viswanathan-k",
+    "docImage": "./media_12951da396bd9440074eebbf6897341bd893c2c3a.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/kasi-viswanathan-k.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Meet the new team members who build, support, and improve UXP for third-party developers",
+      "date": "2026-06-15"
+    },
+    "isComplete": true
   },
   {
     "name": "Kelvin Xu",

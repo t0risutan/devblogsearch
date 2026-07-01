@@ -68,14 +68,14 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
+    "name": "Sharayoo Jog",
+    "slug": "sharayoo-jog",
     "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
+      "date": "2021-11-30",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
     },
-    "docUrl": "/en/authors/ayan-choudhary",
+    "docUrl": "/en/authors/sharayoo-jog",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -102,14 +102,14 @@
     ]
   },
   {
-    "name": "Mike Zahorik",
-    "slug": "mike-zahorik",
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
     "latestArticle": {
-      "title": "Power from the People: InDesign Scripting",
-      "date": "2020-10-01",
-      "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
     },
-    "docUrl": "/en/authors/mike-zahorik",
+    "docUrl": "/en/authors/ayan-choudhary",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -119,14 +119,14 @@
     ]
   },
   {
-    "name": "Sharayoo Jog",
-    "slug": "sharayoo-jog",
+    "name": "Mike Zahorik",
+    "slug": "mike-zahorik",
     "latestArticle": {
-      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
-      "date": "2021-11-30",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
+      "title": "Power from the People: InDesign Scripting",
+      "date": "2020-10-01",
+      "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
     },
-    "docUrl": "/en/authors/sharayoo-jog",
+    "docUrl": "/en/authors/mike-zahorik",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -170,23 +170,6 @@
     ]
   },
   {
-    "name": "Asim Chatterjee",
-    "slug": "asim-chatterjee",
-    "latestArticle": {
-      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
-      "date": "2025-06-09",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
-    },
-    "docUrl": "/en/authors/asim-chatterjee",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Pratibha Sharma",
     "slug": "pratibha-sharma",
     "latestArticle": {
@@ -204,14 +187,14 @@
     ]
   },
   {
-    "name": "Kelvin Xu",
-    "slug": "kelvin-xu",
+    "name": "Asim Chatterjee",
+    "slug": "asim-chatterjee",
     "latestArticle": {
-      "title": "Adobe Developer App Builder — The Power of Scaling at Your Fingertips",
-      "date": "2022-05-13",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/05/adobe-app-builder-the-power-of-scaling-at-your-fingertips-8ae1149b7ebd"
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
     },
-    "docUrl": "/en/authors/kelvin-xu",
+    "docUrl": "/en/authors/asim-chatterjee",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -229,6 +212,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2022/00/powering-adobe-max-with-app-builder-io-runtime"
     },
     "docUrl": "/en/authors/honwai-wong",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Kelvin Xu",
+    "slug": "kelvin-xu",
+    "latestArticle": {
+      "title": "Adobe Developer App Builder — The Power of Scaling at Your Fingertips",
+      "date": "2022-05-13",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/05/adobe-app-builder-the-power-of-scaling-at-your-fingertips-8ae1149b7ebd"
+    },
+    "docUrl": "/en/authors/kelvin-xu",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -272,14 +272,14 @@
     ]
   },
   {
-    "name": "Renae Kang",
-    "slug": "renae-kang",
+    "name": "David Sankel",
+    "slug": "david-sankel",
     "latestArticle": {
-      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
-      "date": "2024-12-05",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
+      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
+      "date": "2024-04-26",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
     },
-    "docUrl": "/en/authors/renae-kang",
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -289,14 +289,14 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
+    "name": "Renae Kang",
+    "slug": "renae-kang",
     "latestArticle": {
-      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
-      "date": "2024-04-26",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
+      "date": "2024-12-05",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
     },
-    "docUrl": "/en/authors/david-sankel",
+    "docUrl": "/en/authors/renae-kang",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
