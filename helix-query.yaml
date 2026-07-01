@@ -86,7 +86,10 @@ indices:
         select: main h1:first-of-type
         value: |
           textContent(el)
-
+      status:
+        select: none
+        value: |
+          match(path, '/drafts/') ? 'draft' : 'published'
       publishedDate:
         select: head > meta[name="m_date"]
         value: |
