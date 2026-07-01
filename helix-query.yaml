@@ -89,7 +89,7 @@ indices:
       status:
         select: none
         value: |
-          match(path, '/drafts/') ? 'draft' : 'published'
+          match(path, '\/(drafts)\/')
       publishedDate:
         select: head > meta[name="m_date"]
         value: |
