@@ -670,6 +670,26 @@
     "isComplete": false
   },
   {
+    "name": "Padma Krishnamoorthy",
+    "slug": "padma-krishnamoorthy",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/padma-krishnamoorthy",
+    "title": "Sr. Technical Product Manager at Adobe",
+    "linkedin": "https://www.linkedin.com/in/krishnamoorthypadma/",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/padma-krishnamoorthy",
+    "docImage": "./media_128c730da72c934955142deb9ba038ba5784acc4f.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/padma-krishnamoorthy.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
+      "date": "2026-06-30"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Pratibha Sharma",
     "slug": "pratibha-sharma",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/pratibha-sharma",

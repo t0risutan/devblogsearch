@@ -17,14 +17,14 @@
     ]
   },
   {
-    "name": "Steve Kwak",
-    "slug": "steve-kwak",
+    "name": "Ash Ryan Arnwine",
+    "slug": "ash-ryan-arnwine",
     "latestArticle": {
-      "title": "How to Customize Your Adobe Creative Cloud Extension Package",
-      "date": "2018-08-21",
-      "url": "https://blog.developer.adobe.com/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package"
+      "title": "Using ES2015 template strings in CEP",
+      "date": "2018-02-08",
+      "url": "https://blog.developer.adobe.com/en/publish/2019/06/using-es2015-template-strings-in-cep"
     },
-    "docUrl": "/en/authors/steve-kwak",
+    "docUrl": "/en/authors/ash-ryan-arnwine",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -34,14 +34,14 @@
     ]
   },
   {
-    "name": "Ash Ryan Arnwine",
-    "slug": "ash-ryan-arnwine",
+    "name": "Steve Kwak",
+    "slug": "steve-kwak",
     "latestArticle": {
-      "title": "Using ES2015 template strings in CEP",
-      "date": "2018-02-08",
-      "url": "https://blog.developer.adobe.com/en/publish/2019/06/using-es2015-template-strings-in-cep"
+      "title": "How to Customize Your Adobe Creative Cloud Extension Package",
+      "date": "2018-08-21",
+      "url": "https://blog.developer.adobe.com/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package"
     },
-    "docUrl": "/en/authors/ash-ryan-arnwine",
+    "docUrl": "/en/authors/steve-kwak",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -68,23 +68,6 @@
     ]
   },
   {
-    "name": "Sharayoo Jog",
-    "slug": "sharayoo-jog",
-    "latestArticle": {
-      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
-      "date": "2021-11-30",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
-    },
-    "docUrl": "/en/authors/sharayoo-jog",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Ashikka Gupta",
     "slug": "ashikka-gupta",
     "latestArticle": {
@@ -102,14 +85,14 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
+    "name": "Sharayoo Jog",
+    "slug": "sharayoo-jog",
     "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+      "title": "Check Out Our New Developer Resources, Plus a New Plugin Showcase Page on Behance",
+      "date": "2021-11-30",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance"
     },
-    "docUrl": "/en/authors/ayan-choudhary",
+    "docUrl": "/en/authors/sharayoo-jog",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -127,6 +110,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
     },
     "docUrl": "/en/authors/mike-zahorik",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "latestArticle": {
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+    },
+    "docUrl": "/en/authors/ayan-choudhary",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -289,14 +289,14 @@
     ]
   },
   {
-    "name": "Renae Kang",
-    "slug": "renae-kang",
+    "name": "Kalyan Dechiraju",
+    "slug": "kalyan-dechiraju",
     "latestArticle": {
-      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
-      "date": "2024-12-05",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
+      "title": "Build Faster with the Adobe Express Developer MCP Server",
+      "date": "2026-03-16",
+      "url": "https://blog.developer.adobe.com/en/publish/2026/03/build-faster-with-the-adobe-express-developer-mcp-server"
     },
-    "docUrl": "/en/authors/renae-kang",
+    "docUrl": "/en/authors/kalyan-dechiraju",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -306,14 +306,14 @@
     ]
   },
   {
-    "name": "Kalyan Dechiraju",
-    "slug": "kalyan-dechiraju",
+    "name": "Renae Kang",
+    "slug": "renae-kang",
     "latestArticle": {
-      "title": "Build Faster with the Adobe Express Developer MCP Server",
-      "date": "2026-03-16",
-      "url": "https://blog.developer.adobe.com/en/publish/2026/03/build-faster-with-the-adobe-express-developer-mcp-server"
+      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
+      "date": "2024-12-05",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
     },
-    "docUrl": "/en/authors/kalyan-dechiraju",
+    "docUrl": "/en/authors/renae-kang",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
