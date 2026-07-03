@@ -1,8 +1,29 @@
 {
-  "total": 93,
+  "total": 94,
   "offset": 0,
-  "limit": 93,
+  "limit": 94,
   "data": [
+    {
+      "path": "/en/publish/2026/06/dark-mode-is-coming-to-adobe-express-what-add-on-developers-need-to-know",
+      "image": "/en/publish/2026/06/media_1b3df6ec4529661f88765ab154af3fb3ad876e4a0.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
+      "author": "Padma Krishnamoorthy",
+      "description": "Adobe Express is adding dark mode to the application experience — one of the most requested customization and accessibility features from our users.",
+      "tags": "[\"adobe-express\",\"add-on\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1783036851",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782777600",
+      "sortDate": "2026-06-30",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": "",
+      "isHeroVideo": false
+    },
     {
       "path": "/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now",
       "image": "/en/publish/2026/06/media_1678e569ebf2763f58a39d560501e6435b18ce5c0.png?width=1200&format=pjpg&optimize=medium",
@@ -1957,5 +1978,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-01T11:21:36.282Z"
+  "generatedAt": "2026-07-03T03:55:13.258Z"
 }
