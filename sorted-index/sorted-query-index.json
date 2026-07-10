@@ -1,8 +1,168 @@
 {
-  "total": 85,
+  "total": 94,
   "offset": 0,
-  "limit": 85,
+  "limit": 94,
   "data": [
+    {
+      "path": "/en/publish/2026/06/dark-mode-is-coming-to-adobe-express-what-add-on-developers-need-to-know",
+      "image": "/en/publish/2026/06/media_1b3df6ec4529661f88765ab154af3fb3ad876e4a0.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
+      "author": "Padma Krishnamoorthy",
+      "description": "Adobe Express is adding dark mode to the application experience — one of the most requested customization and accessibility features from our users.",
+      "tags": "[\"adobe-express\",\"add-on\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1783036851",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782777600",
+      "sortDate": "2026-06-30",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now",
+      "image": "/en/publish/2026/06/media_1678e569ebf2763f58a39d560501e6435b18ce5c0.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Upcoming Photoshop UI Changes: Test Your UXP Plugin Now",
+      "author": "Cory Shubert",
+      "description": "Corey Shubert is a Product Manager on the Photoshop Desktop Team at Adobe",
+      "tags": "[\"Photoshop\",\"uxp\",\"UI\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1782388438",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782345600",
+      "sortDate": "2026-06-25",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/06/new-community-resource-hub-for-adobe-express-and-creative-cloud-developers",
+      "image": "/en/publish/2026/06/media_132b48cb686fe58f357dfcc76097269e78493299f.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "New Community Resource Hub for Adobe Express and Creative Cloud Developers",
+      "author": "Erin Finnegan",
+      "description": "Sometimes the best documentation, tutorials, and code samples don’t come from the official source. Often, the most helpful developer resources come from the community itself. ...",
+      "tags": "[\"developer resources\",\"Blog\",\"github\",\"links\",\"developer tools\",\"uxp\",\"express\",\"add-ons\",\"cep\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1782389219",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782259200",
+      "sortDate": "2026-06-24",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/06/meet-the-new-team-members-who-build-support-and-improve-uxp-for-third-party-developers",
+      "image": "/en/publish/2026/06/media_1e7f3cda8759f6f1be54bdaefd2436de43dbed7ae.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Meet the new team members who build, support, and improve UXP for third-party developers",
+      "author": "Kasi Viswanathan K",
+      "description": "The Unified Extensibility Platform (UXP) community has grown into something special — a place where developers push the limits of what's possible with Adobe's creative ...",
+      "tags": "[\"Uxp\",\"creative cloud\",\"team\"]",
+      "imageAlt": "Kasi, Erin, and Karan",
+      "robots": "",
+      "lastModified": "1781640650",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1781481600",
+      "sortDate": "2026-06-15",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/06/the-architectural-foundations-of-an-agentic-commerce-platform",
+      "image": "/en/publish/2026/06/media_10e095e25d951b7a5483d95a397d2b197b0b31793.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "The Architectural Foundations of an Agentic Commerce Platform",
+      "author": "Surya Lamech",
+      "description": "Commerce is undergoing a structural shift. Customers are no longer relying solely on search engines or browsing storefronts to explore their options. Instead, they’re turning ...",
+      "tags": "[\"adobe-experience-cloud\",\"agentic-commerce\",\"adobe-commerce\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1781277209",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1781222400",
+      "sortDate": "2026-06-12",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/06/3-risk-checks-for-developers-before-vibe-code-becomes-a-production-problem",
+      "image": "/en/publish/2026/06/media_1a0f09fc50e451fb8b7cf688b7d6e71a810a1742d.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "3 Risk Checks for Developers Before Vibe Code Becomes a Production Problem",
+      "author": "Justin Taylor",
+      "description": "If you’re a developer and you don’t love how casually people trust AI-generated code or vibe code, you’re not alone.",
+      "tags": "[\"Vibe coding\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1780516591",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1780531200",
+      "sortDate": "2026-06-04",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections",
+      "image": "/vi/hRNmOtOWna0/maxresdefault.jpg",
+      "date": "",
+      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding Common Rejections",
+      "author": "Sonya P",
+      "description": "Editor’s Note: Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!",
+      "tags": "[\"add-on\",\"extensibility\",\"review process\",\"developer distribution\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1780409974",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1779148800",
+      "sortDate": "2026-05-19",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/05/help-your-adobe-express-add-on-reach-enterprise-users-with-granular-admin-approvals",
+      "image": "/en/publish/2026/05/media_13a4c9d41e9648c8c0ec28d344e35261ef47f9038.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Help Your Adobe Express Add-on Reach Enterprise Users with Granular Admin Approvals",
+      "author": "Chris Zhang",
+      "description": "Enterprise and education customers can now approve individual Adobe Express add-ons instead of choosing all or nothing. For developers, that means a trusted add-on has ...",
+      "tags": "[\"Admin console\",\"user role\",\"add-ons permission\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1778220485",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1778112000",
+      "sortDate": "2026-05-07",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
     {
       "path": "/en/publish/2026/04/adobe-developers-blog-reloaded",
       "image": "/en/publish/2026/04/media_1a7a397f869a563930ba8c29335a24a90273d72be.png?width=1200&format=pjpg&optimize=medium",
@@ -13,14 +173,15 @@
       "tags": "[\"Adobe-developers\",\"developers-blog\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1777471679",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1777334400",
       "sortDate": "2026-04-28",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/04/adobe-express-add-on-platform-updates-spring-2026-digest",
@@ -32,14 +193,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1776674712",
+      "lastModified": "1778589263",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1776643200",
       "sortDate": "2026-04-20",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/04/uxp-hybrid-plugins-now-available-for-premiere",
@@ -51,14 +213,15 @@
       "tags": "[\"uxp\",\"hybrid plugins\",\"C++\",\"native libraries\",\"premiere\",\"extensibility\",\"performance\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1776292715",
+      "lastModified": "1778241440",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1776297600",
       "sortDate": "2026-04-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/build-faster-with-the-adobe-express-developer-mcp-server",
@@ -70,18 +233,19 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\",\"mcp\",\"mcp-server\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1776262862",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1773619200",
       "sortDate": "2026-03-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "Creative Cloud",
-      "adobeApp": "Adobe Express"
+      "adobeApp": "Adobe Express",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/how-the-experience-modernization-agent-migrates-sites-to-edge-delivery-services",
-      "image": "/en/publish/2026/03/media_17f86b4d53528a2670391feba30d7243a81b30d28.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/03/media_12dd57fecb4a6fb5b36b201cd337726a5f0189a06.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "How the Experience Modernization Agent Migrates Sites to Edge Delivery Services",
       "author": "Sherrie Rohde",
@@ -89,18 +253,19 @@
       "tags": "[\"adobe-experience-manager\",\"aem\",\"edge-delivery-services\",\"adobe-experience-cloud\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1776263711",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1773619200",
       "sortDate": "2026-03-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "Experience Cloud",
-      "adobeApp": "Adobe Experience Manager"
+      "adobeApp": "Adobe Experience Manager",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/introducing-webview-ui-in-bolt-uxp-build-richer-adobe-plugins-faster",
-      "image": "/en/publish/2026/03/media_166d70d99b7026ca2a1b8706b326a68b82e0c19ae.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/yyQLXh-kCGY/maxresdefault.jpg",
       "date": "",
       "title": "Introducing Webview UI in Bolt UXP: Build Richer Adobe Plugins Faster",
       "author": "Ingo Eichel",
@@ -108,18 +273,19 @@
       "tags": "[\"Adobe-UXP\",\"adobe-creative-cloud-plugins\",\"plugin-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1776264204",
+      "lastModified": "1779777558",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772755200",
       "sortDate": "2026-03-06",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "Creative Cloud",
-      "adobeApp": "Photoshop, Premiere Pro, InDesign"
+      "adobeApp": "Photoshop, Premiere Pro, InDesign",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/from-local-to-live-how-to-publish-your-adobe-express-add-on",
-      "image": "/en/publish/2026/03/media_1afefda6e3ca7fa5f14ad6791e5177bd8a21bab1e.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/vi/lm02Mowy9uo/maxresdefault.jpg",
       "date": "",
       "title": "From Local to Live: How to Publish Your Adobe Express Add-on",
       "author": "Ingo Eichel",
@@ -127,18 +293,19 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772630013",
+      "lastModified": "1779777460",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772582400",
       "sortDate": "2026-03-04",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/new-app-builder-console-features-logs-ui-and-cdn-management",
-      "image": "/en/publish/2026/02/media_1c00002ba6ead45eb625a39ed67f2d62809eec440.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/02/media_19dc81bac32d18c072ef59b30ba6d5d1d8be4136c.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "New App Builder Console Features: Logs UI and CDN Management",
       "author": "Rohan Kapoor",
@@ -146,18 +313,19 @@
       "tags": "[\"adobe-app-builder\",\"app-builder\",\"logging\",\"cdn\",\"cacaching\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772188787",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1772150400",
       "sortDate": "2026-02-27",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/the-agentic-evolution-of-adobe-experience-manager",
-      "image": "/en/publish/2026/02/media_1068272d182892f013bdb465375b826e00879c5e6.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/02/media_1d2483bd04b1b6cc7af831423ff0d371df7cd4917.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "The Agentic Evolution of Adobe Experience Manager",
       "author": "Sherrie Rohde",
@@ -165,18 +333,19 @@
       "tags": "[\"adobe-experience-manager\",\"aem\",\"agentic-web\",\"adobe-experience-cloud\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772038233",
+      "lastModified": "1778225680",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1771977600",
       "sortDate": "2026-02-25",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/building-the-agentic-web-with-adobe-experience-manager",
-      "image": "/en/publish/2026/02/media_1e891152a9b84a74db1edb2d98ee7122a1c451155.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2026/02/media_13bbec63042a5f1e47426c35f8ee7589127f1edcf.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Building the Agentic Web with Adobe Experience Manager",
       "author": "Sherrie Rohde",
@@ -184,14 +353,15 @@
       "tags": "[\"adobe-experience-manager\",\"AEM\",\"agentic-web\",\"adobe-experience-cloud\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772002637",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1771891200",
       "sortDate": "2026-02-24",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/building-adobe-express-add-ons-in-24-hours",
@@ -203,14 +373,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\",\"hackathon\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772009263",
+      "lastModified": "1778679976",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1771891200",
       "sortDate": "2026-02-24",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/02/inside-the-24-hour-adobe-express-add-ons-for-enterprise-hackathon",
@@ -222,14 +393,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"extensibility\",\"hackathon\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1773769750",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1771891200",
       "sortDate": "2026-02-24",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/12/adobe-express-add-on-platform-updates-winter-2025-digest",
@@ -241,18 +413,19 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1766102400",
       "sortDate": "2025-12-19",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/12/self-service-public-profile-management-for-adobe-developers",
-      "image": "/en/publish/2025/12/media_14403fac9216de0745ee674fdbe0389fba25936e4.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/12/media_1ae592bccba91c9351bfb8f6d85e13046971e5f40.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Self-Service Public Profile Management for Adobe Developers",
       "author": "Madhur Sharma",
@@ -260,18 +433,19 @@
       "tags": "[\"adobe-exchange-marketplace\",\"adobe-express\",\"adobe-express-add-ons\",\"add-on-development\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772708190",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1765843200",
       "sortDate": "2025-12-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/12/uxp-arrives-in-premiere-a-new-era-for-plugin-development",
-      "image": "/en/publish/2025/12/media_16fb76c13ccdb8b86d8f2e8f53a95f94ceca1e3f1.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/12/media_18bc8a022ec9551de1f3669ee7056e543ffaa6c9a.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "UXP Arrives in Premiere: A New Era for Plugin Development",
       "author": "Arvind Sridhar",
@@ -279,14 +453,15 @@
       "tags": "[\"uxp\",\"premiere\",\"extensibility\",\"plugin-development\",\"unified-extensibility-platform\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1765843200",
       "sortDate": "2025-12-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/11/adobe-express-add-on-platform-updates-fall-2025-digest",
@@ -298,14 +473,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-add-ons\",\"mcp-server\",\"add-on-development\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1762473600",
       "sortDate": "2025-11-07",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/10/learnings-from-vibe-coding-with-cursor-and-the-adobe-express-add-on-mcp-server",
@@ -317,18 +493,19 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"add-on-mcp-server\",\"adobe-express-add-ons\",\"mcp-server\",\"add-on-development\",\"vibe-coding\",\"AI\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1760918400",
       "sortDate": "2025-10-20",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/09/introducing-the-adobe-express-add-on-dev-mcp-server-beta",
-      "image": "/en/publish/2025/09/media_18c6423a5b81077de25d9a90bfcb427e9ec1fc38c.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/09/media_1f65d3e78d07bd5b28a162ff00f9186bf17af306e.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Introducing the Adobe Express Add-on Dev MCP Server (Beta)",
       "author": "Colene Chow",
@@ -336,18 +513,19 @@
       "tags": "[\"adobe-express\",\"MCP-server\",\"adobe-express-add-ons\",\"add-on-development\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1756771200",
       "sortDate": "2025-09-02",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/08/inside-ai-collaborate-s-24-hour-adobe-express-add-on-hackathon",
-      "image": "/en/publish/2025/08/media_1ef79620dc5b1ad70a20666c50352185979eca05f.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/08/media_12eed60263e9225f9bbf050b3c9118066f37ed3b1.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Inside AI Collaborate's 24-Hour Adobe Express Add-On Hackathon",
       "author": "Sayan Jain",
@@ -355,14 +533,15 @@
       "tags": "[\"adobe-express-addons\",\"adobe-express\",\"ai\",\"hackathon\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772626940",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1756339200",
       "sortDate": "2025-08-28",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/08/design-meets-dam-aem-assets-x-figma-a-turnkey-connector-is-here",
@@ -374,14 +553,15 @@
       "tags": "[\"aem-assets\",\"aem\",\"figma\",\"dam\",\"connector\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1755734400",
       "sortDate": "2025-08-21",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/08/meet-the-winners-of-the-first-adobe-express-add-ons-hackathon",
@@ -393,18 +573,19 @@
       "tags": "[\"Adobe-express-addons\",\"adobe-express\",\"hackathon\",\"developer\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1754524800",
       "sortDate": "2025-08-07",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/06/adobe-express-add-ons-whats-new-and-coming-up-for-developers",
-      "image": "/en/publish/2025/06/media_1118867786f80f809772e095ec5455e40ffc9bd18.png?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/06/media_1788269926af02e9aa638b94e2760d95ac4eb7b9c.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Adobe Express Add-ons: What’s New and Coming Up for Developers",
       "author": "Kerri Shotts",
@@ -412,14 +593,15 @@
       "tags": "[\"adobe-express-addons\",\"adobe-express\",\"enhanced-text-capabilities\",\"ai-powered-documentation\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1780388142",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1750982400",
       "sortDate": "2025-06-27",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/06/show-dont-tell-multimodal-answers-in-ai-assistant-in-adobe-experience-platform",
@@ -431,14 +613,15 @@
       "tags": "[\"adobe-experience-platform\",\"AI\",\"AI-assistant\",\"gen-ai\",\"adobe-experience-cloud\"]",
       "imageAlt": "Picture",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1749772800",
       "sortDate": "2025-06-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer",
@@ -450,18 +633,19 @@
       "tags": "[\"adobe-experience-platform\",\"real-time-cdp\",\"marketing\",\"customer-ai\",\"adobe-experience-cloud\"]",
       "imageAlt": "A person smiling and looking at a screen AI-generated content may be incorrect.",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1749427200",
       "sortDate": "2025-06-09",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/06/launching-workflows-from-the-aem-content-fragment-editor-with-ui-extensibility",
-      "image": "/en/publish/2025/06/media_1fd57564c6f7e5db9a2fb23892cd6815aa1ea0f8d.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2025/06/media_103cb3df88d9f4c8c10914ab4769ad63c98259616.jpg?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Launching Workflows from the AEM Content Fragment Editor with UI Extensibility",
       "author": "Drew Robinson",
@@ -469,14 +653,15 @@
       "tags": "[\"adobe-experience-manager\",\"adobe experience cloud\",\"content-framework-editor\",\"extensibility\",\"user-interface\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1748995200",
       "sortDate": "2025-06-04",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/03/build-adobe-express-add-ons-for-these-key-categories-and-get-funded",
@@ -488,14 +673,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-creative-cloud\",\"extensibility\",\"developer\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1745798400",
       "sortDate": "2025-04-28",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/04/raising-the-bar-for-ai-assistant-in-adobe-experience-platform",
@@ -507,14 +693,15 @@
       "tags": "[\"ai\",\"platform\",\"adobe-experience-platform\",\"enterprise-ai\",\"machine-learning\"]",
       "imageAlt": "︎Some authors of the paper displaying the DSRI AI Incidents and Best Practices Paper Award won at the 39th Annual AAAI Conference on Artificial Intelligence.",
       "robots": "",
-      "lastModified": "1772626839",
+      "lastModified": "1778225272",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1743552000",
       "sortDate": "2025-04-02",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/03/how-to-create-telemetry-dashboards-for-adobe-express-add-ons",
@@ -526,14 +713,15 @@
       "tags": "[\"adobe-express\",\"analytics\",\"power-bi\",\"azure-functions\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1743465600",
       "sortDate": "2025-04-01",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/01/how-to-market-and-monetize-adobe-express-add-ons",
@@ -545,14 +733,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-creative-cloud\",\"plugins\",\"extensibility\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1738886400",
       "sortDate": "2025-02-07",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/01/ai-assistant-in-adobe-experience-platform-evaluation-and-continual-improvement",
@@ -564,14 +753,15 @@
       "tags": "[\"ai\",\"ai-assistant\",\"platform\",\"adobe-experience-platform\",\"generative-ai-tools\"]",
       "imageAlt": "︎Image credits: Adobe Stock",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778224432",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1738540800",
       "sortDate": "2025-02-03",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/01/introducing-the-creative-cloud-developer-champion-program",
@@ -583,14 +773,15 @@
       "tags": "[\"adobe-express-add-ons\",\"adobe-express\",\"developer\",\"developer-stories\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1736726400",
       "sortDate": "2025-01-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/00/edge-delivery-services-for-commerce-a-new-storefront-has-dropped",
@@ -602,14 +793,15 @@
       "tags": "[\"adobe-commerce\",\"aem-developer\",\"edge-delivery-services\",\"composable-commerce\",\"adobe-experience-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1734048000",
       "sortDate": "2024-12-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/12/developer-spotlight-building-adobe-express-add-ons-with-prasanta-barman",
@@ -621,14 +813,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-creative-cloud\",\"color-blindness\",\"accessibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772109320",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1733443200",
       "sortDate": "2024-12-06",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader",
@@ -640,14 +833,15 @@
       "tags": "[\"devsecops\",\"cloud-security\",\"security\",\"security-culture\",\"product-security\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772108550",
+      "lastModified": "1780389211",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1733356800",
       "sortDate": "2024-12-05",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/11/important-cross-origin-isolation-update-for-adobe-express-add-on-developers",
@@ -659,14 +853,15 @@
       "tags": "[\"adobe-express\",\"add-on\",\"developer\",\"cross-origin-isolation\",\"adobe-creative-cloud\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772101999",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1730678400",
       "sortDate": "2024-11-04",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/10/how-accessify-was-built-an-adobe-express-add-on-that-ensures-your-content-is-accessible",
@@ -678,14 +873,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-creative-cloud\",\"extensibility\",\"developer\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778233843",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1729123200",
       "sortDate": "2024-10-17",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/10/adobe-express-platform-updates-for-max-2024-new-developer-capabilities-and-explosive-growth-of-our-partner-ecosystem",
@@ -697,14 +893,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"adobe-max\",\"extensibility\",\"adobe-express-add-ons\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772101530",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1728604800",
       "sortDate": "2024-10-11",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/07/help-preview-the-adobe-export-and-import-form-data-api",
@@ -716,14 +913,15 @@
       "tags": "[\"adobe-document-cloud\",\"api\",\"adobe-acrobat\",\"pdf\",\"document\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778228130",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1724803200",
       "sortDate": "2024-08-28",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/07/empower-users-to-create-better-content-with-the-adobe-express-embed-sdk",
@@ -735,14 +933,15 @@
       "tags": "[\"adobe-express\",\"extensibility\",\"sdk\",\"adobe-firefly\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1723161600",
       "sortDate": "2024-08-09",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/07/adobe-acrobat-services-sdks-updated-and-revised",
@@ -754,14 +953,15 @@
       "tags": "[\"acrobat\",\"adobe-acrobat\",\"sdk\",\"adobe-document-cloud\",\"rest-api\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1722556800",
       "sortDate": "2024-08-02",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/07/introducing-the-adobe-pdf-watermark-api",
@@ -773,14 +973,15 @@
       "tags": "[\"adobe-document-cloud\",\"pdf\",\"adobe-acrobat\",\"extensibility\",\"watermark\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772097402",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1722211200",
       "sortDate": "2024-07-29",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/04/how-line-creative-lab-built-an-adobe-express-integration-with-the-embed-sdk",
@@ -792,14 +993,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"line-creative-lab\",\"extensibility\",\"line\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778235048",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1715558400",
       "sortDate": "2024-05-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting",
@@ -811,14 +1013,15 @@
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-creative-cloud\",\"adobe\"]",
       "imageAlt": "Tokyo cityscape",
       "robots": "",
-      "lastModified": "1771627188",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1714089600",
       "sortDate": "2024-04-26",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/02/c-and-the-next-30-years",
@@ -830,14 +1033,15 @@
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-engineering\",\"adobe\"]",
       "imageAlt": "Tokyo cityscape",
       "robots": "",
-      "lastModified": "1771628576",
+      "lastModified": "1780387799",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1713744000",
       "sortDate": "2024-04-22",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/04/important-cross-origin-isolation-update-for-adobe-express-add-on-developers",
@@ -849,14 +1053,15 @@
       "tags": "[\"adobe-express\",\"add-on\",\"developer\",\"cross-origin-isolation\",\"adobe-creative-cloud\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1772100135",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1712793600",
       "sortDate": "2024-04-11",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2025/08/get-funding-to-build-adobe-express-add-ons",
@@ -868,14 +1073,15 @@
       "tags": "[\"adobe-express-addons\",\"adobe-fund-for-design\",\"adobe-express\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1779193230",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1712707200",
       "sortDate": "2024-04-10",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/01/introducing-webhook-support-in-acrobat-services",
@@ -887,14 +1093,15 @@
       "tags": "[\"webhooks\",\"adobe-acrobat\",\"developer\",\"rest-api\",\"document-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1706140800",
       "sortDate": "2024-01-25",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2024/01/how-wellsaid-labs-built-their-adobe-express-add-on",
@@ -906,14 +1113,15 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"wellsaid\",\"ai\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1702857600",
       "sortDate": "2023-12-18",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/10/integrating-the-photoshop-api-with-python",
@@ -925,14 +1133,15 @@
       "tags": "[\"python-programming\",\"adobe-photoshop\",\"api\",\"developer\",\"adobe-document-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1699315200",
       "sortDate": "2023-11-07",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/09/max-2023-recap-everything-you-need-to-know-about-adobe-express-add-ons",
@@ -944,14 +1153,15 @@
       "tags": "[\"adobe-max\",\"adobe-cloud-platform\",\"generative-ai-tools\",\"adobe-express-add-ons\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1698624000",
       "sortDate": "2023-10-30",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/10/adobe-express-at-max-2023-the-next-step-for-our-open-developer-platform",
@@ -963,14 +1173,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"plugins\",\"extensibility\",\"adobe-express-add-ons\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1696896000",
       "sortDate": "2023-10-10",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/09/trip-report-summer-iso-c-standards-meeting",
@@ -982,14 +1193,15 @@
       "tags": "[\"Cpp\",\"cpp-at-adobe\",\"adobe-stlab\",\"adobe-creative-cloud\",\"adobe\"]",
       "imageAlt": "Varna, Bulgaria",
       "robots": "",
-      "lastModified": "1771866661",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1694649600",
       "sortDate": "2023-09-14",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/08/adobes-open-developer-platform-principles",
@@ -1001,14 +1213,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"extensibility\",\"open-development\",\"developer\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778234442",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1692230400",
       "sortDate": "2023-08-17",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/06/adobe-express-introduces-add-ons-for-developers",
@@ -1020,14 +1233,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-express\",\"plugins\",\"extensibility\",\"developer\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1686182400",
       "sortDate": "2023-06-08",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/04/tagging-pdf-documents-for-accessibility-at-scale-with-adobe-acrobat-pdf-services",
@@ -1039,14 +1253,15 @@
       "tags": "[\"adobe-document-cloud\",\"pdf\",\"accessibility\",\"api\",\"adobe-acrobat-services\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1684108800",
       "sortDate": "2023-05-15",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/05/automating-image-workflows-with-the-photoshop-api",
@@ -1058,14 +1273,15 @@
       "tags": "[\"photoshop\",\"adobe-creative-cloud\",\"creative-tech\",\"automation\",\"api\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1680480000",
       "sortDate": "2023-04-03",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/02/adobe-summit-2023-everything-developers-need-to-know",
@@ -1077,14 +1293,15 @@
       "tags": "[\"developer\",\"adobe-summit\",\"platform\",\"headless\",\"extensibility\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1678924800",
       "sortDate": "2023-03-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/07/lightroom-classic-plugin-support-for-the-adobe-exchange-for-creative-cloud",
@@ -1096,14 +1313,15 @@
       "tags": "[\"adobe-creative-cloud\",\"lightroom-classic\",\"developer\",\"adobe-lightroom\",\"plugins\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1658793600",
       "sortDate": "2022-07-26",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/05/adobe-app-builder-the-power-of-scaling-at-your-fingertips-8ae1149b7ebd",
@@ -1115,14 +1333,15 @@
       "tags": "[\"adobe-developer-app-builder\",\"adobe-io-runtime\",\"serverless\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1652400000",
       "sortDate": "2022-05-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/03/how-to-install-uxp-plugins-using-command-line-tools",
@@ -1134,14 +1353,15 @@
       "tags": "[\"adobe-creative-cloud\",\"developer\",\"exmancmd\",\"plugins\",\"adobe-xd-plugin\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1646697600",
       "sortDate": "2022-03-08",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/00/how-to-forward-adobe-developer-app-builder-application-logs",
@@ -1153,14 +1373,15 @@
       "tags": "[\"adobe-developer-app-builder\",\"adobe-experience-manager\",\"adobe-experience-cloud\",\"aio-cli\",\"log-forwarding\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1643241600",
       "sortDate": "2022-01-27",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/00/powering-adobe-max-with-app-builder-io-runtime",
@@ -1172,14 +1393,15 @@
       "tags": "[\"adobe-io-runtime\",\"adobe-app-builder\",\"adobe-max\",\"rest-api\",\"adobe-developer-app-builder\"]",
       "imageAlt": "︎Card collection component showing personalized content via an integration with Target activities and Target Recommendations",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1642377600",
       "sortDate": "2022-01-17",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/03/building-an-image-search-plugin-for-photoshop",
@@ -1191,14 +1413,15 @@
       "tags": "[\"photoshop\",\"adobe\",\"adobe-photoshop\",\"uxp\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎Ashikka’s Unsplash plugin sample in action.",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1640908800",
       "sortDate": "2021-12-31",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2022/09/check-out-our-new-developer-resources-plus-a-new-plugin-showcase-page-on-behance",
@@ -1210,14 +1433,15 @@
       "tags": "[\"plugin-development\",\"plugins\",\"developer\",\"adobe-creative-cloud\",\"behance\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1638230400",
       "sortDate": "2021-11-30",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop",
@@ -1229,14 +1453,15 @@
       "tags": "[\"uxp\",\"mlh-fellowship\",\"adobe-photoshop\",\"oauth\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎An image from Adobe Stock.",
       "robots": "",
-      "lastModified": "1772005036",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1621296000",
       "sortDate": "2021-05-18",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/06/new-command-line-tool-for-plugin-installation-replaces-exmancmd",
@@ -1248,14 +1473,15 @@
       "tags": "[\"exmancmd\",\"adobe-creative-cloud\",\"plugins\",\"upia\",\"adobe-exchange\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1620864000",
       "sortDate": "2021-05-13",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/01/an-illustrator-25-1-update-for-plugin-developers",
@@ -1267,14 +1493,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-illustrator\",\"c-programming\",\"applescript\",\"plugins\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1611705600",
       "sortDate": "2021-01-27",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/01/8-steps-to-your-first-photoshop-uxp-plugin",
@@ -1286,14 +1513,15 @@
       "tags": "[\"adobe-photoshop\",\"adobe-creative-cloud\",\"uxp\",\"plugins\",\"developer\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1610755200",
       "sortDate": "2021-01-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/03/in-app-extensibility-support-for-arm-apple-silicon-devices",
@@ -1305,14 +1533,15 @@
       "tags": "[\"arm\",\"apple-silicon\",\"cep\",\"uxp\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1605744000",
       "sortDate": "2020-11-19",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting",
@@ -1324,14 +1553,15 @@
       "tags": "[\"adobe-creative-cloud\",\"adobe-indesign\",\"scripting\",\"developer\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1601510400",
       "sortDate": "2020-10-01",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/02/june-2020-update-of-project-firefly-custom-app-publishing-and-custom-events",
@@ -1343,14 +1573,15 @@
       "tags": "[\"platform\",\"serverless\",\"cloud-computing\",\"extensibility\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1591920000",
       "sortDate": "2020-06-12",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2021/06/licensing-updates-for-developers-using-indesign-server",
@@ -1362,14 +1593,15 @@
       "tags": "[\"indesign\",\"development\",\"creative-cloud\",\"adobe-indesign\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1589760000",
       "sortDate": "2020-05-18",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/02/app-builder-build-custom-cloud-native-adobe-apps",
@@ -1381,14 +1613,15 @@
       "tags": "[\"platform\",\"serverless\",\"custom-app-development\",\"adobe\",\"cloud-computing\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1588809600",
       "sortDate": "2020-05-07",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1080-720",
@@ -1400,33 +1633,55 @@
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1774351958",
+      "lastModified": "1782900652",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584835200",
       "sortDate": "2020-03-22",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
-      "adobeCloud": "",
-      "adobeApp": ""
+      "adobeCloud": "Experience cloud",
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
-      "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_142918e546614f29261de1b0de574e14fa0fc846c.png?width=1200&format=pjpg&optimize=medium",
+      "path": "/en/publish/2026/drafts/copy-of-image-behavior-test-1080-720",
+      "image": "/en/publish/2026/drafts/media_1830fdf4c961b518843868ce4d3f3cf3dc8657858.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
-      "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
+      "title": "Image Cropping & Layout Behavior Test – 1080 × 720",
       "author": "Devblogs",
       "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
       "tags": "[]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1774353579",
+      "lastModified": "1782889005",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1584835200",
+      "sortDate": "2020-03-22",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "Experience cloud",
+      "adobeApp": "",
+      "mediaUrl": ""
+    },
+    {
+      "path": "/en/publish/2026/03/image-behavior-test-1280-720",
+      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
+      "author": "Devblogs",
+      "description": "1280 × 720 (~2.13:1) is suitable for: Faster loading, Standard usage scenarios.Clear composition guidelines can improve visual consistency",
+      "tags": "[]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1782805181",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584748800",
       "sortDate": "2020-03-21",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2020/01/learning-by-doing-porting-free-stock-search-from-cep-to-uxp-in-adobe-xd",
@@ -1438,14 +1693,15 @@
       "tags": "[\"developer\",\"adobe-cep\",\"adobe-xd\",\"uxp\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎Thomas Zagler of pixelsucht",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1581465600",
       "sortDate": "2020-02-12",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/01/troubleshoot-issues-installing-extensions-and-add-ons-for-creative-cloud-apps",
@@ -1457,14 +1713,15 @@
       "tags": "[\"addons\",\"installation-failed\",\"extension\",\"adobe-exchange\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1574985600",
       "sortDate": "2019-11-29",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2023/09/how-to-join-creative-cloud-prerelease-programs",
@@ -1476,14 +1733,15 @@
       "tags": "[\"adobe-creative-cloud\",\"developer-tools\",\"prerelease\",\"adobe-photoshop\",\"cep\"]",
       "imageAlt": "︎Where to download the actual builds",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1571184000",
       "sortDate": "2019-10-16",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/10/estk-and-macos-10-15-catalina",
@@ -1495,14 +1753,15 @@
       "tags": "[\"catalina\",\"adobe-creative-cloud\",\"extendscript\",\"estk\",\"developers\"]",
       "imageAlt": "︎ExtendScript Debugger for VSCode is supported on macOS 10.15 Catalina.",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1570579200",
       "sortDate": "2019-10-09",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/06/how-to-customize-your-adobe-creative-cloud-extension-package",
@@ -1514,14 +1773,15 @@
       "tags": "[\"adobe-cep\",\"adobe-exchange\",\"creative-cloud\",\"extenstion\",\"plugins\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1779980456",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1534809600",
       "sortDate": "2018-08-21",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2018/04/cep-panels-and-json-objects",
@@ -1530,17 +1790,18 @@
       "title": "CEP Panels and JSON Objects",
       "author": "Davide Barranca",
       "description": "Update 4/10/2018: Our CEP Getting Started resources are now on GitHub! See the repo for the latest info.",
-      "tags": "[\"adobe-creative-cloud\",\"cep-panels\",\"json\",\"creative-cloud-extensibility\",\"adobe-photoshop\"]",
+      "tags": "[\"adobe-creative-cloud\",\"cep-panels\",\"json\",\"creative cloud extensibility\",\"Adobe photoshop\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778247664",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1522800000",
       "sortDate": "2018-04-04",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/06/scripting-for-cc-apps-via-cep-panels",
@@ -1552,33 +1813,35 @@
       "tags": "[\"javascript\",\"adobe-cep\",\"extension\",\"api\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1521590400",
       "sortDate": "2018-03-21",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/06/using-es6-promises-to-write-async-evalscript-calls-in-photoshop",
-      "image": "/en/publish/2019/06/media_1066a7ee1010e8ccdf3cb16953254fd05c4a046ff.jpg?width=1200&format=pjpg&optimize=medium",
+      "image": "/en/publish/2019/06/media_1732a7fc93552b778e54b7fec34d4fdcef15f1bd9.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
       "title": "Using ES6 promises to write async “evalScript()” calls in Photoshop",
       "author": "Steve Kwak",
       "description": "Update 4/10/2018: Our CEP Getting Started resources are now on GitHub! See our repo for the latest information.",
       "tags": "[\"javascript\",\"adobe-cep\",\"photoshop\",\"api\",\"adobe-creative-cloud\"]",
-      "imageAlt": "︎",
+      "imageAlt": "",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1520294400",
       "sortDate": "2018-03-06",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/06/using-es2015-template-strings-in-cep",
@@ -1590,14 +1853,15 @@
       "tags": "[\"adobe-cep\",\"javascript\",\"api\",\"development\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778169588",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1518048000",
       "sortDate": "2018-02-08",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     },
     {
       "path": "/en/publish/2019/06/debugging-your-adobe-panel",
@@ -1609,14 +1873,15 @@
       "tags": "[\"creative-cloud\",\"developer\",\"adobe-cep\",\"api\",\"adobe-creative-cloud\"]",
       "imageAlt": "︎",
       "robots": "",
-      "lastModified": "1771238856",
+      "lastModified": "1778227703",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1517270400",
       "sortDate": "2018-01-30",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "",
-      "adobeApp": ""
+      "adobeApp": "",
+      "mediaUrl": ""
     }
   ],
   "columns": [
@@ -1636,8 +1901,9 @@
     "sortDateTimestampLegacy",
     "updatedDate",
     "adobeCloud",
-    "adobeApp"
+    "adobeApp",
+    "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-04-30T14:14:04.650Z"
+  "generatedAt": "2026-07-10T07:56:43.147Z"
 }

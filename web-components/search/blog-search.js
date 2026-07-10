@@ -21,6 +21,66 @@ async function loadMiloUtils() {
 }
 
 const searchParams = new URLSearchParams(window.location.search);
+const DEFAULT_INDEX_SOURCE = '/sorted-index/sorted-query-index.json';
+
+function parseDateToTimestamp(dateStr) {
+  if (!dateStr || typeof dateStr !== 'string') return 0;
+
+  const match = dateStr.trim().match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!match) return 0;
+
+  const ms = Date.UTC(
+    parseInt(match[1], 10),
+    parseInt(match[2], 10) - 1,
+    parseInt(match[3], 10),
+  );
+
+  return Math.floor(ms / 1000);
+}
+
+function getArticleSortTimestamp(article) {
+  if (article.updatedDate) {
+    const updatedTs = parseDateToTimestamp(article.updatedDate);
+    if (updatedTs !== 0) return updatedTs;
+  }
+
+  if (article.sortDateTimestamp != null && !Number.isNaN(article.sortDateTimestamp)) {
+    return parseInt(article.sortDateTimestamp, 10);
+  }
+
+  if (article.sortDate) {
+    return parseDateToTimestamp(article.sortDate);
+  }
+
+  return 0;
+}
+
+function comparePathNumbers(a, b) {
+  const numbersA = a.match(/\d+/g)?.map(Number) || [];
+  const numbersB = b.match(/\d+/g)?.map(Number) || [];
+  const maxLength = Math.max(numbersA.length, numbersB.length);
+
+  for (let i = 0; i < maxLength; i += 1) {
+    const numA = numbersA[i] || 0;
+    const numB = numbersB[i] || 0;
+    if (numA !== numB) return numB - numA;
+  }
+
+  return 0;
+}
+
+function sortArticlesByPublicationDate(articles) {
+  return [...articles].sort((a, b) => {
+    const tsA = getArticleSortTimestamp(a);
+    const tsB = getArticleSortTimestamp(b);
+
+    if (tsA !== 0 && tsB !== 0) return tsB - tsA;
+    if (tsA !== 0) return -1;
+    if (tsB !== 0) return 1;
+
+    return comparePathNumbers(a.path, b.path);
+  });
+}
 
 function findNextHeading(el) {
   let preceedingEl = el.parentElement.previousElement || el.parentElement.parentElement;
@@ -461,7 +521,7 @@ class BlogSearch extends HTMLElement {
     this.shadowRoot.adoptedStyleSheets = [styleSheet];
 
     const placeholders = await fetchPlaceholders();
-    const source = this.getAttribute('data-source') || '/en/query-index.json';
+    const source = this.getAttribute('data-source') || DEFAULT_INDEX_SOURCE;
     this.config = { source, placeholders };
 
     const isExploreFacets = this.classList.contains('explore-facets')
@@ -619,8 +679,11 @@ class BlogSearch extends HTMLElement {
     }
 
     const facetFilteredData = this.applyFilters(data, this.activeFilters);
+    const orderedData = searchTerms.length
+      ? facetFilteredData
+      : sortArticlesByPublicationDate(facetFilteredData);
     this.updateFilterCounts(facetFilteredData);
-    await renderExploreResults(this, this.config, facetFilteredData, searchTerms);
+    await renderExploreResults(this, this.config, orderedData, searchTerms);
   }
 
   applyFilterChange() {
