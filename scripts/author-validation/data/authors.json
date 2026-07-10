@@ -125,6 +125,26 @@
     "isComplete": false
   },
   {
+    "name": "Asim Chatterjee",
+    "slug": "asim-chatterjee",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/asim-chatterjee",
+    "title": "",
+    "linkedin": "",
+    "links": [],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": false,
+    "hasDoc": false,
+    "docUrl": "/en/authors/asim-chatterjee",
+    "docImage": "",
+    "image": "/images/authors/asim-chatterjee.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09"
+    },
+    "isComplete": false
+  },
+  {
     "name": "Aubrey Cattell",
     "slug": "aubrey-cattell",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/aubrey-cattell",
@@ -190,6 +210,26 @@
     "isComplete": true
   },
   {
+    "name": "Chris Zhang",
+    "slug": "chris-zhang",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/chris-zhang",
+    "title": "Product Manager | Creative Cloud Extensibility: Extending Adobe Express through add-ons and integrations",
+    "linkedin": "https://www.linkedin.com/in/christopher-zhang-ii/",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/chris-zhang",
+    "docImage": "./media_19461cfc1917c295398a623d885eba5ecb33797f5.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/chris-zhang.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Help Your Adobe Express Add-on Reach Enterprise Users with Granular Admin Approvals",
+      "date": "2026-05-07"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Colene Chow",
     "slug": "colene-chow",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/colene-chow",
@@ -206,6 +246,31 @@
     "latestArticle": {
       "title": "Introducing the Adobe Express Add-on Dev MCP Server (Beta)",
       "date": "2025-09-02"
+    },
+    "isComplete": true
+  },
+  {
+    "name": "Cory Shubert",
+    "slug": "cory-shubert",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/cory-shubert",
+    "title": "PM Photoshop Desktop",
+    "linkedin": "https://www.linkedin.com/in/cory-shubert-45439b8/",
+    "links": [
+      {
+        "url": "https://www.behance.net/shubertmedia",
+        "label": "Shubert Media"
+      }
+    ],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/cory-shubert",
+    "docImage": "./media_15f7d582865511a2f312b3a6a73730deb4ea2cdce.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/cory-shubert.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Upcoming Photoshop UI Changes: Test Your UXP Plugin Now",
+      "date": "2026-06-25"
     },
     "isComplete": true
   },
@@ -294,8 +359,8 @@
     "image": "/images/authors/erin-finnegan.png",
     "fallbackImage": "/images/default-images/default-image-1.png",
     "latestArticle": {
-      "title": "Introducing the Creative Cloud Developer Champion Program",
-      "date": "2025-01-13"
+      "title": "New Community Resource Hub for Adobe Express and Creative Cloud Developers",
+      "date": "2026-06-24"
     },
     "isComplete": true
   },
@@ -370,6 +435,31 @@
     "isComplete": true
   },
   {
+    "name": "Justin Taylor",
+    "slug": "justin-taylor",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/justin-taylor",
+    "title": "Helping creative teams automate the boring so they can create they amazing",
+    "linkedin": "https://www.linkedin.com/in/justin-taylor-3716222b/",
+    "links": [
+      {
+        "url": "https://hyperbrew.co/",
+        "label": "Personal Blog"
+      }
+    ],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": true,
+    "hasDoc": true,
+    "docUrl": "/en/authors/justin-taylor",
+    "docImage": "./media_15167048fde8f789505d1bd61d865d2e0b416993a.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/justin-taylor.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "3 Risk Checks for Developers Before Vibe Code Becomes a Production Problem",
+      "date": "2026-06-04"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Kalyan Dechiraju",
     "slug": "kalyan-dechiraju",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/kalyan-dechiraju",
@@ -388,6 +478,26 @@
       "date": "2026-03-16"
     },
     "isComplete": false
+  },
+  {
+    "name": "Kasi Viswanathan K",
+    "slug": "kasi-viswanathan-k",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/kasi-viswanathan-k",
+    "title": "Sr. Developer Relations Engineer",
+    "linkedin": "https://linkedin.com/in/kasivis",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/kasi-viswanathan-k",
+    "docImage": "./media_12951da396bd9440074eebbf6897341bd893c2c3a.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/kasi-viswanathan-k.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Meet the new team members who build, support, and improve UXP for third-party developers",
+      "date": "2026-06-15"
+    },
+    "isComplete": true
   },
   {
     "name": "Kelvin Xu",
@@ -560,18 +670,38 @@
     "isComplete": false
   },
   {
-    "name": "Pratibha Sharma & Asim Chatterjee",
-    "slug": "pratibha-sharma-asim-chatterjee",
-    "profileUrl": "https://blog.developer.adobe.com/en/authors/pratibha-sharma-asim-chatterjee",
+    "name": "Padma Krishnamoorthy",
+    "slug": "padma-krishnamoorthy",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/padma-krishnamoorthy",
+    "title": "Sr. Technical Product Manager at Adobe",
+    "linkedin": "https://www.linkedin.com/in/krishnamoorthypadma/",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/padma-krishnamoorthy",
+    "docImage": "./media_128c730da72c934955142deb9ba038ba5784acc4f.png?width=750&#x26;format=png&#x26;optimize=medium",
+    "image": "/images/authors/padma-krishnamoorthy.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
+      "date": "2026-06-30"
+    },
+    "isComplete": true
+  },
+  {
+    "name": "Pratibha Sharma",
+    "slug": "pratibha-sharma",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/pratibha-sharma",
     "title": "",
     "linkedin": "",
     "links": [],
     "isAdobeEmployee": false,
     "isDeveloperChampion": false,
     "hasDoc": false,
-    "docUrl": "/en/authors/pratibha-sharma-asim-chatterjee",
+    "docUrl": "/en/authors/pratibha-sharma",
     "docImage": "",
-    "image": "/images/authors/pratibha-sharma-asim-chatterjee.png",
+    "image": "/images/authors/pratibha-sharma.png",
     "fallbackImage": "/images/default-images/default-image-1.png",
     "latestArticle": {
       "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
@@ -725,6 +855,26 @@
     "isComplete": true
   },
   {
+    "name": "Sonya P",
+    "slug": "sonya-p",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/sonya-p",
+    "title": "Software Developer &#x26; Tech Content Creator.",
+    "linkedin": "https://www.linkedin.com/in/sonyablibli",
+    "links": [],
+    "isAdobeEmployee": false,
+    "isDeveloperChampion": true,
+    "hasDoc": true,
+    "docUrl": "/en/authors/sonya-p",
+    "docImage": "./media_1ae343503462921003c6e429758b673abd30855ec.jpg?width=750&#x26;format=jpg&#x26;optimize=medium",
+    "image": "/images/authors/sonya-p.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "How to Get Your Adobe Express Add-on Approved: Avoiding Common Rejections",
+      "date": "2026-05-19"
+    },
+    "isComplete": true
+  },
+  {
     "name": "Steve Kwak",
     "slug": "steve-kwak",
     "profileUrl": "https://blog.developer.adobe.com/en/authors/steve-kwak",
@@ -743,6 +893,26 @@
       "date": "2018-08-21"
     },
     "isComplete": false
+  },
+  {
+    "name": "Surya Lamech",
+    "slug": "surya-lamech",
+    "profileUrl": "https://blog.developer.adobe.com/en/authors/surya-lamech",
+    "title": "Principal Product Marketing Manager",
+    "linkedin": "https://www.linkedin.com/in/surya-lamech/",
+    "links": [],
+    "isAdobeEmployee": true,
+    "isDeveloperChampion": false,
+    "hasDoc": true,
+    "docUrl": "/en/authors/surya-lamech",
+    "docImage": "./media_17a415b5da6febb6103ec9e8a07c9c1b7d6c334bb.jpg?width=750&#x26;format=jpg&#x26;optimize=medium",
+    "image": "/images/authors/surya-lamech.png",
+    "fallbackImage": "/images/default-images/default-image-1.png",
+    "latestArticle": {
+      "title": "The Architectural Foundations of an Agentic Commerce Platform",
+      "date": "2026-06-12"
+    },
+    "isComplete": true
   },
   {
     "name": "Taylor Krusen",

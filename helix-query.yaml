@@ -33,7 +33,7 @@ indices:
       updatedDate:
         select: head > meta[name="updated_date"]
         value: |
-          attribute(el, 'content')          
+          attribute(el, 'content')
       # 🔼 End of addition
 
       adobeCloud:
@@ -69,6 +69,76 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      mediaUrl:
+        select: head > meta[name="mediaurl"]
+        value: |
+          attribute(el, 'content')
+
+  article-management:
+    include:
+      - /en/publish/**
+    exclude:
+      - '**/Document.*'
+    target: /en/article-management.xlsx
+
+    properties:
+      article:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      status:
+        select: none
+        value: |
+          match(path, '\/(drafts)\/')
+      publishedDate:
+        select: head > meta[name="m_date"]
+        value: |
+          attribute(el, 'content')
+
+      updatedDate:
+        select: head > meta[name="updated_date"]
+        value: |
+          attribute(el, 'content')
+
+      author:
+        select: head > meta[name="author"]
+        value: |
+          attribute(el, 'content')
+    
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+
+      description: 
+        select: head > meta[name="description"] 
+        value: | 
+          attribute(el, 'content')
+
+      shortDescription:
+        select: head > meta[name="short_description"]
+        value: |
+          attribute(el, 'content')
+
+      url:
+        select: head > meta[property="og:url"]
+        value: |
+          attribute(el, 'content')
+
+      adobeCloud:
+        select: head > meta[name="adobe-cloud"]
+        value: |
+          attribute(el, 'content')
+
+      adobeApp:
+        select: head > meta[name="adobe-app"]
+        value: |
+          attribute(el, 'content')
+
+      newsletterPlanned:
+        select: head > meta[name="newsletter_planned"]
+        value: |
+          attribute(el, 'content')
 
 # The blog.a.c config includes multiple additional languages, similar to this:
 # french:

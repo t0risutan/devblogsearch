@@ -83,6 +83,35 @@ function fetchData(url) {
   });
 }
 
+async function hasHeroVideo(articlePath) {
+  try {
+    const articleUrl = `https://blog.developer.adobe.com${articlePath}`;
+    const html = await fetchData(articleUrl);
+
+    const afterH1 = html.split(/<\/h1>/i)[1];
+    if (!afterH1) return false;
+
+    const firstParagraphMatch = afterH1.match(/<p>([\s\S]*?)<\/p>/i);
+
+    if (!firstParagraphMatch) return false;
+
+    const firstParagraph = firstParagraphMatch[1];
+
+    const hrefMatch = firstParagraph.match(/href="([^"]+)"/i);
+
+    if (!hrefMatch) return false;
+
+    const href = hrefMatch[1];
+
+    return (
+      href.includes('youtube.com') || href.includes('youtu.be') || /\.(mp4|webm)(\?|$)/i.test(href)
+    );
+  } catch (err) {
+    console.warn(`Failed to fetch ${articlePath}`, err.message);
+    return false;
+  }
+}
+
 function ensureDirectory(filePath) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
@@ -106,6 +135,45 @@ async function fetchAndSort() {
     }
 
     console.log(`Found ${blogData.data.length} blog posts in the query index`);
+
+    // filter out draft articles before sorting
+    blogData.data = blogData.data.filter((article) => !article.path.includes('/drafts/'));
+
+    // Build cache keyed by path from the existing sorted JSON.
+    // Each cached entry stores { isHeroVideo, lastModified } so we can detect
+    // whether the article has changed since the last run.
+    const cache = {};
+    if (fs.existsSync(OUT_FILE)) {
+      try {
+        const existing = JSON.parse(fs.readFileSync(OUT_FILE, 'utf8'));
+        (existing.data || []).forEach((e) => {
+          if ('isHeroVideo' in e) {
+            cache[e.path] = { isHeroVideo: e.isHeroVideo, lastModified: e.lastModified };
+          }
+        });
+      } catch (err) {
+        console.log(`Could not read existing cache from ${OUT_FILE}:`, err.message);
+      }
+    }
+
+    let fetchedCount = 0;
+    let cachedCount = 0;
+
+    for (const article of blogData.data) {
+      const cached = cache[article.path];
+      const unchanged = cached && cached.lastModified === article.lastModified;
+
+      if (unchanged) {
+        article.isHeroVideo = cached.isHeroVideo;
+        cachedCount++;
+      } else {
+        article.isHeroVideo = await hasHeroVideo(article.path);
+        fetchedCount++;
+        console.log(`  ${article.path} → isHeroVideo: ${article.isHeroVideo} (${cached ? 'lastModified changed' : 'new article'})`);
+      }
+    }
+
+    console.log(`✅ Hero video check: ${fetchedCount} fetched, ${cachedCount} served from cache`);
 
     blogData.data.sort((a, b) => {
       const tsA = getSortTimestamp(a);

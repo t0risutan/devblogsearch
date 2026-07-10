@@ -198,7 +198,7 @@ function getAuthorIssues(author) {
 function buildLatestArticleMap(indexData) {
   const map = new Map();
 
-  for (const { author, title, sortDate, updatedDate } of indexData) {
+  for (const { author, title, path, sortDate, updatedDate } of indexData) {
     if (!author || !title) continue;
 
     const ts =
@@ -207,13 +207,15 @@ function buildLatestArticleMap(indexData) {
 
     if (!ts) continue;
 
-    for (const name of author.split(',')) {
+    // Split on both comma and ampersand to match fetchQueryIndex splitting.
+    for (const name of author.split(/[,&]/)) {
       const slug = slugify(name.trim());
       const existing = map.get(slug);
 
       if (!existing || ts > existing.ts) {
         map.set(slug, {
           title,
+          path,
           ts,
           date: new Date(ts).toISOString().split('T')[0],
         });
@@ -268,7 +270,8 @@ async function fetchQueryIndex() {
   const authorSet = new Set();
   data.forEach(({ author }) => {
     if (author) {
-      author.split(',').forEach((a) => {
+      // Split on both comma and ampersand to handle "Author A & Author B" entries.
+      author.split(/[,&]/).forEach((a) => {
         const clean = a.trim();
         if (clean) authorSet.add(clean);
       });
@@ -348,6 +351,7 @@ async function validateAuthors() {
         report.push({
           name:   authorData.name,
           slug:   authorData.slug,
+          latestArticle: {...authorData.latestArticle, url: `${BASE_URL}${latest.path}`},
           docUrl: authorData.docUrl,
           hasDoc: authorData.hasDoc,
           issues: getAuthorIssues(authorData),
