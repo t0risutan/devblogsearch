@@ -327,7 +327,16 @@ async function renderExploreResults(component, config, filteredData, searchTerms
     const noResultsMessage = document.createElement('li');
     noResultsMessage.className = 'explore-no-results-message';
     noResultsMessage.setAttribute('role', 'status');
-    noResultsMessage.textContent = config.placeholders.searchNoResults || 'No results found.';
+
+    const noResultsTitle = document.createElement('p');
+    noResultsTitle.className = 'explore-no-results-title';
+    noResultsTitle.textContent = config.placeholders.searchNoResults || 'No results found.';
+
+    const noResultsHint = document.createElement('p');
+    noResultsHint.className = 'explore-no-results-hint';
+    noResultsHint.textContent = 'Try a different search term or adjust your filter selection.';
+
+    noResultsMessage.append(noResultsTitle, noResultsHint);
     exploreResults.classList.add('no-results');
     exploreResults.replaceChildren(noResultsMessage);
   }
@@ -1019,6 +1028,11 @@ class BlogSearch extends HTMLElement {
         label.textContent = value;
 
         item.append(checkbox, label);
+        item.addEventListener('click', (e) => {
+          if (e.target.closest('input[type="checkbox"], label')) return;
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+        });
         menu.append(item);
       });
 
