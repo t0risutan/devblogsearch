@@ -9,3 +9,4 @@ node_modules/*
 sorted-index/analyze-tags.js
 agents/*
 web-components/MDPlanningIPA/*
+web-components/blogSearch.md
