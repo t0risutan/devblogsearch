@@ -1,4 +1,5 @@
 {
   "spec": "test/**/*.test.mjs",
+  "ignore": "test/browser/**",
   "node-option": ["loader=./test/esm-loader.mjs"]
 }

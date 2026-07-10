@@ -1,4 +1,6 @@
 .hlx/*
+playwright-report/
+test-results/
 coverage/*
 logs/*
 node_modules/*
@@ -6,3 +8,5 @@ node_modules/*
 .idea
 sorted-index/analyze-tags.js
 agents/*
+web-components/MDPlanningIPA/*
+web-components/blogSearch.md

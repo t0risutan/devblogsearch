@@ -8,6 +8,22 @@ module.exports = {
     sourceType: 'module',
     requireConfigFile: false,
   },
+  overrides: [
+    {
+      files: ['playwright.config.js'],
+      env: { node: true },
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['test/e2e/**/*.js'],
+      env: { node: true },
+      rules: {
+        'import/extensions': 'off',
+      },
+    },
+  ],
   rules: {
     // allow reassigning param
     'no-param-reassign': [2, { props: false }],

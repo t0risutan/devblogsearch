@@ -20,6 +20,31 @@ indices:
         select: head > meta[name="publication-date"]
         value: |
           dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+
+      # 🔽 Added for accurate metadata-based sorting (safe addition)
+      sortDateTimestamp:
+        select: head > meta[name="m_date"]
+        value: |
+          parseTimestamp(attribute(el, 'content'), 'YYYY-MM-DD')
+      sortDate:
+        select: head > meta[name="publication-date"], head > meta[name="m_date"]
+        value: |
+          attribute(el, 'content')
+      updatedDate:
+        select: head > meta[name="updated_date"]
+        value: |
+          attribute(el, 'content')          
+      # 🔼 End of addition
+
+      adobeCloud:
+        select: head > meta[name="adobe-cloud"]
+        value: |
+          attribute(el, 'content')
+      adobeApp:
+        select: head > meta[name="adobe-app"]
+        value: |
+          attribute(el, 'content')
+          
       image:
         select: head > meta[property="og:image"]
         value: |

@@ -52,6 +52,8 @@ to see the results.
 
 Tests pass with `npm test` but the test coverage is fairly low.
 
+See **[TESTING.md](./TESTING.md)** for all test commands (Mocha, Web Test Runner, Playwright), layout, and environment variables.
+
 ## Scripts
 
 The `scripts` folder has the default EDS scripts, not changed much from the code

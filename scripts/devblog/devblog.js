@@ -14,7 +14,7 @@
 
 import { setupDefaultImages } from './default-images.js';
 import { setupTaxonomyProxy } from './taxonomy-proxy.js';
-import { getAuthorInfoFromPathAndHash, getAuthorPagePath } from './authors.js';
+import { getAuthorInfoFromPathAndHash, getAuthorPagePath, toSlug } from './authors.js';
 
 // The defaultImages values must be set this according to the contents of the default images folder
 export const SITE = {
@@ -83,6 +83,18 @@ export function addDevBlogBlockOverrides(overrides) {
     milo: 'article-feed',
     blog: 'article-feed-post-process',
   });
+  overrides.push({
+    milo: 'article-header',
+    blog: 'article-header-post-process',
+  });
+  overrides.push({
+    milo: 'author-header',
+    blog: 'author-header-post-process',
+  });
+  overrides.push({
+    milo: 'authors-list',
+    blog: 'authors-list',
+  });
   return overrides;
 }
 
@@ -102,6 +114,7 @@ export const [setLibs, getLibs] = (() => {
         const local = hostname.includes('local');
         if (!(hlxPipeline || local)) return prodLibs;
         const branch = new URLSearchParams(search).get('milolibs') || 'main';
+        if (!/^[a-zA-Z0-9_-]+$/.test(branch)) throw new Error('Invalid branch name.');
         if (branch === 'local') return 'http://localhost:6456/libs';
         return branch.includes('--') ? `https://${branch}.aem.live/libs` : `https://${branch}--milo--adobecom.aem.live/libs`;
       })();
@@ -262,25 +275,48 @@ export async function decorateContent() {
   if (window.location.pathname.includes('/authors/')) return;
 
   imgEls.forEach((imgEl) => {
+    const parentEl = imgEl.closest('p');
+    if (!parentEl) return;
+
     const block = createTag('div', { class: 'figure' });
     const row = createTag('div');
     const caption = getImageCaption(imgEl);
-    const parentEl = imgEl.closest('p');
+
+    const wrapper = createTag('div', null, imgEl.cloneNode(true));
+    row.append(wrapper);
 
     if (caption) {
-      const picture = createTag('p', null, imgEl.cloneNode(true));
       const em = createTag('p', null, caption.cloneNode(true));
-      const wrapper = createTag('div');
-      wrapper.append(picture, em);
-      row.append(wrapper);
+      row.append(em);
       caption.remove();
-    } else {
-      const wrapper = createTag('div', null, imgEl.cloneNode(true));
-      row.append(wrapper);
     }
 
-    block.append(row.cloneNode(true));
-    parentEl.replaceWith(block);
+    block.append(row);
+
+    // Preserve text before and after image
+    const nodes = Array.from(parentEl.childNodes);
+    const imgIndex = nodes.indexOf(imgEl);
+
+    const beforeNodes = nodes.slice(0, imgIndex);
+    const afterNodes = nodes.slice(imgIndex + 1);
+
+    const fragment = document.createDocumentFragment();
+
+    if (beforeNodes.length) {
+      const beforeP = document.createElement('p');
+      beforeNodes.forEach(n => beforeP.appendChild(n.cloneNode(true)));
+      fragment.appendChild(beforeP);
+    }
+
+    fragment.appendChild(block);
+
+    if (afterNodes.length) {
+      const afterP = document.createElement('p');
+      afterNodes.forEach(n => afterP.appendChild(n.cloneNode(true)));
+      fragment.appendChild(afterP);
+    }
+
+    parentEl.replaceWith(fragment);
   });
 }
 
@@ -343,15 +379,15 @@ function buildTopicPage(mainEl) {
   document.title = title;
 }
 
-function buildAuthorPage(mainEl) {
+async function buildAuthorPage(mainEl) {
 
   // Replace author markers in the generic page
   // If we get a specific page it should be built with the
   // correct template to get the author's bio and feed
-  const { authorName, authorImageFilename } = getAuthorInfoFromPathAndHash(`${window.location.pathname}${window.location.hash}`);
+  const { authorName, authorImageFilename } = await getAuthorInfoFromPathAndHash(`${window.location.pathname}${window.location.hash}`);
   document.title = authorName;
-  document.querySelectorAll('body *').forEach(e => {
-    if(e.childElementCount == 0) {
+  mainEl.querySelectorAll('*').forEach(e => {
+    if(e.childElementCount === 0 && e.textContent.includes('$AUTHOR$')) {
       e.textContent = e.textContent.replace(/\$AUTHOR\$/, authorName);
     }
   })
@@ -383,6 +419,36 @@ function buildAuthorPage(mainEl) {
   div.prepend(authorHeader);
 }
 
+function buildAuthorHeader(mainEl, social = null, socialLinks = null) {
+  const div = mainEl.querySelector('div');
+  const heading = div.querySelector('h1, h2');
+  const bio = div.querySelector('h1 + p, h2 + p');
+  const picture = div.querySelector('picture');
+
+  let title;
+  if (heading.tagName !== 'H1') {
+    title = document.createElement('h1');
+    title.textContent = heading.textContent;
+    title.id = heading.id;
+    heading.replaceWith(title);
+  }
+
+  const authorHeading = title ? title : heading;
+  const authorHeader = buildBlock('author-header', [
+    [{
+      elems: [
+        authorHeading,
+        picture.closest('p'),
+        bio,
+        social,
+        socialLinks,
+      ],
+    }],
+  ]);
+
+  div.prepend(authorHeader);
+}
+
 async function buildArticleHeader(el) {
   const miloLibs = getLibs();
   const { getMetadata, getConfig } = await import(`${miloLibs}/utils/utils.js`);
@@ -401,15 +467,16 @@ async function buildArticleHeader(el) {
   const category = tag || 'News';
   const author = getMetadata('author') || SITE.team;
   const { codeRoot } = getConfig();
-  const authorURL = getMetadata('author-url') || getAuthorPagePath(codeRoot, author);
+  const authorSlug = toSlug(author);
+  const authorURL = `/en/authors/${authorSlug}`;
   const publicationDate = getMetadata('publication-date');
-
+  const authorImageFilename = authorSlug;
   const categoryTag = getLinkForTopic(category);
 
   const articleHeaderBlockEl = buildBlock('article-header', [
     [`<p>${categoryTag}</p>`],
     [h1],
-    [`<p>${authorURL ? `<a href="${authorURL}">${author}</a>` : author}</p>
+    [`<p>${authorURL ? `<a href="${authorURL}" data-author-image="/images/authors/${authorImageFilename}.png">${author}</a>` : author}</p>
       <p>${publicationDate}</p>`],
     [figure],
   ]);
@@ -519,14 +586,60 @@ function redirectTaggedPath() {
   window.location = `/en/topics/${tag}`;
 }
 
+function buildAuthorsListPage(mainEl) {
+  document.title = 'Authors';
+
+  // Clear out any $AUTHORS$ placeholder text and empty sections
+  mainEl.innerHTML = '';
+
+  // Build a section with the authors-list block and inject it
+  const section = document.createElement('div');
+  const authorsListBlock = buildBlock('authors-list', []);
+  section.append(authorsListBlock);
+  mainEl.append(section);
+}
+
 export async function buildDevblogAutoBlocks() {
   fixImportedContent();
   addLangRoot();
   setupTaxonomyProxy();
   eagerLoadCssForLCP();
   const mainEl = document.querySelector('main');
-  if(window.location.pathname.match(/\/authors\//)) {
-    buildAuthorPage(mainEl);
+  if (window.location.pathname.match(/\/authors(\/|$)/)) {
+    const path = window.location.pathname;
+
+    // Authors list root page — inject authors-list block, no author-header needed
+    if (path.replace(/\/$/, '') === SITE.authorsRoot) {
+      buildAuthorsListPage(mainEl);
+      loadWebComponents();
+      setupDefaultImages();
+      watchAutoLinks();
+      return;
+    }
+
+  try {
+    const res = await fetch(`${path}.plain.html`);
+
+    if (res.ok) {
+      const text = await res.text();
+
+      // Check if it's a real author doc (not the generic template)
+      if (text && text.trim().length > 0 && !text.includes('$AUTHOR$')) {
+
+        const parser = new DOMParser();
+        const fetchedDoc = parser.parseFromString(text, 'text/html');
+        const social = fetchedDoc.querySelector('h3');
+        const socialLinks = social ? social.nextElementSibling : null;
+        buildAuthorHeader(mainEl, social, socialLinks);
+        return;
+      }
+    }
+  } catch (e) {
+    console.warn('Error fetching author doc:', e);
+  }
+
+  // No specific doc → fallback to generic
+    await buildAuthorPage(mainEl);
   } else if(window.location.pathname.match(/\/topics\//)) {
     buildTopicPage(mainEl);
   } else if(window.location.pathname.match(/\/tagged\//)) {
