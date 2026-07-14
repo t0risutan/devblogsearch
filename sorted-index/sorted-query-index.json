@@ -1705,6 +1705,27 @@
       "isHeroVideo": false
     },
     {
+      "path": "/en/publish/2026/03/image-behavior-test-1280-720",
+      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
+      "author": "Devblogs",
+      "description": "Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!",
+      "tags": "[\"Test value for Tags\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1784025532",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1584835200",
+      "sortDate": "2020-03-22",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "2020-04-22",
+      "adobeCloud": "Creative Cloud, Experience Cloud, Document Cloud, Test value Adobe Cloud",
+      "adobeApp": "Adobe Photoshop, Adobe Lightroom, Test value Adobe Apps",
+      "mediaUrl": "",
+      "isHeroVideo": false
+    },
+    {
       "path": "/en/publish/2026/03/image-behavior-test-1080-720",
       "image": "/en/publish/2026/03/media_1830fdf4c961b518843868ce4d3f3cf3dc8657858.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -1721,27 +1742,6 @@
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
       "adobeCloud": "Experience cloud",
-      "adobeApp": "",
-      "mediaUrl": "",
-      "isHeroVideo": false
-    },
-    {
-      "path": "/en/publish/2026/03/image-behavior-test-1280-720",
-      "image": "/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&format=pjpg&optimize=medium",
-      "date": "",
-      "title": "Image Cropping & Layout Behavior Test – 1280 × 720",
-      "author": "Devblogs",
-      "description": "1280 × 720 (~2.13:1) is suitable for: Faster loading, Standard usage scenarios.Clear composition guidelines can improve visual consistency",
-      "tags": "[]",
-      "imageAlt": "",
-      "robots": "",
-      "lastModified": "1782805181",
-      "Removed from Medium?": "",
-      "sortDateTimestamp": "1584748800",
-      "sortDate": "2020-03-21",
-      "sortDateTimestampLegacy": "",
-      "updatedDate": "",
-      "adobeCloud": "",
       "adobeApp": "",
       "mediaUrl": "",
       "isHeroVideo": false
@@ -1978,5 +1978,5 @@
     "mediaUrl"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-03T03:55:13.258Z"
+  "generatedAt": "2026-07-14T10:45:41.570Z"
 }
