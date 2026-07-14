@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jul 2026 00:00:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 10:50:08 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -835,7 +835,7 @@
       <title><![CDATA[Image Cropping & Layout Behavior Test – 1280 × 720]]></title>
       <link>https://blog.developer.adobe.com/en/publish/2026/03/image-behavior-test-1280-720</link>
       <guid isPermaLink="true">https://blog.developer.adobe.com/en/publish/2026/03/image-behavior-test-1280-720</guid>
-      <description><![CDATA[1280 × 720 (~2.13:1) is suitable for: Faster loading, Standard usage scenarios.Clear composition guidelines can improve visual consistency]]></description>
+      <description><![CDATA[Welcome Sonya P., a 2026 Adobe Developer Champion, software developer, and content creator, to the Adobe Developer Blog!]]></description>
       <dc:creator><![CDATA[Devblogs]]></dc:creator>
       <pubDate>Sat, 21 Mar 2020 00:00:00 GMT</pubDate>
       <enclosure url="https://blog.developer.adobe.com/en/publish/2026/03/media_1cef1057f851524593726d1f2be9f0959e13f8f58.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
