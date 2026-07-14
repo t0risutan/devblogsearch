@@ -16,6 +16,10 @@ indices:
         select: main h1:first-of-type
         value: |
           textContent(el)
+      metaTitle:
+        select: head > meta[name="meta-title"]
+        value: |
+          attribute(el, 'content')
       date:
         select: head > meta[name="publication-date"]
         value: |
@@ -57,9 +61,25 @@ indices:
         select: head > meta[name="description"]
         value: |
           attribute(el, 'content')
+      shortDescription:
+        select: head > meta[name="short_description"]
+        value: |
+          attribute(el, 'content')
       tags:
         select: head > meta[property="article:tag"]
         values: |
+          attribute(el, 'content')
+      newsletterPlanned:
+        select: head > meta[name="newsletter_planned"]
+        value: |
+          attribute(el, 'content')
+      newsletterPublished:
+        select: head > meta[name="newsletter_published"]
+        value: |
+          attribute(el, 'content')
+      importer:
+        select: head > meta[name="m_importer"]
+        value: |
           attribute(el, 'content')
       robots:
         select: head > meta[name="robots"]
@@ -120,6 +140,10 @@ indices:
         value: |
           attribute(el, 'content')
 
+      metaTitle:
+        select: head > meta[name="meta-title"]
+        value: |
+          attribute(el, 'content')
       url:
         select: head > meta[property="og:url"]
         value: |
@@ -135,8 +159,23 @@ indices:
         value: |
           attribute(el, 'content')
 
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+
       newsletterPlanned:
         select: head > meta[name="newsletter_planned"]
+        value: |
+          attribute(el, 'content')
+
+      newsletterPublished:
+        select: head > meta[name="newsletter_published"]
+        value: |
+          attribute(el, 'content')
+
+      importer:
+        select: head > meta[name="m_importer"]
         value: |
           attribute(el, 'content')
 
