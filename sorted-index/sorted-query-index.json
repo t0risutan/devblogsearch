@@ -299,7 +299,7 @@
       "tags": "[\"adobe-express\",\"adobe-express-add-ons\",\"adobe-express-addons\",\"add-on-development\",\"extensibility\",\"mcp\",\"mcp-server\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1778169588",
+      "lastModified": "1784146931",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1773619200",
       "sortDate": "2026-03-16",
@@ -312,7 +312,7 @@
       "shortDescription": "",
       "newsletterPlanned": "",
       "newsletterPublished": "",
-      "importer": "",
+      "importer": "v15june25",
       "isHeroVideo": false
     },
     {
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-15T14:49:53.963Z"
+  "generatedAt": "2026-07-15T22:00:05.730Z"
 }
