@@ -9,11 +9,11 @@
       "date": "",
       "title": "Upcoming Photoshop UI Changes: Test Your UXP Plugin Now",
       "author": "Cory Shubert",
-      "description": "If you develop UXP plugins for Photoshop, this article is for you.",
+      "description": "If you develop UXP plugins for Photoshop, this article is for you. A recent Photoshop Beta build introduced an updated UI backend that may affect ...",
       "tags": "[\"Photoshop\",\"uxp\",\"UI\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1784105022",
+      "lastModified": "1784119600",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1782345600",
       "sortDate": "2026-06-25",
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-15T10:49:15.515Z"
+  "generatedAt": "2026-07-15T14:49:53.963Z"
 }
