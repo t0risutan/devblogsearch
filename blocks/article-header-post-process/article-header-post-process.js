@@ -7,7 +7,33 @@ import { setLibs, getLibs, SITE } from '../../scripts/devblog/devblog.js';
 setLibs(SITE.prodLibsPath);
 
 const miloBlock = await import(`${getLibs()}/blocks/article-header/article-header.js`);
-const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
+const { loadStyle, getMetadata } = await import(`${getLibs()}/utils/utils.js`);
+
+function injectUpdatedNote(blockEl) {
+  const updatedRaw = getMetadata('publication-date')
+  const publicationRaw = getMetadata('updated_date');
+
+  // Only show if updated_date exists
+  if (!updatedRaw || !publicationRaw) return;
+
+  function toReadable(dateStr) {
+    const isYMD = /^\d{4}-\d{2}-\d{2}$/.test(dateStr);
+    const normalized = isYMD
+      ? dateStr
+      : dateStr.replace(/^(\d{2})-(\d{2})-(\d{4})$/, '$3-$1-$2');
+    return new Date(`${normalized}T00:00:00`).toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric',
+    });
+  }
+
+  const note = document.createElement('p');
+  note.className = 'article-updated-note';
+  note.innerHTML = `Originally published: ${toReadable(publicationRaw)} &nbsp;·&nbsp; Updated: ${toReadable(updatedRaw)}`;
+
+  // Insert after the hero image/video
+  const heroEl = blockEl.querySelector('.article-feature-image, .article-feature-video');
+  heroEl?.insertAdjacentElement('afterend', note);
+}
 
 export default async function init(blockEl) {
   try {
@@ -219,7 +245,7 @@ export default async function init(blockEl) {
       }
     }
   }
-
+    injectUpdatedNote(blockEl);
   // Author image injection
 
   blockEl.classList.add('article-header');

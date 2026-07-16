@@ -247,6 +247,14 @@ main + footer .feds-regionPicker-wrapper > .fragment p strong > a::after {
   transform: rotate(45deg);
 }
 
+.article-updated-note {
+  color: #696969;
+  font-size: 13px;
+  text-align: left;
+  max-width: 820px;
+  margin: 12px auto 0;
+  padding: 0 26px;
+}
 /* SUBSCRIBE + RSS (DESKTOP) */
 
 @media (min-width: 900px) {
