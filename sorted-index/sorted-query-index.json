@@ -4,6 +4,32 @@
   "limit": 94,
   "data": [
     {
+      "path": "/en/publish/2026/06/dark-mode-is-coming-to-adobe-express-what-add-on-developers-need-to-know",
+      "image": "/en/publish/2026/06/media_1b3df6ec4529661f88765ab154af3fb3ad876e4a0.png?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
+      "author": "Padma Krishnamoorthy",
+      "description": "Adobe Express is adding dark mode to the application experience, giving creators more flexibility to personalize their workspace and work comfortably in the environment that ...",
+      "tags": "[\"adobe-express\",\"add-on\",\"extensibility\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1784151200",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1782777600",
+      "sortDate": "2026-06-30",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "2026-07-16",
+      "adobeCloud": "",
+      "adobeApp": "",
+      "mediaUrl": "",
+      "metaTitle": "",
+      "shortDescription": "fsdfdfsdfds",
+      "newsletterPlanned": "July 2026",
+      "newsletterPublished": "",
+      "importer": "v15june25",
+      "isHeroVideo": false
+    },
+    {
       "path": "/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now",
       "image": "/en/publish/2026/06/media_1678e569ebf2763f58a39d560501e6435b18ce5c0.png?width=1200&format=pjpg&optimize=medium",
       "date": "",
@@ -27,32 +53,6 @@
       "newsletterPlanned": "6/1/2026",
       "newsletterPublished": "",
       "importer": "v15june25",
-      "isHeroVideo": false
-    },
-    {
-      "path": "/en/publish/2026/06/dark-mode-is-coming-to-adobe-express-what-add-on-developers-need-to-know",
-      "image": "/en/publish/2026/06/media_1b3df6ec4529661f88765ab154af3fb3ad876e4a0.png?width=1200&format=pjpg&optimize=medium",
-      "date": "",
-      "title": "Dark Mode Is Coming to Adobe Express: What Add-on Developers Need to Know",
-      "author": "Padma Krishnamoorthy",
-      "description": "Adobe Express is adding dark mode to the application experience — one of the most requested customization and accessibility features from our users.",
-      "tags": "[\"adobe-express\",\"add-on\",\"extensibility\"]",
-      "imageAlt": "",
-      "robots": "",
-      "lastModified": "1783036851",
-      "Removed from Medium?": "",
-      "sortDateTimestamp": "1782777600",
-      "sortDate": "2026-06-30",
-      "sortDateTimestampLegacy": "",
-      "updatedDate": "",
-      "adobeCloud": "",
-      "adobeApp": "",
-      "mediaUrl": "",
-      "metaTitle": "",
-      "shortDescription": "",
-      "newsletterPlanned": "",
-      "newsletterPublished": "",
-      "importer": "",
       "isHeroVideo": false
     },
     {
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-15T21:06:58.728Z"
+  "generatedAt": "2026-07-16T00:06:11.655Z"
 }
