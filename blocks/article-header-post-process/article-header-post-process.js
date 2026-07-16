@@ -10,8 +10,8 @@ const miloBlock = await import(`${getLibs()}/blocks/article-header/article-heade
 const { loadStyle, getMetadata } = await import(`${getLibs()}/utils/utils.js`);
 
 function injectUpdatedNote(blockEl) {
-  const updatedRaw = getMetadata('publication-date')
-  const publicationRaw = getMetadata('updated_date');
+  const updatedRaw = getMetadata('updated_date')
+  const publicationRaw = getMetadata('publication-date');
 
   // Only show if updated_date exists
   if (!updatedRaw || !publicationRaw) return;
