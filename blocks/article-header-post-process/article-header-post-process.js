@@ -30,9 +30,16 @@ function injectUpdatedNote(blockEl) {
   note.className = 'article-updated-note';
   note.innerHTML = `Originally published: ${toReadable(publicationRaw)} &nbsp;·&nbsp; Updated: ${toReadable(updatedRaw)}`;
 
-  // Insert after the hero image/video
-  const heroEl = blockEl.querySelector('.article-feature-image, .article-feature-video');
-  heroEl?.insertAdjacentElement('afterend', note);
+  // Find the second section (article body section)
+  const articleSection = document.querySelector('main > div.section:nth-of-type(2)');
+  if (articleSection) {
+    // Insert as first child of the section — before any content/figure blocks
+    articleSection.insertAdjacentElement('afterbegin', note);
+  } else {
+    // fallback
+    const heroEl = blockEl.querySelector('.article-feature-image, .article-feature-video');
+    heroEl?.insertAdjacentElement('afterend', note);
+  }
 }
 
 export default async function init(blockEl) {
