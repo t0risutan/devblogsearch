@@ -2111,15 +2111,15 @@
     },
     {
       "path": "/en/publish/2026/03/image-behavior-test-1080-720",
-      "image": "/en/publish/2026/03/media_1830fdf4c961b518843868ce4d3f3cf3dc8657858.png?width=1200&format=pjpg&optimize=medium",
+      "image": "",
       "date": "",
       "title": "Image Cropping & Layout Behavior Test – 1080 × 720",
       "author": "Devblogs",
-      "description": "When analyzing the image behavior across the blog layout, the goal was not just to fix a visual issue — it was to understand how ...",
+      "description": "",
       "tags": "[\"Test value for Tags\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1784030326",
+      "lastModified": "1784288611",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1584835200",
       "sortDate": "2020-03-22",
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-16T12:19:59.481Z"
+  "generatedAt": "2026-07-17T12:08:57.714Z"
 }
