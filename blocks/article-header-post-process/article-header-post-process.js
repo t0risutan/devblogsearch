@@ -12,6 +12,7 @@ const { loadStyle, getMetadata } = await import(`${getLibs()}/utils/utils.js`);
 function injectUpdatedNote(blockEl) {
   const updatedRaw = getMetadata('updated_date')
   const publicationRaw = getMetadata('publication-date');
+  const updateNote = getMetadata('update_note');
 
   // Only show if updated_date exists
   if (!updatedRaw || !publicationRaw) return;
@@ -21,14 +22,16 @@ function injectUpdatedNote(blockEl) {
     const normalized = isYMD
       ? dateStr
       : dateStr.replace(/^(\d{2})-(\d{2})-(\d{4})$/, '$3-$1-$2');
-    return new Date(`${normalized}T00:00:00`).toLocaleDateString('en-US', {
-      year: 'numeric', month: 'long', day: 'numeric',
+    return new Date(`${normalized}T00:00:00`).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
     });
   }
 
   const note = document.createElement('p');
   note.className = 'article-updated-note';
-  note.innerHTML = `Originally published: ${toReadable(publicationRaw)} &nbsp;·&nbsp; Updated: ${toReadable(updatedRaw)}`;
+  note.innerHTML = `This article was first published on ${toReadable(publicationRaw)}. ${updateNote}`;
 
   // Find the second section (article body section)
   const articleSection = document.querySelector('main > div.section:nth-of-type(2)');
