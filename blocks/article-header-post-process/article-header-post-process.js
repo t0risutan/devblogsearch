@@ -31,7 +31,7 @@ function injectUpdatedNote(blockEl) {
 
   const note = document.createElement('p');
   note.className = 'article-updated-note';
-  note.innerHTML = `This article was first published on ${toReadable(publicationRaw)}. ${updateNote}`;
+  note.innerHTML = `This article was first published on ${toReadable(publicationRaw)}. ${updateNote || ''}`;
 
   // Find the second section (article body section)
   const articleSection = document.querySelector('main > div.section:nth-of-type(2)');
