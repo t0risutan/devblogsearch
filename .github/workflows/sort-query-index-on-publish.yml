@@ -3,24 +3,19 @@ name: Create a local sorted copy of the blog's query index (on publish)
 on:
   repository_dispatch:
     types:
-      - resource-published-native
       - resource-published
   workflow_dispatch: # Allow manual trigger
 
 jobs:
   sync-blog-data:
+    # Only run for actual article publishes, not every resource in the repo.
+    if: startsWith(github.event.client_payload.path, '/en/publish/') || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
-      - name: Debug event payload
-        run: |
-          echo "Event name: ${{ github.event_name }}"
-          echo "Action: ${{ github.event.action }}"
-          echo "Full payload: ${{ toJson(github.event.client_payload) }}"
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
