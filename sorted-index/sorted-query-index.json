@@ -143,14 +143,14 @@
       "tags": "[\"Vibe coding\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1780516591",
+      "lastModified": "1784553581",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1780531200",
       "sortDate": "2026-06-04",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
-      "adobeCloud": "",
-      "adobeApp": "",
+      "adobeCloud": "Creative Cloud, Experience Cloud, Document Cloud, Test value Adobe Cloud",
+      "adobeApp": "Adobe Photoshop, Adobe Lightroom, Test value Adobe Apps",
       "mediaUrl": "",
       "metaTitle": "",
       "shortDescription": "",
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-17T14:15:09.724Z"
+  "generatedAt": "2026-07-20T13:27:26.721Z"
 }
