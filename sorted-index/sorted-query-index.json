@@ -13,7 +13,7 @@
       "tags": "[\"adobe-express\",\"add-on\",\"extensibility\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1784200676",
+      "lastModified": "1784553938",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1782777600",
       "sortDate": "2026-06-30",
@@ -22,8 +22,8 @@
       "adobeCloud": "Creative Cloud, Experience Cloud, Document Cloud, Test value Adobe Cloud",
       "adobeApp": "Adobe Photoshop, Adobe Lightroom, Test value Adobe Apps",
       "mediaUrl": "",
-      "metaTitle": "Dark Mode in Adobe Express for Add-on Developers",
-      "shortDescription": "Learn how to prepare your Adobe Express add-on for dark mode, update theme support, test your UI, and deliver a seamless user experience.",
+      "metaTitle": "",
+      "shortDescription": "",
       "newsletterPlanned": "July  2026",
       "newsletterPublished": "",
       "importer": "",
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-20T13:27:26.721Z"
+  "generatedAt": "2026-07-20T13:35:39.017Z"
 }
