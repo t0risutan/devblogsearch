@@ -8,7 +8,7 @@
     <link>https://blog.developer.adobe.com</link>
     <description>The latest developer news, tutorials, and resources from Adobe.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 13:39:31 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 15:31:32 GMT</lastBuildDate>
     <atom:link href="https://blog.developer.adobe.com/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
@@ -35,7 +35,7 @@
       <title><![CDATA[Upcoming Photoshop UI Changes: Test Your UXP Plugin Now]]></title>
       <link>https://blog.developer.adobe.com/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now</link>
       <guid isPermaLink="true">https://blog.developer.adobe.com/en/publish/2026/06/upcoming-photoshop-ui-changes-test-your-uxp-plugin-now</guid>
-      <description><![CDATA[If you develop UXP plugins for Photoshop, this article is for you. A recent Photoshop Beta build introduced an updated UI backend that may affect ...]]></description>
+      <description><![CDATA[Test your Photoshop UXP plugin against the upcoming UI backend changes, identify compatibility issues, and prepare for the public release.]]></description>
       <dc:creator><![CDATA[Cory Shubert]]></dc:creator>
       <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://blog.developer.adobe.com/en/publish/2026/06/media_1678e569ebf2763f58a39d560501e6435b18ce5c0.png?width=1200&amp;format=pjpg&amp;optimize=medium" type="image/png" length="0"/>
