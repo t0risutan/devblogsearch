@@ -91,7 +91,7 @@
       "tags": "[\"developer resources\",\"Blog\",\"github\",\"links\",\"developer tools\",\"uxp\",\"express\",\"add-ons\",\"cep\"]",
       "imageAlt": "",
       "robots": "",
-      "lastModified": "1784200451",
+      "lastModified": "1784554560",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1782259200",
       "sortDate": "2026-06-24",
@@ -100,8 +100,8 @@
       "adobeCloud": "Creative Cloud, Experience Cloud, Document Cloud, Test value Adobe Cloud",
       "adobeApp": "Adobe Photoshop, Adobe Lightroom, Test value Adobe Apps",
       "mediaUrl": "",
-      "metaTitle": "Adobe Express & Creative Cloud Developer Resource Hub",
-      "shortDescription": "Discover the new GitHub community resource hub for Adobe Express and Creative Cloud developers, featuring tools, tutorials, code samples, and more.",
+      "metaTitle": "",
+      "shortDescription": "",
       "newsletterPlanned": "",
       "newsletterPublished": "",
       "importer": "",
@@ -2474,5 +2474,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-20T13:39:27.940Z"
+  "generatedAt": "2026-07-20T13:40:55.580Z"
 }
