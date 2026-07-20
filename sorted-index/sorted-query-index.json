@@ -91,14 +91,14 @@
       "tags": "[\"Uxp\",\"creative cloud\",\"team\"]",
       "imageAlt": "Kasi, Erin, and Karan",
       "robots": "",
-      "lastModified": "1781640650",
+      "lastModified": "1784554447",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1781481600",
       "sortDate": "2026-06-15",
       "sortDateTimestampLegacy": "",
       "updatedDate": "",
-      "adobeCloud": "",
-      "adobeApp": "",
+      "adobeCloud": "Creative Cloud, Experience Cloud, Document Cloud, Test value Adobe Cloud",
+      "adobeApp": "Adobe Photoshop, Adobe Lightroom, Test value Adobe Apps",
       "mediaUrl": "",
       "metaTitle": "",
       "shortDescription": "",
@@ -2448,5 +2448,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-07-20T13:35:39.017Z"
+  "generatedAt": "2026-07-20T13:39:09.826Z"
 }
