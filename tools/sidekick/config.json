@@ -72,7 +72,8 @@
       "includePaths": [ "**/:x**" ]
     },
     {
-      "id": "publish"
+      "id": "publish",
+      "excludePaths": [ "**/drafts/**" ]
     }
   ]
 }
