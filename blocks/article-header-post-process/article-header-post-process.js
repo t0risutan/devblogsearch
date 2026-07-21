@@ -7,7 +7,43 @@ import { setLibs, getLibs, SITE } from '../../scripts/devblog/devblog.js';
 setLibs(SITE.prodLibsPath);
 
 const miloBlock = await import(`${getLibs()}/blocks/article-header/article-header.js`);
-const { loadStyle } = await import(`${getLibs()}/utils/utils.js`);
+const { loadStyle, getMetadata } = await import(`${getLibs()}/utils/utils.js`);
+
+function injectUpdatedNote(blockEl) {
+  const updatedRaw = getMetadata('updated_date')
+  const publicationRaw = getMetadata('publication-date');
+  const updateNote = getMetadata('update_note');
+
+  // Only show if updated_date exists
+  if (!updatedRaw || !publicationRaw) return;
+
+  function toReadable(dateStr) {
+    const isYMD = /^\d{4}-\d{2}-\d{2}$/.test(dateStr);
+    const normalized = isYMD
+      ? dateStr
+      : dateStr.replace(/^(\d{2})-(\d{2})-(\d{4})$/, '$3-$1-$2');
+    return new Date(`${normalized}T00:00:00`).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  }
+
+  const note = document.createElement('p');
+  note.className = 'article-updated-note';
+  note.innerHTML = `This article was first published on ${toReadable(publicationRaw)}. ${updateNote || ''}`;
+
+  // Find the second section (article body section)
+  const articleSection = document.querySelector('main > div.section:nth-of-type(2)');
+  if (articleSection) {
+    // Insert as first child of the section — before any content/figure blocks
+    articleSection.insertAdjacentElement('afterbegin', note);
+  } else {
+    // fallback
+    const heroEl = blockEl.querySelector('.article-feature-image, .article-feature-video');
+    heroEl?.insertAdjacentElement('afterend', note);
+  }
+}
 
 export default async function init(blockEl) {
   try {
@@ -219,7 +255,7 @@ export default async function init(blockEl) {
       }
     }
   }
-
+    injectUpdatedNote(blockEl);
   // Author image injection
 
   blockEl.classList.add('article-header');

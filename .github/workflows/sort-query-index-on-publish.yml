@@ -1,0 +1,39 @@
+name: Create a local sorted copy of the blog's query index (on publish)
+
+on:
+  repository_dispatch:
+    types:
+      - resource-published
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-blog-data:
+    # Only run for actual article publishes, not every resource in the repo.
+    if: startsWith(github.event.client_payload.path, '/en/publish/') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Run sorting scripts
+        run: node sorted-index/sort-query-index.js
+
+      - name: Commit and push changes if any
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (sort query index)"
+          git pull
+          git add .
+          git diff-index --quiet HEAD || git commit -am "Update sorted query index on publish- $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git push

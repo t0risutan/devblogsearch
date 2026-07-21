@@ -17,10 +17,22 @@ function escapeXml(str = '') {
     .replace(/'/g, '&apos;');
 }
 
-function toRfc822(timestamp) {
-  const ms = Number(timestamp) * 1000;
-  if (!ms || Number.isNaN(ms)) return new Date().toUTCString();
-  return new Date(ms).toUTCString();
+function toRfc822(value) {
+  if (!value) return new Date().toUTCString();
+
+  // Handle Unix timestamps (seconds)
+  if (!Number.isNaN(Number(value))) {
+    return new Date(Number(value) * 1000).toUTCString();
+  }
+
+  // Handle ISO date strings (YYYY-MM-DD)
+  const parsedDate = new Date(value);
+  if (!Number.isNaN(parsedDate.getTime())) {
+    return parsedDate.toUTCString();
+  }
+
+  // Fallback
+  return new Date().toUTCString();
 }
 
 function getImageMimeType(url = '') {

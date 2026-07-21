@@ -449,6 +449,15 @@ function buildAuthorHeader(mainEl, social = null, socialLinks = null) {
   div.prepend(authorHeader);
 }
 
+// Converts YYYY-MM-DD → MM-DD-YYYY to match publication-date display format
+function formatUpdatedDate(dateStr) {
+  if (!dateStr) return null;
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return null;
+  const [year, month, day] = parts;
+  return `${month}-${day}-${year}`;
+}
+
 async function buildArticleHeader(el) {
   const miloLibs = getLibs();
   const { getMetadata, getConfig } = await import(`${miloLibs}/utils/utils.js`);
@@ -470,6 +479,8 @@ async function buildArticleHeader(el) {
   const authorSlug = toSlug(author);
   const authorURL = `/en/authors/${authorSlug}`;
   const publicationDate = getMetadata('publication-date');
+  const updateDate = getMetadata('updated_date');
+  const displayDate = formatUpdatedDate(updateDate) || publicationDate;
   const authorImageFilename = authorSlug;
   const categoryTag = getLinkForTopic(category);
 
@@ -477,7 +488,7 @@ async function buildArticleHeader(el) {
     [`<p>${categoryTag}</p>`],
     [h1],
     [`<p>${authorURL ? `<a href="${authorURL}" data-author-image="/images/authors/${authorImageFilename}.png">${author}</a>` : author}</p>
-      <p>${publicationDate}</p>`],
+      <p>${displayDate}</p>`],
     [figure],
   ]);
   div.append(articleHeaderBlockEl);
