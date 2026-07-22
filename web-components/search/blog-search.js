@@ -977,10 +977,13 @@ class BlogSearch extends HTMLElement {
         author: 'Author',
         type: 'Type',
       };
-    const exploreGroups = new Set(['prod', 'cloud', 'cat', 'type', 'author', 'date']);
-    const facetEntries = explore
-      ? ['prod', 'cloud', 'cat', 'type', 'author', 'date'].map((group) => [group, facets[group]])
-      : Object.entries(facets);
+    // Date filter is disabled for now (not enough content); re-add 'date' to
+    // these arrays to bring it back.
+    const exploreGroups = new Set(['cloud', 'prod', 'cat', 'type', 'author']);
+    const order = explore
+      ? ['cloud', 'prod', 'cat', 'type', 'author']
+      : ['cat', 'cloud', 'prod', 'author', 'type'];
+    const facetEntries = order.map((group) => [group, facets[group]]);
 
     facetEntries.forEach(([group, values]) => {
       if (group === 'date') {
