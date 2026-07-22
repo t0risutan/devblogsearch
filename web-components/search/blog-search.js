@@ -56,6 +56,16 @@ function getArticleSortTimestamp(article) {
   return 0;
 }
 
+// adobeCloud/adobeApp are authored as comma-separated strings in a single meta
+// tag; split them so each product surfaces as its own facet value.
+function splitProductValues(...fields) {
+  return fields
+    .filter(Boolean)
+    .flatMap((field) => field.split(','))
+    .map((v) => v.trim())
+    .filter(Boolean);
+}
+
 function comparePathNumbers(a, b) {
   const numbersA = a.match(/\d+/g)?.map(Number) || [];
   const numbersB = b.match(/\d+/g)?.map(Number) || [];
@@ -830,8 +840,8 @@ class BlogSearch extends HTMLElement {
           // eslint-disable-next-line no-console
         }
       }
-      if (article.adobeCloud) prodSet.add(article.adobeCloud);
-      if (article.adobeApp) prodSet.add(article.adobeApp);
+      splitProductValues(article.adobeCloud, article.adobeApp)
+        .forEach((product) => prodSet.add(product));
       if (article.author) authorSet.add(article.author);
       if (article.sortDate) dateSet.add(article.sortDate);
       if (article.articleType) typeSet.add(article.articleType);
@@ -877,7 +887,7 @@ class BlogSearch extends HTMLElement {
             }
             break;
           case 'prod':
-            values = [article.adobeCloud, article.adobeApp].filter(Boolean);
+            values = splitProductValues(article.adobeCloud, article.adobeApp);
             break;
           case 'author':
             if (article.author) values = [article.author];
@@ -1149,7 +1159,7 @@ class BlogSearch extends HTMLElement {
         }
         return [];
       case 'prod':
-        return [article.adobeCloud, article.adobeApp].filter(Boolean);
+        return splitProductValues(article.adobeCloud, article.adobeApp);
       case 'author':
         return article.author ? [article.author] : [];
       case 'type':
