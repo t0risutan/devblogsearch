@@ -514,6 +514,7 @@ function searchBox(component, config) {
  * @typedef {Object} ActiveFilters
  * @property {string[]} cat
  * @property {string[]} prod
+ * @property {string[]} cloud
  * @property {string[]} author
  * @property {string[]} date
  * @property {string[]} type
@@ -525,6 +526,7 @@ class BlogSearch extends HTMLElement {
     this.activeFilters = {
       cat: [],
       prod: [],
+      cloud: [],
       author: [],
       date: [],
       type: [],
@@ -823,6 +825,7 @@ class BlogSearch extends HTMLElement {
   generateFacets(data) {
     const catSet = new Set();
     const prodSet = new Set();
+    const cloudSet = new Set();
     const authorSet = new Set();
     const dateSet = new Set();
     const typeSet = new Set();
@@ -840,8 +843,8 @@ class BlogSearch extends HTMLElement {
           // eslint-disable-next-line no-console
         }
       }
-      splitProductValues(article.adobeCloud, article.adobeApp)
-        .forEach((product) => prodSet.add(product));
+      splitProductValues(article.adobeApp).forEach((product) => prodSet.add(product));
+      splitProductValues(article.adobeCloud).forEach((cloud) => cloudSet.add(cloud));
       if (article.author) authorSet.add(article.author);
       if (article.sortDate) dateSet.add(article.sortDate);
       if (article.articleType) typeSet.add(article.articleType);
@@ -852,6 +855,7 @@ class BlogSearch extends HTMLElement {
     return {
       cat: sorted(catSet),
       prod: sorted(prodSet),
+      cloud: sorted(cloudSet),
       author: sorted(authorSet),
       date: sorted(dateSet),
       type: sorted(typeSet),
@@ -887,7 +891,10 @@ class BlogSearch extends HTMLElement {
             }
             break;
           case 'prod':
-            values = splitProductValues(article.adobeCloud, article.adobeApp);
+            values = splitProductValues(article.adobeApp);
+            break;
+          case 'cloud':
+            values = splitProductValues(article.adobeCloud);
             break;
           case 'author':
             if (article.author) values = [article.author];
@@ -910,6 +917,7 @@ class BlogSearch extends HTMLElement {
     return {
       cat: params.getAll('cat').filter(Boolean),
       prod: params.getAll('prod').filter(Boolean),
+      cloud: params.getAll('cloud').filter(Boolean),
       author: params.getAll('author').filter(Boolean),
       date: params.getAll('date').filter(Boolean),
       type: params.getAll('type').filter(Boolean),
@@ -955,11 +963,23 @@ class BlogSearch extends HTMLElement {
     if (explore) filterBar.classList.add('filter-bar-explore');
 
     const labels = explore
-      ? { cat: 'Category', prod: 'Products', type: 'Topic', author: 'Author' }
-      : { cat: 'Category', prod: 'Product', author: 'Author', type: 'Type' };
-    const exploreGroups = new Set(['prod', 'cat', 'type', 'author', 'date']);
+      ? {
+        cat: 'Tags',
+        prod: 'Products',
+        cloud: 'Adobe Cloud',
+        type: 'Topic',
+        author: 'Author',
+      }
+      : {
+        cat: 'Tags',
+        prod: 'Products',
+        cloud: 'Adobe Cloud',
+        author: 'Author',
+        type: 'Type',
+      };
+    const exploreGroups = new Set(['prod', 'cloud', 'cat', 'type', 'author', 'date']);
     const facetEntries = explore
-      ? ['prod', 'cat', 'type', 'author', 'date'].map((group) => [group, facets[group]])
+      ? ['prod', 'cloud', 'cat', 'type', 'author', 'date'].map((group) => [group, facets[group]])
       : Object.entries(facets);
 
     facetEntries.forEach(([group, values]) => {
@@ -1159,7 +1179,9 @@ class BlogSearch extends HTMLElement {
         }
         return [];
       case 'prod':
-        return splitProductValues(article.adobeCloud, article.adobeApp);
+        return splitProductValues(article.adobeApp);
+      case 'cloud':
+        return splitProductValues(article.adobeCloud);
       case 'author':
         return article.author ? [article.author] : [];
       case 'type':
