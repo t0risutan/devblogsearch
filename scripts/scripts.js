@@ -387,6 +387,9 @@ const { loadArea, setConfig, getMetadata } = await import(`${miloLibs}/utils/uti
   mq.addEventListener('change', moveSearch);
 
   function injectExploreFacets() {
+    // Author pages show only that author's articles; facets/search don't apply there.
+    if (window.location.pathname.includes('/authors/')) return;
+
     const articleFeed = document.querySelector('main .article-feed, main .article-feed-post-process');
     if (!articleFeed || document.querySelector('blog-search.explore-facets')) return;
 
