@@ -39,7 +39,7 @@
       "tags": "[\"UXP\",\"Changelog\",\"Plugin Development\"]",
       "imageAlt": "New and old employees on the DevEx team",
       "robots": "",
-      "lastModified": "1785744660",
+      "lastModified": "1785855831",
       "Removed from Medium?": "",
       "sortDateTimestamp": "1785283200",
       "sortDate": "2026-07-29",
@@ -139,7 +139,7 @@
       "date": "",
       "title": "New Community Resource Hub for Adobe Express and Creative Cloud Developers",
       "author": "Erin Finnegan",
-      "description": "Sometimes the best documentation, tutorials, and code samples don’t come from the official source. Often, the most helpful developer resources come from the community itself. ...",
+      "description": "Sometimes the best documentation, tutorials, and code samples don��t come from the official source. Often, the most helpful developer resources come from the community itself. ...",
       "tags": "[\"developer resources\",\"Blog\",\"github\",\"links\",\"developer tools\",\"uxp\",\"add-ons\",\"cep\"]",
       "imageAlt": "",
       "robots": "",
@@ -2890,5 +2890,5 @@
     "importer"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-08-03T10:41:59.511Z"
+  "generatedAt": "2026-08-04T15:30:44.341Z"
 }
