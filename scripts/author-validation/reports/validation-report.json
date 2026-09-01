@@ -85,6 +85,23 @@
     ]
   },
   {
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "latestArticle": {
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+    },
+    "docUrl": "/en/authors/ayan-choudhary",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
     "name": "Ashikka Gupta",
     "slug": "ashikka-gupta",
     "latestArticle": {
@@ -110,23 +127,6 @@
       "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
     },
     "docUrl": "/en/authors/mike-zahorik",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
-    "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
-    },
-    "docUrl": "/en/authors/ayan-choudhary",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -187,23 +187,6 @@
     ]
   },
   {
-    "name": "Asim Chatterjee",
-    "slug": "asim-chatterjee",
-    "latestArticle": {
-      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
-      "date": "2025-06-09",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
-    },
-    "docUrl": "/en/authors/asim-chatterjee",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Honwai Wong",
     "slug": "honwai-wong",
     "latestArticle": {
@@ -229,6 +212,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2023/06/adobe-developer-app-builder-support-for-setting-response-headers"
     },
     "docUrl": "/en/authors/kelvin-xu",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Asim Chatterjee",
+    "slug": "asim-chatterjee",
+    "latestArticle": {
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
+    },
+    "docUrl": "/en/authors/asim-chatterjee",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -272,14 +272,14 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
+    "name": "Renae Kang",
+    "slug": "renae-kang",
     "latestArticle": {
-      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
-      "date": "2024-04-26",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
+      "date": "2024-12-05",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
     },
-    "docUrl": "/en/authors/david-sankel",
+    "docUrl": "/en/authors/renae-kang",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -289,14 +289,14 @@
     ]
   },
   {
-    "name": "Renae Kang",
-    "slug": "renae-kang",
+    "name": "David Sankel",
+    "slug": "david-sankel",
     "latestArticle": {
-      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
-      "date": "2024-12-05",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
+      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
+      "date": "2024-04-26",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
     },
-    "docUrl": "/en/authors/renae-kang",
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -357,14 +357,14 @@
     ]
   },
   {
-    "name": "Walter Kimaro",
-    "slug": "walter-kimaro",
+    "name": "Achim Koch",
+    "slug": "achim-koch",
     "latestArticle": {
-      "title": "My Experience Building an Adobe Express Add-on",
-      "date": "2023-08-04",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/08/my-experience-building-an-adobe-express-add-on"
+      "title": "AEM Dispatcher — Create the Perfect Caching Architecture",
+      "date": "2023-05-23",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/05/aem-dispatcher-create-the-perfect-caching-architecture"
     },
-    "docUrl": "/en/authors/walter-kimaro",
+    "docUrl": "/en/authors/achim-koch",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -391,31 +391,14 @@
     ]
   },
   {
-    "name": "Tony Evers",
-    "slug": "tony-evers",
+    "name": "Walter Kimaro",
+    "slug": "walter-kimaro",
     "latestArticle": {
-      "title": "Distributing Adobe Commerce Patches at Scale",
-      "date": "2023-05-08",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/05/distributing-adobe-commerce-patches-at-scale"
+      "title": "My Experience Building an Adobe Express Add-on",
+      "date": "2023-08-04",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/08/my-experience-building-an-adobe-express-add-on"
     },
-    "docUrl": "/en/authors/tony-evers",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
-    "name": "Achim Koch",
-    "slug": "achim-koch",
-    "latestArticle": {
-      "title": "AEM Dispatcher — Create the Perfect Caching Architecture",
-      "date": "2023-05-23",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/05/aem-dispatcher-create-the-perfect-caching-architecture"
-    },
-    "docUrl": "/en/authors/achim-koch",
+    "docUrl": "/en/authors/walter-kimaro",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -450,6 +433,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2022/11/how-to-use-the-adobe-developer-app-builder-template-registry"
     },
     "docUrl": "/en/authors/pat-hyde",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Tony Evers",
+    "slug": "tony-evers",
+    "latestArticle": {
+      "title": "Distributing Adobe Commerce Patches at Scale",
+      "date": "2023-05-08",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/05/distributing-adobe-commerce-patches-at-scale"
+    },
+    "docUrl": "/en/authors/tony-evers",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
