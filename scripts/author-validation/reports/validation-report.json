@@ -51,6 +51,40 @@
     ]
   },
   {
+    "name": "Ayan Choudhary",
+    "slug": "ayan-choudhary",
+    "latestArticle": {
+      "title": "Developing an OAuth Sample for Adobe Photoshop",
+      "date": "2021-05-18",
+      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
+    },
+    "docUrl": "/en/authors/ayan-choudhary",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Mike Zahorik",
+    "slug": "mike-zahorik",
+    "latestArticle": {
+      "title": "Power from the People: InDesign Scripting",
+      "date": "2020-10-01",
+      "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
+    },
+    "docUrl": "/en/authors/mike-zahorik",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
     "name": "Abhishek Jain",
     "slug": "abhishek-jain",
     "latestArticle": {
@@ -85,23 +119,6 @@
     ]
   },
   {
-    "name": "Ayan Choudhary",
-    "slug": "ayan-choudhary",
-    "latestArticle": {
-      "title": "Developing an OAuth Sample for Adobe Photoshop",
-      "date": "2021-05-18",
-      "url": "https://blog.developer.adobe.com/en/publish/2021/05/developing-an-oauth-sample-for-adobe-photoshop"
-    },
-    "docUrl": "/en/authors/ayan-choudhary",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Ashikka Gupta",
     "slug": "ashikka-gupta",
     "latestArticle": {
@@ -110,23 +127,6 @@
       "url": "https://blog.developer.adobe.com/en/publish/2022/03/building-an-image-search-plugin-for-photoshop"
     },
     "docUrl": "/en/authors/ashikka-gupta",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
-    "name": "Mike Zahorik",
-    "slug": "mike-zahorik",
-    "latestArticle": {
-      "title": "Power from the People: InDesign Scripting",
-      "date": "2020-10-01",
-      "url": "https://blog.developer.adobe.com/en/publish/2020/09/make-yourself-a-power-user-indesign-scripting"
-    },
-    "docUrl": "/en/authors/mike-zahorik",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -204,14 +204,14 @@
     ]
   },
   {
-    "name": "Kelvin Xu",
-    "slug": "kelvin-xu",
+    "name": "Asim Chatterjee",
+    "slug": "asim-chatterjee",
     "latestArticle": {
-      "title": "Adobe Developer App Builder — Support for Setting Response Headers",
-      "date": "2023-06-07",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/06/adobe-developer-app-builder-support-for-setting-response-headers"
+      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
+      "date": "2025-06-09",
+      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
     },
-    "docUrl": "/en/authors/kelvin-xu",
+    "docUrl": "/en/authors/asim-chatterjee",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -221,14 +221,14 @@
     ]
   },
   {
-    "name": "Asim Chatterjee",
-    "slug": "asim-chatterjee",
+    "name": "Kelvin Xu",
+    "slug": "kelvin-xu",
     "latestArticle": {
-      "title": "Leveraging Propensity Models: Marketing that Thinks Like Your Customer",
-      "date": "2025-06-09",
-      "url": "https://blog.developer.adobe.com/en/publish/2025/06/leveraging-propensity-models-marketing-that-thinks-like-your-customer"
+      "title": "Adobe Developer App Builder — Support for Setting Response Headers",
+      "date": "2023-06-07",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/06/adobe-developer-app-builder-support-for-setting-response-headers"
     },
-    "docUrl": "/en/authors/asim-chatterjee",
+    "docUrl": "/en/authors/kelvin-xu",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -272,14 +272,14 @@
     ]
   },
   {
-    "name": "Renae Kang",
-    "slug": "renae-kang",
+    "name": "David Sankel",
+    "slug": "david-sankel",
     "latestArticle": {
-      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
-      "date": "2024-12-05",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
+      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
+      "date": "2024-04-26",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
     },
-    "docUrl": "/en/authors/renae-kang",
+    "docUrl": "/en/authors/david-sankel",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -289,14 +289,14 @@
     ]
   },
   {
-    "name": "David Sankel",
-    "slug": "david-sankel",
+    "name": "Renae Kang",
+    "slug": "renae-kang",
     "latestArticle": {
-      "title": "Trip Report: Winter ISO C++ Standards Meeting in Tokyo",
-      "date": "2024-04-26",
-      "url": "https://blog.developer.adobe.com/en/publish/2024/02/trip-report-winter-iso-c-standards-meeting"
+      "title": "Behind the Scenes with Ammar Alim, DevSecOps Leader",
+      "date": "2024-12-05",
+      "url": "https://blog.developer.adobe.com/en/publish/2024/12/behind-the-scenes-with-ammar-alim-devsecops-leader"
     },
-    "docUrl": "/en/authors/david-sankel",
+    "docUrl": "/en/authors/renae-kang",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -374,23 +374,6 @@
     ]
   },
   {
-    "name": "Sandeep Paliwal",
-    "slug": "sandeep-paliwal",
-    "latestArticle": {
-      "title": "Adobe Developer App Builder — Support for Setting Response Headers",
-      "date": "2023-07-21",
-      "url": "https://blog.developer.adobe.com/en/publish/2023/07/adobe-developer-app-builder-support-for-setting-response-headers"
-    },
-    "docUrl": "/en/authors/sandeep-paliwal",
-    "hasDoc": false,
-    "issues": [
-      "No author landing page (Google Doc)",
-      "Missing headline/title",
-      "Missing LinkedIn URL",
-      "Missing image in author document"
-    ]
-  },
-  {
     "name": "Walter Kimaro",
     "slug": "walter-kimaro",
     "latestArticle": {
@@ -425,14 +408,14 @@
     ]
   },
   {
-    "name": "Pat Hyde",
-    "slug": "pat-hyde",
+    "name": "Sandeep Paliwal",
+    "slug": "sandeep-paliwal",
     "latestArticle": {
-      "title": "How to Use the Adobe Developer App Builder Template Registry",
-      "date": "2022-07-11",
-      "url": "https://blog.developer.adobe.com/en/publish/2022/11/how-to-use-the-adobe-developer-app-builder-template-registry"
+      "title": "Adobe Developer App Builder — Support for Setting Response Headers",
+      "date": "2023-07-21",
+      "url": "https://blog.developer.adobe.com/en/publish/2023/07/adobe-developer-app-builder-support-for-setting-response-headers"
     },
-    "docUrl": "/en/authors/pat-hyde",
+    "docUrl": "/en/authors/sandeep-paliwal",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -450,6 +433,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2023/05/distributing-adobe-commerce-patches-at-scale"
     },
     "docUrl": "/en/authors/tony-evers",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Pat Hyde",
+    "slug": "pat-hyde",
+    "latestArticle": {
+      "title": "How to Use the Adobe Developer App Builder Template Registry",
+      "date": "2022-07-11",
+      "url": "https://blog.developer.adobe.com/en/publish/2022/11/how-to-use-the-adobe-developer-app-builder-template-registry"
+    },
+    "docUrl": "/en/authors/pat-hyde",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
@@ -484,6 +484,23 @@
       "url": "https://blog.developer.adobe.com/en/publish/2021/08/finding-your-feet-with-adobe-developer-app-builder"
     },
     "docUrl": "/en/authors/john-hill",
+    "hasDoc": false,
+    "issues": [
+      "No author landing page (Google Doc)",
+      "Missing headline/title",
+      "Missing LinkedIn URL",
+      "Missing image in author document"
+    ]
+  },
+  {
+    "name": "Sumit Kumar",
+    "slug": "sumit-kumar",
+    "latestArticle": {
+      "title": "Build-Time Wasm Module Splitting: Ship More Features Without Growing Your Startup Bundle",
+      "date": "2026-10-01",
+      "url": "https://blog.developer.adobe.com/en/publish/2026/10/build-time-wasm-module-splitting-ship-more-features-without-growing-your-startup-bundle"
+    },
+    "docUrl": "/en/authors/sumit-kumar",
     "hasDoc": false,
     "issues": [
       "No author landing page (Google Doc)",
