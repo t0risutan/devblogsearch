@@ -1,8 +1,35 @@
 {
-  "total": 121,
+  "total": 122,
   "offset": 0,
-  "limit": 121,
+  "limit": 122,
   "data": [
+    {
+      "path": "/en/publish/2026/10/adobe-developers-live-2026-recap-cep-to-uxp-migration-express-connectors-and-what-we-publish-next",
+      "image": "/en/publish/2026/10/media_1962ecb547745b95227bb86d937ac6789ab238ba4.jpg?width=1200&format=pjpg&optimize=medium",
+      "date": "",
+      "title": "Adobe Developers Live 2026 Recap: CEP to UXP Migration, Express Connectors, and Our Next Steps",
+      "author": "Ingo Eichel",
+      "description": "Watch the recordings, see how developers voted on UXP priorities, and find the CEP deprecation roadmap, Express updates, and next steps.",
+      "tags": "[\"uxp\",\"cep\",\"add-ons\",\"plugins\",\"developers\",\"extensibility\",\"community\"]",
+      "imageAlt": "",
+      "robots": "",
+      "lastModified": "1791988904",
+      "Removed from Medium?": "",
+      "sortDateTimestamp": "1791936000",
+      "sortDate": "2026-10-14",
+      "sortDateTimestampLegacy": "",
+      "updatedDate": "",
+      "adobeCloud": "Creative Cloud, Experience Cloud",
+      "adobeApp": "Adobe Express, Photoshop, InDesign, Premiere, After Effects, Media Encoder, Illustrator",
+      "mediaUrl": "",
+      "metaTitle": "",
+      "shortDescription": "",
+      "newsletterPlanned": "October",
+      "newsletterPublished": "",
+      "importer": "",
+      "updateNote": "",
+      "isHeroVideo": false
+    },
     {
       "path": "/en/publish/2026/10/build-time-wasm-module-splitting-ship-more-features-without-growing-your-startup-bundle",
       "image": "/en/publish/2026/10/media_161ecd6254cd7304cc63217bf76f934447bd4989c.png?width=1200&format=pjpg&optimize=medium",
@@ -1953,7 +1980,7 @@
       "date": "",
       "title": "MAX 2023 Recap: Everything You Need to Know About Adobe Express Add-Ons",
       "author": "Colene Chow",
-      "description": "“The Express ecosystem is growing really fast, helping you work seamlessly across the many tools and clouds that you use every day.” — Scott Belsky, ...",
+      "description": "���The Express ecosystem is growing really fast, helping you work seamlessly across the many tools and clouds that you use every day.” — Scott Belsky, ...",
       "tags": "[\"adobe max\",\"adobe-cloud-platform\",\"generative ai tools\",\"add-ons\"]",
       "imageAlt": "︎",
       "robots": "",
@@ -3298,5 +3325,5 @@
     "updateNote"
   ],
   ":type": "sheet",
-  "generatedAt": "2026-10-13T15:36:34.598Z"
+  "generatedAt": "2026-10-14T16:38:20.538Z"
 }
